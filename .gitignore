@@ -1,0 +1,12 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment and IDE
+.venv/
+.vscode/
+
+# Processed data and search outputs
+data/processed/
+data/output/
+

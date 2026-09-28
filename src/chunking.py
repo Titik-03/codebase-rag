@@ -48,7 +48,7 @@ def get_node_char(node: ast.AST, offset: List[int]) -> Tuple[int, int]:
     start = offset[node.lineno - 1] + node.col_offset
     end = offset[node.end_lineno - 1] + node.end_col_offset
     return start, end
-def chunk_markdown(raw_dir: Path | str, max_chunk_size: int = 2000, overlap: int = 50) -> List[Dict[str, Any]]:
+def chunk_markdown(raw_dir: Path | str, max_chunk_size: int = 2000, overlap: int = 120) -> List[Dict[str, Any]]:
     """Simple sliding-window chunking for markdown/txt/rst files."""
     chunks: List[Dict[str, Any]] = []
 

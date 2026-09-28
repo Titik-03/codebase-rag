@@ -24,9 +24,14 @@ def tokenize_text(text):
 
     return tokens
 
-def tokenize(chunks):
+def tokenize(chunks, name):
     for c in chunks:
-        c["tokens"] = tokenize_text(c["text"])
+        tokens = tokenize_text(c["text"])
+
+        if name == "code":
+            tokens += tokenize_text(c["file_path"])
+
+        c["tokens"] = tokens
 
 def index(chunks):
     index = []
@@ -168,41 +173,37 @@ def save_data(path, data):
     with open(path, "wb") as f:
         pickle.dump(data, f)
 
+def process_chunks(chunks, name):
+    add_source_to_chunks(chunks)
+    tokenize(chunks, name)
+
+    index_chunks = index(chunks)
+    inv = inverted_index(index_chunks)
+
+    metadata = {
+        "N": len(index_chunks),
+        "avgdl": average_lenght(index_chunks)
+    }
+
+    save_data(f"data/processed/{name}_chunks.pkl", chunks)
+    save_data(f"data/processed/{name}_index.pkl", index_chunks)
+    save_data(f"data/processed/{name}_inverted_index.pkl", inv)
+    save_data(f"data/processed/{name}_metadata.pkl", metadata)
 
 
 if __name__ == "__main__":
 
-    chunks = (
-        parse_nodes("vllm-0.10.1", max_chunk_size=2000)
-        + chunk_markdown("vllm-0.10.1", max_chunk_size=2000)
+    chunks_py = parse_nodes(
+        "data/raw/vllm-0.10.1",
+        max_chunk_size=2000
     )
 
-    add_source_to_chunks(chunks)
+    chunks_doc = chunk_markdown(
+        "data/raw/vllm-0.10.1",
+        max_chunk_size=2000
+    )
 
-    tokenize(chunks)
-
-    index_chunks = index(chunks)
-
-    inv = inverted_index(index_chunks)
-
-    N = len(index_chunks)
-    avgdl = average_lenght(index_chunks)
-
-    metadata = {
-        "N": N,
-        "avgdl": avgdl
-    }
-
-    save_data("data/chunks.pkl", chunks)
-    save_data("data/index.pkl", index_chunks)
-    save_data("data/inverted_index.pkl", inv)
-    save_data("data/metadata.pkl", metadata)
+    process_chunks(chunks_py, "code")
+    process_chunks(chunks_doc, "docs")
 
     print("Indexing finished.")
-    print(f"Total chunks: {N}")
-    print(f"Average chunk length: {avgdl:.2f}")
-    print("Saved:")
-    print("  data/chunks.pkl")
-    print("  data/index.pkl")
-    print("  data/inverted_index.pkl")
-    print("  data/metadata.pkl")

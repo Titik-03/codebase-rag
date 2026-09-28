@@ -32,65 +32,129 @@ def get_sources(results, chunks) -> list[MinimalSource]:
     return sources
 
 def search(
-        question_id,
+    question_id,
+    query,
+    chunks,
+    index_chunks,
+    inverted,
+    avgdl,
+    k=5
+):
+    results = bm25_search(
         query,
-        chunks,
         index_chunks,
         inverted,
         avgdl,
-        k=5
-    ) -> MinimalSearchResults:
+        top_k=k
+    )
 
-        results = bm25_search(
-            query,
+    sources = get_sources(results, chunks)
+
+    return MinimalSearchResults(
+        question_id=question_id,
+        question=query,
+        retrieved_sources=sources
+    )
+
+def search_dataset(
+    dataset_path,
+    chunks,
+    index_chunks,
+    inverted,
+    avgdl,
+    k=5
+):
+    with open(dataset_path, "r") as f:
+        data = f.read()
+
+    dataset = RagDataset.model_validate_json(data)
+
+    search_results = []
+
+    for question in dataset.rag_questions:
+        result = search(
+            question.question_id,
+            question.question,
+            chunks,
             index_chunks,
             inverted,
             avgdl,
-            top_k=k
+            k
         )
 
-        sources = get_sources(results, chunks)
+        search_results.append(result)
 
-        return MinimalSearchResults(
-            question_id=question_id,
-            question=query,
-            retrieved_sources=sources
-        )
+    return StudentSearchResults(
+        search_results=search_results,
+        k=k
+    )
 
-def search_dataset(chunks, index_chunks, inverted, metadata):
-    with open("data/datasets/UnansweredQuestions/dataset_docs_public.json", "r") as f:
-        data = f.read()
-        dataset = RagDataset.model_validate_json(data)
-        search_result = []
-        for question in dataset.rag_questions:
-            id = question.question_id
-            query = question.question
-            result = search(
-                question_id=id,
-                query=query,
-                chunks=chunks,
-                index_chunks=index_chunks,
-                inverted=inverted,
-                avgdl=metadata["avgdl"],
-                k=5
-            )
-            search_result.append(result)
-        return StudentSearchResults(
-            search_results=search_result,
-            k=5
-        )
-def dump_json(result):
-    output_dir = Path("data/output/search_results")
-    output_dir.mkdir(parents=True, exist_ok=True)
+def dump_json(result, output_path):
+    output_path = Path(output_path)
 
-    with open(output_dir / "result.json", "w") as f:
+    output_path.parent.mkdir(
+        parents=True,
+        exist_ok=True
+    )
+
+    with open(output_path, "w") as f:
         f.write(result.model_dump_json(indent=2))
 
 
 if __name__ == "__main__":
-    chunks = load_data("data/processed/chunks.pkl")
-    index_chunks = load_data("data/processed/index.pkl")
-    inverted = load_data("data/processed/inverted_index.pkl")
-    metadata = load_data("data/processed/metadata.pkl")
-    result = search_dataset(chunks, index_chunks, inverted, metadata)
-    dump_json(result)
+
+    # DOCS
+    docs_chunks = load_data(
+        "data/processed/docs_chunks.pkl"
+    )
+    docs_index = load_data(
+        "data/processed/docs_index.pkl"
+    )
+    docs_inverted = load_data(
+        "data/processed/docs_inverted_index.pkl"
+    )
+    docs_metadata = load_data(
+        "data/processed/docs_metadata.pkl"
+    )
+
+    # CODE
+    code_chunks = load_data(
+        "data/processed/code_chunks.pkl"
+    )
+    code_index = load_data(
+        "data/processed/code_index.pkl"
+    )
+    code_inverted = load_data(
+        "data/processed/code_inverted_index.pkl"
+    )
+    code_metadata = load_data(
+        "data/processed/code_metadata.pkl"
+    )
+
+    docs_results = search_dataset(
+        "data/datasets/UnansweredQuestions/dataset_docs_public.json",
+        docs_chunks,
+        docs_index,
+        docs_inverted,
+        docs_metadata["avgdl"],
+        k=5
+    )
+
+    code_results = search_dataset(
+        "data/datasets/UnansweredQuestions/dataset_code_public.json",
+        code_chunks,
+        code_index,
+        code_inverted,
+        code_metadata["avgdl"],
+        k=5
+    )
+
+    dump_json(
+        docs_results,
+        "data/output/search_results/docs_result.json"
+    )
+
+    dump_json(
+        code_results,
+        "data/output/search_results/code_result.json"
+    )
