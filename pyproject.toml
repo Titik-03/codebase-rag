@@ -9,6 +9,8 @@ authors = [
 requires-python = ">=3.14"
 dependencies = [
     "pydantic>=2.13.5",
+    "torch>=2.14.0",
+    "transformers",
 ]
 
 [project.scripts]
@@ -17,3 +19,5 @@ rag-against-the-machine = "rag_against_the_machine:main"
 [build-system]
 requires = ["uv_build>=0.12.10,<0.13.0"]
 build-backend = "uv_build"
+[tool.uv]
+package = false

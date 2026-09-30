@@ -1,6 +1,7 @@
 import pickle
 from indexing import bm25_search
 from pathlib import Path
+from indexing import save_data
 import json
 from models import (
     MinimalSource,
@@ -148,7 +149,8 @@ if __name__ == "__main__":
         code_metadata["avgdl"],
         k=5
     )
-
+    save_data(f"data/processed/docs_re.pkl", docs_results)
+    save_data(f"data/processed/code_re.pkl", code_results)
     dump_json(
         docs_results,
         "data/output/search_results/docs_result.json"
