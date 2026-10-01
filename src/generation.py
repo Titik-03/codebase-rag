@@ -2,43 +2,95 @@ from models import MinimalSource
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from retrieval import load_data
 
-def getcontext(sources: list[MinimalSource]) -> list[str]:
+
+MODEL_NAME = "Qwen/Qwen3-0.6B"
+MAX_NEW_TOKENS = 200
+
+tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+model = AutoModelForCausalLM.from_pretrained(MODEL_NAME)
+model.eval()
+CONTEXT_LIMIT = model.config.max_position_embeddings
+
+MAX_INPUT_TOKENS = CONTEXT_LIMIT - MAX_NEW_TOKENS
+
+
+def get_context(sources: list[MinimalSource]) -> list[str]:
+    """Read and extract the text represented by retrieved sources."""
     contexts = []
+
     for source in sources:
-        with open(source.file_path, "r") as f:
+        with open(source.file_path, "r", encoding="utf-8") as f:
             text = f.read()
-            chunk = text[source.first_character_index:
-                     source.last_character_index]
-            contexts.append(chunk)
+
+        chunk = text[
+            source.first_character_index:
+            source.last_character_index
+        ]
+
+        contexts.append(chunk)
+
     return contexts
 
+def count_tokens(text: str) -> int:
+    """Count the number of tokens in a text."""
+    tokens = tokenizer(text)
+    return len(tokens["input_ids"])
+
+
+def fit_context(
+    contexts: list[str],
+    question: str,
+    max_input_tokens: int
+) -> list[str]:
+    """Select contexts that fit inside the model input token budget."""
+    selected_chunks = []
+
+    for context in contexts:
+        candidate = selected_chunks + [context]
+
+        prompt = build_prompt(
+            question,
+            candidate
+        )
+
+        token_count = count_tokens(prompt)
+
+        if token_count <= max_input_tokens:
+            selected_chunks.append(context)
+
+    return selected_chunks
+
 def build_prompt(question: str, contexts: list[str]) -> str:
+    """Build a prompt containing retrieved context and the question."""
     context_text = "\n\n".join(contexts)
 
     prompt = f"""
-        Answer the question using only the provided context.
+Answer the question using only the provided context.
 
-        Context:
-        {context_text}
+Context:
+{context_text}
 
-        Question:
-        {question}
+Question:
+{question}
 
-        Answer:
-        """
+Answer:
+"""
 
     return prompt
 
-MODEL_NAME = "Qwen/Qwen3-0.6B"
-tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
-model = AutoModelForCausalLM.from_pretrained(MODEL_NAME)
+
 def generate_answer(
     question: str,
     sources: list[MinimalSource]
 ) -> str:
+    """Generate an answer from a question and its retrieved sources."""
 
-    contexts = getcontext(sources)
-
+    contexts = get_context(sources)
+    contexts = fit_context(
+        contexts,
+        question,
+        MAX_INPUT_TOKENS
+    )
     prompt = build_prompt(
         question,
         contexts
@@ -51,7 +103,7 @@ def generate_answer(
 
     outputs = model.generate(
         **inputs,
-        max_new_tokens=200
+        max_new_tokens=MAX_NEW_TOKENS
     )
 
     input_length = inputs["input_ids"].shape[1]
@@ -65,14 +117,34 @@ def generate_answer(
 
     return answer
 
-docs = load_data("data/processed/docs_re.pkl")
 
-result = docs.search_results[0]
+if __name__ == "__main__":
+    docs = load_data("data/processed/docs_re.pkl")
 
-answer = generate_answer(
-    result.question,
-    result.retrieved_sources
-)
+    result = docs.search_results[0]
 
-print("Question:", result.question)
-print("Answer:", answer)
+    contexts = get_context(
+        result.retrieved_sources
+    )
+
+    selected_contexts = fit_context(
+        contexts,
+        result.question,
+        MAX_INPUT_TOKENS
+    )
+
+    print("\nQUESTION:")
+    print(result.question)
+
+    # print("\nRETRIEVED CONTEXT:")
+    # for i, context in enumerate(selected_contexts, start=1):
+    #     print(f"\n--- Context {i} ---")
+    #     print(context)
+
+    answer = generate_answer(
+        result.question,
+        result.retrieved_sources
+    )
+
+    print("\nGENERATED ANSWER:")
+    print(answer)
