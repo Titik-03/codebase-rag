@@ -1,9 +1,8 @@
 import pickle
-from indexing import bm25_search
+from .indexing import bm25_search, save_data
 from pathlib import Path
-from indexing import save_data
 import json
-from models import (
+from .models import (
     MinimalSource,
     MinimalSearchResults,
     RagDataset,

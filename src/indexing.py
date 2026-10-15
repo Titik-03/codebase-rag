@@ -1,5 +1,5 @@
 import re
-from chunking import parse_nodes, chunk_markdown, add_source_to_chunks
+from .chunking import parse_nodes, chunk_markdown, add_source_to_chunks
 from collections import Counter
 from pathlib import Path
 import pickle
@@ -195,20 +195,20 @@ def process_chunks(chunks, name):
     save_data(f"data/processed/{name}_inverted_index.pkl", inv)
     save_data(f"data/processed/{name}_metadata.pkl", metadata)
 
-
-if __name__ == "__main__":
-
+def build_index(max_chunk_size: int = 2000):
     chunks_py = parse_nodes(
         "data/raw/vllm-0.10.1",
-        max_chunk_size=2000
+        max_chunk_size=max_chunk_size
     )
-
     chunks_doc = chunk_markdown(
         "data/raw/vllm-0.10.1",
-        max_chunk_size=2000
+        max_chunk_size=max_chunk_size
     )
 
     process_chunks(chunks_py, "code")
     process_chunks(chunks_doc, "docs")
 
     print("Indexing finished.")
+
+if __name__ == "__main__":
+    build_index()

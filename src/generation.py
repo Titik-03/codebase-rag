@@ -1,6 +1,12 @@
 import torch
 
-from models import MinimalSource
+from models import (
+    MinimalSource,
+    MinimalAnswer,
+    StudentSearchResults,
+    StudentSearchResultsAndAnswer
+)
+from tqdm import tqdm
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from retrieval import load_data
 
@@ -136,19 +142,44 @@ def generate_answer(
 
     return answer.strip()
 
-if __name__ == "__main__":
-
-    docs = load_data("data/processed/docs_re.pkl")
-
-    result = docs.search_results[0] 
-
-    print("\nQUESTION:")
-    print(result.question)
-
-    answer = generate_answer(
-        result.question,
-        result.retrieved_sources
+def generate_dataset(dataset: StudentSearchResults) -> StudentSearchResultsAndAnswer:
+    answers = []
+    for result in tqdm(dataset.search_results):
+        answer = generate_answer(
+            result.question,
+            result.retrieved_sources
+        )
+        answers.append(
+            MinimalAnswer(
+                question_id=result.question_id,
+                question=result.question,
+                retrieved_sources=result.retrieved_sources,
+                answer=answer
+            )
+        )
+    return StudentSearchResultsAndAnswer(
+        search_results=answers,
+        k=dataset.k
     )
 
-    print("\nGENERATED ANSWER:")
-    print(answer)
+def save_results(results: StudentSearchResultsAndAnswer, output_path: str) -> None:
+    with open(output_path, "w", encoding="utf-8") as f:
+        f.write(results.model_dump_json(indent=2))
+
+
+if __name__ == "__main__":
+    test_result = StudentSearchResultsAndAnswer(
+        search_results=[
+            MinimalAnswer(
+                question_id="test1",
+                question="What is vLLM?",
+                retrieved_sources=[],
+                answer="vLLM is an LLM inference engine."
+            )
+        ],
+        k=5
+    )
+
+    save_results(test_result, "test_answers.json")
+
+    print("JSON saved successfully!")
