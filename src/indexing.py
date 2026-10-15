@@ -1,6 +1,7 @@
 import re
 from chunking import parse_nodes, chunk_markdown, add_source_to_chunks
 from collections import Counter
+from pathlib import Path
 import pickle
 import math
 
@@ -170,6 +171,10 @@ def bm25_search(
     return ranked[:top_k]
 
 def save_data(path, data):
+    path = Path(path)
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+
     with open(path, "wb") as f:
         pickle.dump(data, f)
 

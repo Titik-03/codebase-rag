@@ -1,7 +1,8 @@
+import torch
+
 from models import MinimalSource
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from retrieval import load_data
-
 
 MODEL_NAME = "Qwen/Qwen3-0.6B"
 MAX_NEW_TOKENS = 200
@@ -31,29 +32,48 @@ def get_context(sources: list[MinimalSource]) -> list[str]:
 
     return contexts
 
-def count_tokens(text: str) -> int:
-    """Count the number of tokens in a text."""
-    tokens = tokenizer(text)
-    return len(tokens["input_ids"])
 
+def prepare_inputs(question: str, contexts: list[str]):
+    prompt = build_prompt(question, contexts)
+
+    messages = [
+        {
+            "role": "system",
+            "content": (
+                "You are a technical assistant for the vLLM repository. "
+                "Answer using only the provided context. "
+                "Be precise and concise."
+            )
+        },
+        {
+            "role": "user",
+            "content": prompt
+        }
+    ]
+
+    return tokenizer.apply_chat_template(
+        messages,
+        tokenize=True,
+        add_generation_prompt=True,
+        enable_thinking=False,
+        return_tensors="pt",
+        return_dict=True
+    )
 
 def fit_context(
     contexts: list[str],
     question: str,
     max_input_tokens: int
 ) -> list[str]:
-    """Select contexts that fit inside the model input token budget."""
+
     selected_chunks = []
 
     for context in contexts:
         candidate = selected_chunks + [context]
 
-        prompt = build_prompt(
-            question,
-            candidate
-        )
+        inputs = prepare_inputs(question, candidate)
 
-        token_count = count_tokens(prompt)
+        token_count = inputs["input_ids"].shape[1]
 
         if token_count <= max_input_tokens:
             selected_chunks.append(context)
@@ -61,23 +81,22 @@ def fit_context(
     return selected_chunks
 
 def build_prompt(question: str, contexts: list[str]) -> str:
-    """Build a prompt containing retrieved context and the question."""
     context_text = "\n\n".join(contexts)
 
-    prompt = f"""
-Answer the question using only the provided context.
+    return f"""Answer the question using only the provided context.
+
+Rules:
+- Give a direct and precise answer.
+- Preserve exact function names, API endpoints, and parameters.
+- Do not repeat the question or the answer.
+- Do not invent information.
+- If the context does not contain the answer, say "Insufficient context".
 
 Context:
 {context_text}
 
-Question:
-{question}
-
-Answer:
+Question: {question}
 """
-
-    return prompt
-
 
 def generate_answer(
     question: str,
@@ -91,20 +110,20 @@ def generate_answer(
         question,
         MAX_INPUT_TOKENS
     )
-    prompt = build_prompt(
-        question,
-        contexts
-    )
 
-    inputs = tokenizer(
-        prompt,
-        return_tensors="pt"
-    )
+    if not contexts:
+        return "Insufficient context"
 
-    outputs = model.generate(
-        **inputs,
-        max_new_tokens=MAX_NEW_TOKENS
-    )
+    inputs = prepare_inputs(question, contexts)
+    inputs = inputs.to(model.device)
+
+    with torch.inference_mode():
+        outputs = model.generate(
+            **inputs,
+            max_new_tokens=MAX_NEW_TOKENS,
+            do_sample=False,
+            pad_token_id=tokenizer.eos_token_id
+        )
 
     input_length = inputs["input_ids"].shape[1]
 
@@ -115,31 +134,16 @@ def generate_answer(
         skip_special_tokens=True
     )
 
-    return answer
-
+    return answer.strip()
 
 if __name__ == "__main__":
+
     docs = load_data("data/processed/docs_re.pkl")
 
-    result = docs.search_results[0]
-
-    contexts = get_context(
-        result.retrieved_sources
-    )
-
-    selected_contexts = fit_context(
-        contexts,
-        result.question,
-        MAX_INPUT_TOKENS
-    )
+    result = docs.search_results[0] 
 
     print("\nQUESTION:")
     print(result.question)
-
-    # print("\nRETRIEVED CONTEXT:")
-    # for i, context in enumerate(selected_contexts, start=1):
-    #     print(f"\n--- Context {i} ---")
-    #     print(context)
 
     answer = generate_answer(
         result.question,
