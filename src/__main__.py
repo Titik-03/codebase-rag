@@ -3,6 +3,7 @@ from pathlib import Path
 from .indexing import build_index
 from .retrieval import load_data, search as retrieve
 from .retrieval import search_dataset as retrieve_dataset, dump_json
+from .generation import generate_answer
 from .models import MinimalSearchResults
 
 def load_index(name: str):
@@ -82,10 +83,24 @@ def search_both(query: str, k: int = 5):
 
     return final_result
 
+def search_command(query: str, k: int = 5):
+    result = search_both(query, k)
+    print(result.model_dump_json(indent=2))
+
+def query_answer(query: str, k: int = 5):
+    results = search_both(query, k)
+
+    answer = generate_answer(
+        question=query,
+        sources=results.retrieved_sources
+    )
+
+    return answer
 
 if __name__ == "__main__":
     fire.Fire({
         "index": build_index,
         "search": search_command,
-        "search_dataset": search_dataset_command
+        "search_dataset": search_dataset_command,
+        "answer": query_answer
     })

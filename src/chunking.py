@@ -199,8 +199,8 @@ def all_chunks():
 # if __name__ == "__main__":
     
 
-    print(f"total chunks: {len(chunks)}")
-    for i in range(100):
-        c = chunks[i]
-        print(c["file_path"], c["last_character_index"] - c["first_character_index"])
-        print(c["text"][:80])
+    # print(f"total chunks: {len(chunks)}")
+    # for i in range(100):
+    #     c = chunks[i]
+    #     print(c["file_path"], c["last_character_index"] - c["first_character_index"])
+    #     print(c["text"][:80])

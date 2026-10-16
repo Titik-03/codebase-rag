@@ -1,6 +1,6 @@
 import torch
 
-from models import (
+from .models import (
     MinimalSource,
     MinimalAnswer,
     StudentSearchResults,
@@ -8,7 +8,7 @@ from models import (
 )
 from tqdm import tqdm
 from transformers import AutoTokenizer, AutoModelForCausalLM
-from retrieval import load_data
+from .retrieval import load_data
 
 MODEL_NAME = "Qwen/Qwen3-0.6B"
 MAX_NEW_TOKENS = 200
@@ -167,19 +167,19 @@ def save_results(results: StudentSearchResultsAndAnswer, output_path: str) -> No
         f.write(results.model_dump_json(indent=2))
 
 
-if __name__ == "__main__":
-    test_result = StudentSearchResultsAndAnswer(
-        search_results=[
-            MinimalAnswer(
-                question_id="test1",
-                question="What is vLLM?",
-                retrieved_sources=[],
-                answer="vLLM is an LLM inference engine."
-            )
-        ],
-        k=5
-    )
+# if __name__ == "__main__":
+#     test_result = StudentSearchResultsAndAnswer(
+#         search_results=[
+#             MinimalAnswer(
+#                 question_id="test1",
+#                 question="What is vLLM?",
+#                 retrieved_sources=[],
+#                 answer="vLLM is an LLM inference engine."
+#             )
+#         ],
+#         k=5
+#     )
 
-    save_results(test_result, "test_answers.json")
+#     save_results(test_result, "test_answers.json")
 
-    print("JSON saved successfully!")
+#     print("JSON saved successfully!")
