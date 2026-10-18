@@ -1,6 +1,7 @@
 import ast
 from pathlib import Path
-from typing import List, Tuple, Generator, Dict, Any
+from tqdm import tqdm
+from typing import List, Tuple, Dict, Any
 
 
 def get_target_files(raw_dir: Path | str) -> List[Tuple[Path, str]]:
@@ -29,8 +30,9 @@ def calculate_char_offsets(source_code: str) -> List[int]:
         offsets.append(running_offset)
     return offsets
 
+
 def parse_python_file(path: Path) -> Dict[str, Any] | None:
-    """Read and parse a single file safely without holding entire repos in memory."""
+    """Read and parse a file safely without holding entire repos in memory."""
     try:
         source = path.read_text(encoding="utf-8")
         tree = ast.parse(source)
@@ -43,16 +45,25 @@ def parse_python_file(path: Path) -> Dict[str, Any] | None:
     except (SyntaxError, UnicodeDecodeError, OSError):
         return None
 
+
 def get_node_char(node: ast.AST, offset: List[int]) -> Tuple[int, int]:
     """Map AST node lines to absolute character offsets."""
     start = offset[node.lineno - 1] + node.col_offset
     end = offset[node.end_lineno - 1] + node.end_col_offset
     return start, end
-def chunk_markdown(raw_dir: Path | str, max_chunk_size: int = 2000, overlap: int = 120) -> List[Dict[str, Any]]:
+
+
+def chunk_markdown(raw_dir: Path | str,
+                   max_chunk_size: int = 2000,
+                   overlap: int = 120) -> List[Dict[str, Any]]:
     """Simple sliding-window chunking for markdown/txt/rst files."""
     chunks: List[Dict[str, Any]] = []
 
-    for file_path, file_type in get_target_files(raw_dir):
+    for file_path, file_type in tqdm(
+        get_target_files(raw_dir),
+        desc="Chunking documentation",
+        unit="file"
+    ):
         if file_type != "markdown":
             continue
 
@@ -77,7 +88,7 @@ def chunk_markdown(raw_dir: Path | str, max_chunk_size: int = 2000, overlap: int
 
 
 def _slice_oversized(start: int, end: int, str_path: str, max_chunk_size: int,
-                      chunks: List[Dict[str, Any]], overlap: int = 50) -> None:
+                     chunks: List[Dict[str, Any]], overlap: int = 50) -> None:
     """Manually slice a node with no splittable children into fixed-size,
     overlapping windows so each chunk stays under max_chunk_size."""
     pos = start
@@ -90,7 +101,8 @@ def _slice_oversized(start: int, end: int, str_path: str, max_chunk_size: int,
         })
         if chunk_end >= end:
             break
-        pos = chunk_end - overlap 
+        pos = chunk_end - overlap
+
 
 def _emit_node(node, line_offsets, str_path, max_chunk_size, chunks):
     start, end = get_node_char(node, line_offsets)
@@ -117,11 +129,17 @@ def _emit_node(node, line_offsets, str_path, max_chunk_size, chunks):
             continue
         _emit_node(child, line_offsets, str_path, max_chunk_size, chunks)
 
-def parse_nodes(raw_dir: Path | str, max_chunk_size: int = 2000) -> List[Dict[str, Any]]:
+
+def parse_nodes(raw_dir: Path | str,
+                max_chunk_size: int = 2000) -> List[Dict[str, Any]]:
     """Traverse Python files, extract node boundaries, and return chunks."""
     target_files = get_target_files(raw_dir)
     chunks: List[Dict[str, Any]] = []
-    for file_path, file_type in target_files:
+    for file_path, file_type in tqdm(
+        target_files,
+        desc="Chunking Python files",
+        unit="file"
+    ):
         if file_type != "python":
             continue
         parsed = parse_python_file(file_path)
@@ -132,7 +150,6 @@ def parse_nodes(raw_dir: Path | str, max_chunk_size: int = 2000) -> List[Dict[st
         line_offsets = parsed["line_offsets"]
         str_path = parsed["path"]
 
-        chunk_length = 0
         chunk_start = None
         chunk_end = None
 
@@ -151,10 +168,14 @@ def parse_nodes(raw_dir: Path | str, max_chunk_size: int = 2000) -> List[Dict[st
                         "last_character_index": chunk_end,
                     })
                     chunk_start = None
-                _emit_node(node, line_offsets, str_path, max_chunk_size, chunks)
+                _emit_node(node, line_offsets, str_path,
+                           max_chunk_size, chunks)
                 continue
 
-            if chunk_start is not None and (end - chunk_start) > max_chunk_size:
+            if (
+                chunk_start is not None
+                and (end - chunk_start) > max_chunk_size
+            ):
                 chunks.append({
                     "file_path": str_path,
                     "first_character_index": chunk_start,
@@ -174,6 +195,8 @@ def parse_nodes(raw_dir: Path | str, max_chunk_size: int = 2000) -> List[Dict[st
                 "last_character_index": chunk_end,
             })
     return chunks
+
+
 def add_source_to_chunks(chunks: List[Dict[str, Any]]) -> None:
     """Fill in the 'text' field for each chunk by slicing its source file.
     Reads each file once, no matter how many chunks reference it."""
@@ -189,18 +212,12 @@ def add_source_to_chunks(chunks: List[Dict[str, Any]]) -> None:
                 file_cache[path] = ""
 
         source = file_cache[path]
-        c["text"] = source[c["first_character_index"]:c["last_character_index"]]
-    
+        start, end = c["first_character_index"], c["last_character_index"]
+        c["text"] = source[start:end]
+
+
 def all_chunks():
-    chunks = parse_nodes("vllm-0.10.1", max_chunk_size=2000) + chunk_markdown("vllm-0.10.1", max_chunk_size=2000)
+    chunks = parse_nodes("vllm-0.10.1", max_chunk_size=2000) + \
+        chunk_markdown("vllm-0.10.1", max_chunk_size=2000)
     add_source_to_chunks(chunks)
     return chunks
-
-# if __name__ == "__main__":
-    
-
-    # print(f"total chunks: {len(chunks)}")
-    # for i in range(100):
-    #     c = chunks[i]
-    #     print(c["file_path"], c["last_character_index"] - c["first_character_index"])
-    #     print(c["text"][:80])

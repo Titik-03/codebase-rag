@@ -1,10 +1,13 @@
 import fire
+import sys
 from pathlib import Path
+from pydantic import ValidationError
 from .indexing import build_index
 from .retrieval import load_data, search as retrieve
 from .retrieval import search_dataset as retrieve_dataset, dump_json
-from .generation import generate_answer
-from .models import MinimalSearchResults
+from .evaluation import evaluate_dataset
+from .models import MinimalSearchResults, StudentSearchResults, RagDataset
+
 
 def load_index(name: str):
     chunks = load_data(f"data/processed/{name}_chunks.pkl")
@@ -14,11 +17,14 @@ def load_index(name: str):
 
     return chunks, index_chunks, inverted, metadata
 
+
 def search_dataset_command(
     dataset_path: str,
     k: int = 5,
     save_directory: str = "data/output/search_results"
 ):
+    if k <= 0:
+        raise ValueError("k must be greater than 0")
     dataset_name = Path(dataset_path).name
 
     if dataset_name.startswith("dataset_docs_"):
@@ -44,6 +50,7 @@ def search_dataset_command(
 
     print(f"Results saved to: {output_path}")
 
+
 def merge_results(result, k):
     merged = []
     docs = result["docs"]
@@ -57,7 +64,9 @@ def merge_results(result, k):
             break
     return merged[:k]
 
+
 def search_both(query: str, k: int = 5):
+    validate_query(query, k)
     results = {}
 
     for index_type in ("docs", "code"):
@@ -83,13 +92,16 @@ def search_both(query: str, k: int = 5):
 
     return final_result
 
+
 def search_command(query: str, k: int = 5):
     result = search_both(query, k)
     print(result.model_dump_json(indent=2))
 
-def query_answer(query: str, k: int = 5):
-    results = search_both(query, k)
 
+def query_answer(query: str, k: int = 5):
+
+    results = search_both(query, k)
+    from .generation import generate_answer
     answer = generate_answer(
         question=query,
         sources=results.retrieved_sources
@@ -97,10 +109,61 @@ def query_answer(query: str, k: int = 5):
 
     return answer
 
+
+def answer_dataset_command(
+    student_search_results_path: str,
+    save_directory: str
+):
+
+    with open(student_search_results_path, "r", encoding="utf-8") as f:
+        dataset = StudentSearchResults.model_validate_json(f.read())
+
+    if dataset.k <= 0:
+        raise ValueError("k must be greater than 0")
+    from .generation import generate_dataset
+    result = generate_dataset(dataset)
+    filename = Path(student_search_results_path).stem + "_answer.json"
+    output_path = Path(save_directory) / filename
+    dump_json(result, output_path)
+
+    print(f"Answers saved to: {output_path}")
+
+
+def evaluate_command(
+    student_search_results_path: str,
+    dataset_path: str
+):
+    with open(student_search_results_path, "r", encoding="utf-8") as f:
+        student = StudentSearchResults.model_validate_json(f.read())
+
+    with open(dataset_path, "r", encoding="utf-8") as f:
+        reference = RagDataset.model_validate_json(f.read())
+
+    results = evaluate_dataset(reference, student)
+
+    for metric, score in results.items():
+        print(f"{metric}: {score:.3f} ({score * 100:.1f}%)")
+
+
+def validate_query(query: str, k: int):
+    if not query.strip():
+        raise ValueError("Query cannot be empty")
+
+    if k <= 0:
+        raise ValueError("k must be greater than 0")
+
+
 if __name__ == "__main__":
-    fire.Fire({
-        "index": build_index,
-        "search": search_command,
-        "search_dataset": search_dataset_command,
-        "answer": query_answer
-    })
+    try:
+        fire.Fire({
+            "index": build_index,
+            "search": search_command,
+            "search_dataset": search_dataset_command,
+            "answer": query_answer,
+            "answer_dataset": answer_dataset_command,
+            "evaluate": evaluate_command
+        })
+
+    except (ValueError, FileNotFoundError)as e:
+        print(f"Error: {e}", file=sys.stderr)
+        sys.exit(1)

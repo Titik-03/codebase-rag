@@ -1,9 +1,11 @@
 import re
 from .chunking import parse_nodes, chunk_markdown, add_source_to_chunks
 from collections import Counter
+from tqdm import tqdm
 from pathlib import Path
 import pickle
 import math
+
 
 def tokenize_text(text):
     raw_tokens = re.findall(
@@ -25,14 +27,16 @@ def tokenize_text(text):
 
     return tokens
 
+
 def tokenize(chunks, name):
-    for c in chunks:
+    for c in tqdm(chunks, desc=f"Tokenizing {name}", unit="chunk"):
         tokens = tokenize_text(c["text"])
 
         if name == "code":
             tokens += tokenize_text(c["file_path"])
 
         c["tokens"] = tokens
+
 
 def index(chunks):
     index = []
@@ -49,6 +53,7 @@ def index(chunks):
 
     return index
 
+
 def inverted_index(index):
     inverted = {}
     for chunk in index:
@@ -60,16 +65,19 @@ def inverted_index(index):
 
     return inverted
 
+
 def df(inverted):
     df = {}
     for token, chunks in inverted.items():
         df[token] = len(chunks)
     return df
 
+
 def average_lenght(index):
     i = sum(chunk["length"] for chunk in index)
     j = len(index)
     return i/j
+
 
 def bm25_idf(token, inverted, N):
     if token not in inverted:
@@ -83,6 +91,7 @@ def bm25_idf(token, inverted, N):
 
     return idf
 
+
 def bm25_tf(tf, chunk_length, avgdl, k1=1.5, b=0.75):
 
     numerator = tf * (k1 + 1)
@@ -94,6 +103,8 @@ def bm25_tf(tf, chunk_length, avgdl, k1=1.5, b=0.75):
     denominator = tf + k1 * length_normalization
 
     return numerator / denominator
+
+
 def bm25_term_score(
     token,
     chunk,
@@ -123,6 +134,7 @@ def bm25_term_score(
     )
 
     return idf * adjusted_tf
+
 
 def bm25_search(
     query,
@@ -170,6 +182,7 @@ def bm25_search(
 
     return ranked[:top_k]
 
+
 def save_data(path, data):
     path = Path(path)
 
@@ -177,6 +190,7 @@ def save_data(path, data):
 
     with open(path, "wb") as f:
         pickle.dump(data, f)
+
 
 def process_chunks(chunks, name):
     add_source_to_chunks(chunks)
@@ -195,6 +209,7 @@ def process_chunks(chunks, name):
     save_data(f"data/processed/{name}_inverted_index.pkl", inv)
     save_data(f"data/processed/{name}_metadata.pkl", metadata)
 
+
 def build_index(max_chunk_size: int = 2000):
     chunks_py = parse_nodes(
         "data/raw/vllm-0.10.1",
@@ -209,6 +224,7 @@ def build_index(max_chunk_size: int = 2000):
     process_chunks(chunks_doc, "docs")
 
     print("Indexing finished.")
+
 
 if __name__ == "__main__":
     build_index()

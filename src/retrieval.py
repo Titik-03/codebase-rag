@@ -1,6 +1,7 @@
 import pickle
 from .indexing import bm25_search, save_data
 from pathlib import Path
+from tqdm import tqdm
 import json
 from .models import (
     MinimalSource,
@@ -9,10 +10,10 @@ from .models import (
     StudentSearchResults,
 )
 
+
 def load_data(path):
     with open(path, "rb") as f:
         return pickle.load(f)
-
 
 
 def get_sources(results, chunks) -> list[MinimalSource]:
@@ -30,6 +31,7 @@ def get_sources(results, chunks) -> list[MinimalSource]:
         )
 
     return sources
+
 
 def search(
     question_id,
@@ -56,6 +58,7 @@ def search(
         retrieved_sources=sources
     )
 
+
 def search_dataset(
     dataset_path,
     chunks,
@@ -71,7 +74,11 @@ def search_dataset(
 
     search_results = []
 
-    for question in dataset.rag_questions:
+    for question in tqdm(
+        dataset.rag_questions,
+        desc="Retrieving",
+        unit="question"
+    ):
         result = search(
             question.question_id,
             question.question,
@@ -88,6 +95,7 @@ def search_dataset(
         search_results=search_results,
         k=k
     )
+
 
 def dump_json(result, output_path):
     output_path = Path(output_path)

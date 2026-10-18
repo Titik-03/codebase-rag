@@ -1,4 +1,22 @@
-# SPDX-License-Identifier: Apache-2.0
+uv run python -c "
+from pathlib import Path
+from src.models import StudentSearchResults
+
+path = Path('data/output/search_results/UnansweredQuestions/dataset_code_public.json')
+
+dataset = StudentSearchResults.model_validate_json(path.read_text())
+
+test_dataset = StudentSearchResults(
+    search_results=dataset.search_results[:1],
+    k=dataset.k
+)
+
+output = Path('data/output/search_results/test_one_question.json')
+output.write_text(test_dataset.model_dump_json(indent=2))
+
+print('Test dataset created:', output)
+print('Questions:', len(test_dataset.search_results))
+"# SPDX-License-Identifier: Apache-2.0
 # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
 
 import json

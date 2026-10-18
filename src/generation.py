@@ -66,6 +66,7 @@ def prepare_inputs(question: str, contexts: list[str]):
         return_dict=True
     )
 
+
 def fit_context(
     contexts: list[str],
     question: str,
@@ -86,6 +87,7 @@ def fit_context(
 
     return selected_chunks
 
+
 def build_prompt(question: str, contexts: list[str]) -> str:
     context_text = "\n\n".join(contexts)
 
@@ -103,6 +105,7 @@ Context:
 
 Question: {question}
 """
+
 
 def generate_answer(
     question: str,
@@ -142,6 +145,7 @@ def generate_answer(
 
     return answer.strip()
 
+
 def generate_dataset(dataset: StudentSearchResults) -> StudentSearchResultsAndAnswer:
     answers = []
     for result in tqdm(dataset.search_results):
@@ -161,6 +165,7 @@ def generate_dataset(dataset: StudentSearchResults) -> StudentSearchResultsAndAn
         search_results=answers,
         k=dataset.k
     )
+
 
 def save_results(results: StudentSearchResultsAndAnswer, output_path: str) -> None:
     with open(output_path, "w", encoding="utf-8") as f:
