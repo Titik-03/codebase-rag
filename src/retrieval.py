@@ -2,7 +2,12 @@ import pickle
 from .indexing import bm25_search, save_data
 from pathlib import Path
 from tqdm import tqdm
-import json
+from .cache import (
+    make_cache_key,
+    get_index_version,
+    load_cached_result,
+    save_cached_result
+)
 from .models import (
     MinimalSource,
     MinimalSearchResults,
@@ -65,29 +70,50 @@ def search_dataset(
     index_chunks,
     inverted,
     avgdl,
+    index_type: str,
     k=5
 ):
-    with open(dataset_path, "r") as f:
+    with open(dataset_path, "r", encoding="utf-8") as f:
         data = f.read()
 
     dataset = RagDataset.model_validate_json(data)
 
     search_results = []
 
+    index_version = get_index_version(index_type)
+
     for question in tqdm(
         dataset.rag_questions,
         desc="Retrieving",
         unit="question"
     ):
-        result = search(
-            question.question_id,
+        cache_key = make_cache_key(
             question.question,
-            chunks,
-            index_chunks,
-            inverted,
-            avgdl,
-            k
+            k,
+            f"bm25:{index_type}:{index_version}"
         )
+
+        cached = load_cached_result(cache_key)
+
+        if cached is not None:
+            result = MinimalSearchResults(
+                question_id=question.question_id,
+                question=question.question,
+                retrieved_sources=cached.retrieved_sources
+            )
+
+        else:
+            result = search(
+                question.question_id,
+                question.question,
+                chunks,
+                index_chunks,
+                inverted,
+                avgdl,
+                k
+            )
+
+            save_cached_result(cache_key, result)
 
         search_results.append(result)
 
@@ -95,7 +121,6 @@ def search_dataset(
         search_results=search_results,
         k=k
     )
-
 
 def dump_json(result, output_path):
     output_path = Path(output_path)

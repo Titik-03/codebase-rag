@@ -3,12 +3,19 @@ import sys
 from pathlib import Path
 from pydantic import ValidationError
 from .indexing import build_index
+from functools import lru_cache
 from .retrieval import load_data, search as retrieve
 from .retrieval import search_dataset as retrieve_dataset, dump_json
 from .evaluation import evaluate_dataset
 from .models import MinimalSearchResults, StudentSearchResults, RagDataset
+from .cache import (
+    make_cache_key,
+    get_index_version,
+    load_cached_result,
+    save_cached_result
+)
 
-
+@lru_cache(maxsize=2)
 def load_index(name: str):
     chunks = load_data(f"data/processed/{name}_chunks.pkl")
     index_chunks = load_data(f"data/processed/{name}_index.pkl")
@@ -42,6 +49,7 @@ def search_dataset_command(
         index_chunks,
         inverted,
         metadata["avgdl"],
+        index_type=index_type,
         k=k
     )
 
@@ -67,6 +75,17 @@ def merge_results(result, k):
 
 def search_both(query: str, k: int = 5):
     validate_query(query, k)
+    docs_version = get_index_version("docs")
+    code_version = get_index_version("code")
+
+    index_version = docs_version + ":" + code_version
+
+    cache_key = make_cache_key(query, k, index_version) 
+    cached = load_cached_result(cache_key)
+
+    if cached is not None:
+        return cached
+
     results = {}
 
     for index_type in ("docs", "code"):
@@ -89,6 +108,7 @@ def search_both(query: str, k: int = 5):
         question=query,
         retrieved_sources=merged_sources
     )
+    save_cached_result(cache_key, final_result)
 
     return final_result
 
