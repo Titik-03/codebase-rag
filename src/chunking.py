@@ -82,7 +82,7 @@ def chunk_markdown(raw_dir: Path | str,
             })
             if end == len(source):
                 break
-            pos = end - overlap
+            pos = end - min(overlap, max_chunk_size - 1)
 
     return chunks
 

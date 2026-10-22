@@ -1,0 +1,31 @@
+{
+  "question_id": "d40d1b96-89d9-49b0-b2bb-85202cb491f3",
+  "question": "What are some of the test model names used in vLLM's test_utils.py for testing different model types and quantization methods?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 16037,
+      "last_character_index": 16507
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 83456,
+      "last_character_index": 83580
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/models/multimodal/generation/test_mllama.py",
+      "first_character_index": 20851,
+      "last_character_index": 21099
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/platforms/interface.py",
+      "first_character_index": 10226,
+      "last_character_index": 10804
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/compilation/backends.py",
+      "first_character_index": 10649,
+      "last_character_index": 11120
+    }
+  ]
+}

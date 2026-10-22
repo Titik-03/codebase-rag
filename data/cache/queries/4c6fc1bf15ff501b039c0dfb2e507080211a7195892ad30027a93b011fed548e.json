@@ -1,0 +1,31 @@
+{
+  "question_id": "67336e58-c7ca-4ea4-a6ac-4b976ab3f1e8",
+  "question": "What is the default max_threads value used when creating the GrammarCompiler in vLLM's XGrammar backend?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/structured_output/backend_xgrammar.py",
+      "first_character_index": 3143,
+      "last_character_index": 3354
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/compilation.py",
+      "first_character_index": 6828,
+      "last_character_index": 7455
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/executor/multiproc_worker_utils.py",
+      "first_character_index": 8490,
+      "last_character_index": 9719
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 128276,
+      "last_character_index": 128503
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/setup.py",
+      "first_character_index": 2911,
+      "last_character_index": 4302
+    }
+  ]
+}

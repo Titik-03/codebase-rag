@@ -1,0 +1,31 @@
+{
+  "question_id": "4a5b9aca-fbf7-486d-b210-47913db68ba7",
+  "question": "What condition prevents tensors from being moved to device in FlashInfer attention backend's prepare method?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/worker/worker_base.py",
+      "first_character_index": 10542,
+      "last_character_index": 10918
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/v1/attention/test_attention_backends.py",
+      "first_character_index": 107,
+      "last_character_index": 1607
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/compressed_tensors/compressed_tensors_moe.py",
+      "first_character_index": 12632,
+      "last_character_index": 13118
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/worker/model_runner_base.py",
+      "first_character_index": 7240,
+      "last_character_index": 7725
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/platforms/cuda.py",
+      "first_character_index": 13065,
+      "last_character_index": 13954
+    }
+  ]
+}

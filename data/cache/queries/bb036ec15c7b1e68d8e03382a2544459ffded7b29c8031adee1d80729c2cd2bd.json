@@ -1,0 +1,31 @@
+{
+  "question_id": "f1fb35e6-1a65-48e1-8c99-f5e25df6f00c",
+  "question": "What is the default data type for indices_type parameter in the routing simulator's expert selection method?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/fused_moe/routing_simulator.py",
+      "first_character_index": 9158,
+      "last_character_index": 10429
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/fused_moe/routing_simulator.py",
+      "first_character_index": 107,
+      "last_character_index": 1215
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/fused_moe/routing_simulator.py",
+      "first_character_index": 2944,
+      "last_character_index": 4353
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/fused_moe/layer.py",
+      "first_character_index": 60510,
+      "last_character_index": 61796
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/fused_moe/routing_simulator.py",
+      "first_character_index": 4359,
+      "last_character_index": 5666
+    }
+  ]
+}

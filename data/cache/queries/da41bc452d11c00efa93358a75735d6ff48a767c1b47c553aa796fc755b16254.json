@@ -1,0 +1,31 @@
+{
+  "question_id": "17087e20-d7c9-4c3a-9b8b-0e948a681694",
+  "question": "What parameter value is set for requires_grad when creating Parameter objects in _load_weights_from_qkv_linear method?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/tpu_distributed_utils.py",
+      "first_character_index": 2425,
+      "last_character_index": 4003
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/kv_cache.py",
+      "first_character_index": 904,
+      "last_character_index": 1817
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/tpu_distributed_utils.py",
+      "first_character_index": 636,
+      "last_character_index": 1357
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/qqq.py",
+      "first_character_index": 8882,
+      "last_character_index": 9286
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/gptq_marlin_24.py",
+      "first_character_index": 9774,
+      "last_character_index": 10166
+    }
+  ]
+}

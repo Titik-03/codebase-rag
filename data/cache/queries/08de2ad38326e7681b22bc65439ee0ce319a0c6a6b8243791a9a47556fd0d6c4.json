@@ -1,0 +1,31 @@
+{
+  "question_id": "c1da62cd-07b5-4f25-8556-c8b33774b4f4",
+  "question": "What block size divisibility requirement does HybridKVCacheCoordinator enforce when caching is enabled?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/core/kv_cache_coordinator.py",
+      "first_character_index": 11747,
+      "last_character_index": 12100
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/core/scheduler.py",
+      "first_character_index": 87727,
+      "last_character_index": 88354
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/v1/core/test_prefix_caching.py",
+      "first_character_index": 49192,
+      "last_character_index": 50380
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/core/test_chunked_prefill_scheduler.py",
+      "first_character_index": 29956,
+      "last_character_index": 30064
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/core/block_manager.py",
+      "first_character_index": 12742,
+      "last_character_index": 13176
+    }
+  ]
+}

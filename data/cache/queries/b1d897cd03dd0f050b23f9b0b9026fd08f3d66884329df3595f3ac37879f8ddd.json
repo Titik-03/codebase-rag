@@ -1,0 +1,31 @@
+{
+  "question_id": "442c5e35-6424-4acf-8e79-f6da53e478b0",
+  "question": "What is the default cudagraph_support value for TritonAttentionMetadataBuilder?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/worker/gpu_model_runner.py",
+      "first_character_index": 131482,
+      "last_character_index": 131773
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/attention/backends/utils.py",
+      "first_character_index": 5725,
+      "last_character_index": 5809
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/attention/backends/triton_attn.py",
+      "first_character_index": 2273,
+      "last_character_index": 2348
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/attention/backends/mla/flashmla.py",
+      "first_character_index": 1845,
+      "last_character_index": 1937
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/attention/backends/flashinfer.py",
+      "first_character_index": 6972,
+      "last_character_index": 7078
+    }
+  ]
+}

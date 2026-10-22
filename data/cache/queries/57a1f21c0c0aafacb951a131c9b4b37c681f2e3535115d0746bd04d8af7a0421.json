@@ -1,0 +1,31 @@
+{
+  "question_id": "ef591476-8135-4e25-baa9-96c42dbe3ee5",
+  "question": "What is the default value of tie_word_embeddings in vLLM's FalconForCausalLM class when the config doesn't specify it?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/falcon.py",
+      "first_character_index": 18850,
+      "last_character_index": 20162
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/falcon_h1.py",
+      "first_character_index": 22968,
+      "last_character_index": 23021
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/exaone4.py",
+      "first_character_index": 20091,
+      "last_character_index": 20659
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/exaone.py",
+      "first_character_index": 20578,
+      "last_character_index": 21146
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/transformers_utils/configs/nemotron_h.py",
+      "first_character_index": 9442,
+      "last_character_index": 9488
+    }
+  ]
+}

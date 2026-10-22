@@ -1,0 +1,31 @@
+{
+  "question_id": "e9b6052b-222e-432d-9582-064471de4b91",
+  "question": "What is the default value of BLOCK_TABLE_EXTENDER in MLACommonMetadataBuilder?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/mla/common.py",
+      "first_character_index": 25498,
+      "last_character_index": 25540
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/rocm_aiter_mla.py",
+      "first_character_index": 3956,
+      "last_character_index": 4000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/mla/common.py",
+      "first_character_index": 32167,
+      "last_character_index": 32774
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/core/block/block_table.py",
+      "first_character_index": 11320,
+      "last_character_index": 12038
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/core/block/prefix_caching_block.py",
+      "first_character_index": 35124,
+      "last_character_index": 36394
+    }
+  ]
+}

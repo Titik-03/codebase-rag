@@ -1,0 +1,31 @@
+{
+  "question_id": "d39bfccf-9478-4c98-978d-574c596049b2",
+  "question": "What does the get_num_new_matched_tokens method in NIXLConnector return?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/kv_transfer/kv_connector/v1/lmcache_connector.py",
+      "first_character_index": 4267,
+      "last_character_index": 4984
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/v1/core/test_scheduler.py",
+      "first_character_index": 32009,
+      "last_character_index": 32077
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/v1/core/test_scheduler.py",
+      "first_character_index": 36280,
+      "last_character_index": 36348
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/v1/core/test_scheduler.py",
+      "first_character_index": 39310,
+      "last_character_index": 39378
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/v1/core/test_scheduler.py",
+      "first_character_index": 32082,
+      "last_character_index": 32184
+    }
+  ]
+}

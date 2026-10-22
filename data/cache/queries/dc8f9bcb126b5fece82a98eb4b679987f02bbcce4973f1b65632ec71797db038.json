@@ -1,0 +1,31 @@
+{
+  "question_id": "6ffdf5f6-fcd3-4d11-8227-8bedd9b33296",
+  "question": "What conditions must be met for vLLM's ModelRunner to use CUDA graphs instead of the regular model?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/worker/model_runner.py",
+      "first_character_index": 33281,
+      "last_character_index": 34355
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/entrypoints/llm.py",
+      "first_character_index": 5064,
+      "last_character_index": 7064
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/fused_moe/modular_kernel.py",
+      "first_character_index": 11340,
+      "last_character_index": 12550
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/conftest.py",
+      "first_character_index": 25349,
+      "last_character_index": 25958
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/benchmarks/datasets.py",
+      "first_character_index": 6217,
+      "last_character_index": 6970
+    }
+  ]
+}

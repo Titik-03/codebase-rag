@@ -1,0 +1,31 @@
+{
+  "question_id": "b0792edd-53b8-40b5-aaf0-d00416dfae23",
+  "question": "What are all possible values for the QuickReduceRegime enum in vLLM's distributed communication?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/scalar_type.py",
+      "first_character_index": 108,
+      "last_character_index": 448
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/parallel_state.py",
+      "first_character_index": 6029,
+      "last_character_index": 6373
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/utils.py",
+      "first_character_index": 17675,
+      "last_character_index": 19432
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/device_communicators/quick_all_reduce.py",
+      "first_character_index": 6322,
+      "last_character_index": 6627
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/device_communicators/all2all.py",
+      "first_character_index": 590,
+      "last_character_index": 779
+    }
+  ]
+}

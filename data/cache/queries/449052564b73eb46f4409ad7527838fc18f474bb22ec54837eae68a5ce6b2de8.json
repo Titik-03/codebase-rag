@@ -1,0 +1,31 @@
+{
+  "question_id": "16deace0-4e51-4c3d-8f04-ffeadc97a2c3",
+  "question": "What is the default value of pp_locks in RayDistributedExecutor?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/executor/mp_distributed_executor.py",
+      "first_character_index": 8225,
+      "last_character_index": 9678
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/executor/ray_distributed_executor.py",
+      "first_character_index": 28750,
+      "last_character_index": 30411
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/executor/ray_distributed_executor.py",
+      "first_character_index": 4258,
+      "last_character_index": 4308
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/executor/mp_distributed_executor.py",
+      "first_character_index": 5451,
+      "last_character_index": 5501
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/models/multimodal/generation/test_mllama.py",
+      "first_character_index": 19795,
+      "last_character_index": 19945
+    }
+  ]
+}

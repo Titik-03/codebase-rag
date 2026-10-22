@@ -1,0 +1,31 @@
+{
+  "question_id": "dc9be3c4-dbfd-4384-8cd1-ce3f37b0ac2e",
+  "question": "What happens when encoder_inputs is None in the encoder_seq creation in LLMEngine?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/engine/llm_engine.py",
+      "first_character_index": 23611,
+      "last_character_index": 23748
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/sequence.py",
+      "first_character_index": 28314,
+      "last_character_index": 28589
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/inputs/preprocess.py",
+      "first_character_index": 20381,
+      "last_character_index": 22236
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/core/scheduler.py",
+      "first_character_index": 65841,
+      "last_character_index": 66400
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/inputs/preprocess.py",
+      "first_character_index": 27961,
+      "last_character_index": 29496
+    }
+  ]
+}

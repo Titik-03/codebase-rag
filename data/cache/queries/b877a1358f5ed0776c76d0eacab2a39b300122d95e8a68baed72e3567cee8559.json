@@ -1,0 +1,31 @@
+{
+  "question_id": "83396129-7585-435e-9683-271ddfa46475",
+  "question": "What are the expected tensor dimensions for w13_weight_scale in vLLM's MXFP4 quantization layer?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/modelopt.py",
+      "first_character_index": 16267,
+      "last_character_index": 18121
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/mxfp4.py",
+      "first_character_index": 12447,
+      "last_character_index": 12493
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/mxfp4.py",
+      "first_character_index": 8368,
+      "last_character_index": 8430
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/mxfp4.py",
+      "first_character_index": 11210,
+      "last_character_index": 11547
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/mxfp4.py",
+      "first_character_index": 17254,
+      "last_character_index": 17372
+    }
+  ]
+}

@@ -192,7 +192,11 @@ def save_data(path, data):
         pickle.dump(data, f)
 
 
-def process_chunks(chunks, name):
+def process_chunks(
+    chunks,
+    name,
+    index_directory: str = "data/processed"
+):
     add_source_to_chunks(chunks)
     tokenize(chunks, name)
 
@@ -204,24 +208,30 @@ def process_chunks(chunks, name):
         "avgdl": average_lenght(index_chunks)
     }
 
-    save_data(f"data/processed/{name}_chunks.pkl", chunks)
-    save_data(f"data/processed/{name}_index.pkl", index_chunks)
-    save_data(f"data/processed/{name}_inverted_index.pkl", inv)
-    save_data(f"data/processed/{name}_metadata.pkl", metadata)
+    path = Path(index_directory)
 
+    save_data(path / f"{name}_chunks.pkl", chunks)
+    save_data(path / f"{name}_index.pkl", index_chunks)
+    save_data(path / f"{name}_inverted_index.pkl", inv)
+    save_data(path / f"{name}_metadata.pkl", metadata)
 
-def build_index(max_chunk_size: int = 2000):
+def build_index(max_chunk_size: int = 2000,
+                raw_directory: str = "data/raw/vllm-0.10.1",
+                index_directory: str = "data/processed"
+                ):
+    if not 1 < max_chunk_size <= 2000:
+        raise ValueError("max chunk size must be between 1 and 2000")
     chunks_py = parse_nodes(
-        "data/raw/vllm-0.10.1",
+        raw_directory,
         max_chunk_size=max_chunk_size
     )
     chunks_doc = chunk_markdown(
-        "data/raw/vllm-0.10.1",
+        raw_directory,
         max_chunk_size=max_chunk_size
     )
 
-    process_chunks(chunks_py, "code")
-    process_chunks(chunks_doc, "docs")
+    process_chunks(chunks_py, "code", index_directory)
+    process_chunks(chunks_doc, "docs", index_directory)
 
     print("Indexing finished.")
 

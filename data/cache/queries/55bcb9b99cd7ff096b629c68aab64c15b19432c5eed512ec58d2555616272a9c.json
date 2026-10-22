@@ -1,0 +1,31 @@
+{
+  "question_id": "9ab959ff-efa6-4f66-b2f2-5514f61c82d0",
+  "question": "What is the shape and structure of the array returned by the KV cache mapping metadata computation function in TPUModelRunner?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/worker/tpu_model_runner.py",
+      "first_character_index": 25318,
+      "last_character_index": 26357
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/core/block_pool.py",
+      "first_character_index": 4249,
+      "last_character_index": 5127
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/fused_moe/fused_moe.py",
+      "first_character_index": 3790,
+      "last_character_index": 5206
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/fused_moe/fused_moe.py",
+      "first_character_index": 12390,
+      "last_character_index": 13806
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/flash_attn.py",
+      "first_character_index": 28419,
+      "last_character_index": 30415
+    }
+  ]
+}

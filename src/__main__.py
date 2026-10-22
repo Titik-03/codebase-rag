@@ -142,7 +142,7 @@ def answer_dataset_command(
         raise ValueError("k must be greater than 0")
     from .generation import generate_dataset
     result = generate_dataset(dataset)
-    filename = Path(student_search_results_path).stem + "_answer.json"
+    filename = Path(student_search_results_path).name
     output_path = Path(save_directory) / filename
     dump_json(result, output_path)
 

@@ -1,0 +1,31 @@
+{
+  "question_id": "ec9d99ac-0dd1-4e40-b840-df41a82aff1b",
+  "question": "What value is used for the num_kv_heads parameter when calling get_mla_metadata in FlashMLAState's graph_capture method?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/flashmla.py",
+      "first_character_index": 3172,
+      "last_character_index": 3760
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/parallel_state.py",
+      "first_character_index": 36462,
+      "last_character_index": 37807
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/flashmla.py",
+      "first_character_index": 3766,
+      "last_character_index": 4666
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/abstract.py",
+      "first_character_index": 5321,
+      "last_character_index": 6892
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/layer.py",
+      "first_character_index": 10672,
+      "last_character_index": 11269
+    }
+  ]
+}

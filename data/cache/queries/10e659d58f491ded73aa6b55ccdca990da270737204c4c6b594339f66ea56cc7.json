@@ -1,0 +1,31 @@
+{
+  "question_id": "56027a35-434a-4c25-9e4d-7964096500c7",
+  "question": "What hyperparameters must be shared across all layers in vLLM's FlashInfer backend according to infer_global_hyperparameters?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/attention/backends/flashinfer.py",
+      "first_character_index": 8660,
+      "last_character_index": 8799
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/flashinfer.py",
+      "first_character_index": 26675,
+      "last_character_index": 27350
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/flashinfer.py",
+      "first_character_index": 5600,
+      "last_character_index": 6535
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/flashinfer.py",
+      "first_character_index": 12975,
+      "last_character_index": 13076
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/attention/backends/utils.py",
+      "first_character_index": 11063,
+      "last_character_index": 12429
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "question_id": "79ef0eef-b8b3-49d1-a8d9-30b99ce0c4d7",
+  "question": "What is the default value for the use_bitsandbytes_4bit attribute when it's not present on a parameter object in vLLM's linear layer?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/linear.py",
+      "first_character_index": 28373,
+      "last_character_index": 28487
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/linear.py",
+      "first_character_index": 31164,
+      "last_character_index": 31278
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/linear.py",
+      "first_character_index": 46901,
+      "last_character_index": 47015
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/linear.py",
+      "first_character_index": 49948,
+      "last_character_index": 50062
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/fused_moe/layer.py",
+      "first_character_index": 49071,
+      "last_character_index": 49141
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "question_id": "22018181-e293-4308-8289-ecfaac26406f",
+  "question": "What happens when a reshape operation in vLLM's noop elimination has more than one -1 in the shape parameter?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/compilation/noop_elimination.py",
+      "first_character_index": 3568,
+      "last_character_index": 3669
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/compilation/noop_elimination.py",
+      "first_character_index": 3437,
+      "last_character_index": 3550
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/compilation/noop_elimination.py",
+      "first_character_index": 2880,
+      "last_character_index": 3240
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/utils/__init__.py",
+      "first_character_index": 71576,
+      "last_character_index": 72498
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/compilation/noop_elimination.py",
+      "first_character_index": 3383,
+      "last_character_index": 3420
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "question_id": "02789461-05fd-435d-9673-91606102d6c9",
+  "question": "What are the default values for FP8_MIN and FP8_MAX constants in vLLM's triton_flash_attention module?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/ops/triton_flash_attention.py",
+      "first_character_index": 24477,
+      "last_character_index": 24563
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/utils/fp8_utils.py",
+      "first_character_index": 14819,
+      "last_character_index": 15640
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/kernels/moe/test_triton_moe_ptpc_fp8.py",
+      "first_character_index": 4100,
+      "last_character_index": 5785
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/utils/fp8_utils.py",
+      "first_character_index": 12113,
+      "last_character_index": 12183
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/kernels/quant_utils.py",
+      "first_character_index": 6195,
+      "last_character_index": 7159
+    }
+  ]
+}
