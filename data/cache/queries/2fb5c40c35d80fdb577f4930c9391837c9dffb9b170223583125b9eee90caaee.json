@@ -1,0 +1,31 @@
+{
+  "question_id": "5ea5c01a-c953-4477-ae3a-978e20bd73b8",
+  "question": "What method does vLLM's LLM class provide for generating embedding vectors from prompts?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/quickstart.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/pooling_models.md",
+      "first_character_index": 3760,
+      "last_character_index": 5760
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/quickstart.md",
+      "first_character_index": 3760,
+      "last_character_index": 5760
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/design/arch_overview.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/gguf.md",
+      "first_character_index": 1880,
+      "last_character_index": 3490
+    }
+  ]
+}

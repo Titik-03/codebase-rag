@@ -1,0 +1,31 @@
+{
+  "question_id": "db4f05fe-78bf-402f-b02f-630d0a3959c3",
+  "question": "What is the first step to implement a basic vLLM model?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/model/README.md",
+      "first_character_index": 0,
+      "last_character_index": 1177
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/model/basic.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/model/multimodal.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/structured_outputs.md",
+      "first_character_index": 7520,
+      "last_character_index": 9520
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/offline_inference/basic/README.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    }
+  ]
+}

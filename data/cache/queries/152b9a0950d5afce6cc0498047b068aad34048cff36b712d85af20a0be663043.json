@@ -1,0 +1,31 @@
+{
+  "question_id": "7ddc938a-4b0c-4e26-86e9-666e0ab68c28",
+  "question": "What CUDA compiler version is required to build Machete kernels in vLLM?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 28200,
+      "last_character_index": 30200
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 30080,
+      "last_character_index": 32080
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 18800,
+      "last_character_index": 20800
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 20680,
+      "last_character_index": 22680
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/incremental_build.md",
+      "first_character_index": 3760,
+      "last_character_index": 5760
+    }
+  ]
+}

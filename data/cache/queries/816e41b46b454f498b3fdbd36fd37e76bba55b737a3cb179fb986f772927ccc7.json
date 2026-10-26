@@ -1,0 +1,31 @@
+{
+  "question_id": "81e37f26-1203-40ad-a848-764d187d083f",
+  "question": "What are the differences between mm_kwargs and tok_kwargs when using the _call_hf_processor method in vLLM multimodal processing?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/model/multimodal.md",
+      "first_character_index": 22560,
+      "last_character_index": 24560
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/model/multimodal.md",
+      "first_character_index": 24440,
+      "last_character_index": 26440
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/model/multimodal.md",
+      "first_character_index": 35720,
+      "last_character_index": 36813
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/model/multimodal.md",
+      "first_character_index": 20680,
+      "last_character_index": 22680
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/model/multimodal.md",
+      "first_character_index": 31960,
+      "last_character_index": 33960
+    }
+  ]
+}

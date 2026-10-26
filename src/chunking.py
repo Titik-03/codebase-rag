@@ -8,8 +8,8 @@ def get_target_files(raw_dir: Path | str) -> List[Tuple[Path, str]]:
     """Recursively collect and tag eligible files."""
     target_files = []
     base = Path(raw_dir)
-    if not base.exists():
-        return target_files
+    if not base.is_dir():
+        raise FileNotFoundError(f"Source directory not found: {base}")
 
     for path in base.rglob("*"):
         if not path.is_file():

@@ -1,0 +1,31 @@
+{
+  "question_id": "cli-query",
+  "question": "What is an endpoint",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/deployment/frameworks/skypilot.md",
+      "first_character_index": 5640,
+      "last_character_index": 7640
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/v1/test_internal_lb_dp.py",
+      "first_character_index": 15915,
+      "last_character_index": 15941
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/deployment/frameworks/cerebrium.md",
+      "first_character_index": 1880,
+      "last_character_index": 3333
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/v1/test_internal_lb_dp.py",
+      "first_character_index": 22514,
+      "last_character_index": 22540
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/offline_inference/openai_batch/README.md",
+      "first_character_index": 11280,
+      "last_character_index": 13280
+    }
+  ]
+}

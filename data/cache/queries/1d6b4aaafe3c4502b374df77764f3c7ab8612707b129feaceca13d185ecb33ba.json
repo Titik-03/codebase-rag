@@ -1,0 +1,31 @@
+{
+  "question_id": "16cc036e-cfe4-46c7-8f1b-58402f6e4fdb",
+  "question": "How can you disable unused modalities completely in vLLM multimodal models?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/configuration/conserving_memory.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/configuration/conserving_memory.md",
+      "first_character_index": 3760,
+      "last_character_index": 4960
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 31960,
+      "last_character_index": 33960
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 33840,
+      "last_character_index": 35840
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/configuration/optimization.md",
+      "first_character_index": 7520,
+      "last_character_index": 8515
+    }
+  ]
+}

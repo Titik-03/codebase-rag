@@ -1,0 +1,31 @@
+{
+  "question_id": "7f0cb10b-945c-482b-9ba7-100c39d9c64b",
+  "question": "How do you uninstall a vLLM deployment using Helm?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/deployment/frameworks/helm.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/deployment/integrations/production-stack.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/deployment/integrations/production-stack.md",
+      "first_character_index": 3760,
+      "last_character_index": 5720
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/deployment/k8s.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/deployment/integrations/production-stack.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    }
+  ]
+}

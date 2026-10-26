@@ -16,11 +16,16 @@ from .cache import (
 )
 
 @lru_cache(maxsize=2)
-def load_index(name: str):
-    chunks = load_data(f"data/processed/{name}_chunks.pkl")
-    index_chunks = load_data(f"data/processed/{name}_index.pkl")
-    inverted = load_data(f"data/processed/{name}_inverted_index.pkl")
-    metadata = load_data(f"data/processed/{name}_metadata.pkl")
+def load_index(
+    name: str,
+    index_directory: str = "data/processed"
+):
+    path = Path(index_directory)
+
+    chunks = load_data(path / f"{name}_chunks.pkl")
+    index_chunks = load_data(path / f"{name}_index.pkl")
+    inverted = load_data(path / f"{name}_inverted_index.pkl")
+    metadata = load_data(path / f"{name}_metadata.pkl")
 
     return chunks, index_chunks, inverted, metadata
 
@@ -28,7 +33,8 @@ def load_index(name: str):
 def search_dataset_command(
     dataset_path: str,
     k: int = 5,
-    save_directory: str = "data/output/search_results"
+    save_directory: str = "data/output/search_results",
+    index_directory: str = "data/processed"
 ):
     if k <= 0:
         raise ValueError("k must be greater than 0")
@@ -41,7 +47,8 @@ def search_dataset_command(
     else:
         raise ValueError("Cannot determine dataset type from filename")
 
-    chunks, index_chunks, inverted, metadata = load_index(index_type)
+    chunks, index_chunks, inverted, metadata = load_index(index_type,
+                                                          index_directory)
 
     results = retrieve_dataset(
         dataset_path,
@@ -50,7 +57,8 @@ def search_dataset_command(
         inverted,
         metadata["avgdl"],
         index_type=index_type,
-        k=k
+        k=k,
+        index_directory=index_directory
     )
 
     output_path = Path(save_directory) / dataset_name
@@ -73,11 +81,15 @@ def merge_results(result, k):
     return merged[:k]
 
 
-def search_both(query: str, k: int = 5):
+def search_both(
+    query: str,
+    k: int = 5,
+    index_directory: str = "data/processed"
+):
     validate_query(query, k)
-    docs_version = get_index_version("docs")
-    code_version = get_index_version("code")
 
+    docs_version = get_index_version("docs", index_directory)
+    code_version = get_index_version("code", index_directory)
     index_version = docs_version + ":" + code_version
 
     cache_key = make_cache_key(query, k, index_version) 
@@ -87,10 +99,11 @@ def search_both(query: str, k: int = 5):
         return cached
 
     results = {}
-
     for index_type in ("docs", "code"):
-        chunks, index_chunks, inverted, metadata = load_index(index_type)
-
+        chunks, index_chunks, inverted, metadata = load_index(
+            index_type,
+            index_directory
+        )
         result = retrieve(
             question_id="cli-query",
             query=query,
@@ -113,15 +126,23 @@ def search_both(query: str, k: int = 5):
     return final_result
 
 
-def search_command(query: str, k: int = 5):
-    result = search_both(query, k)
+def search_command(
+    query: str,
+    k: int = 5,
+    index_directory: str = "data/processed"
+):
+    result = search_both(query, k, index_directory)
     print(result.model_dump_json(indent=2))
 
+def query_answer(
+    query: str,
+    k: int = 5,
+    index_directory: str = "data/processed"
+):
+    results = search_both(query, k, index_directory)
 
-def query_answer(query: str, k: int = 5):
-
-    results = search_both(query, k)
     from .generation import generate_answer
+
     answer = generate_answer(
         question=query,
         sources=results.retrieved_sources

@@ -1,0 +1,31 @@
+{
+  "question_id": "d8a776b1-adb4-428b-8e81-306998a43554",
+  "question": "What is the minimum vLLM version required for P2P NCCL connector functionality?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/disagg_prefill.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/design/p2p_nccl_connector.md",
+      "first_character_index": 9400,
+      "last_character_index": 11400
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/design/p2p_nccl_connector.md",
+      "first_character_index": 13160,
+      "last_character_index": 15160
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu/cuda.inc.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/deprecation_policy.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    }
+  ]
+}

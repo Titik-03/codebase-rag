@@ -71,7 +71,8 @@ def search_dataset(
     inverted,
     avgdl,
     index_type: str,
-    k=5
+    k=5,
+    index_directory: str = "data/processed"
 ):
     with open(dataset_path, "r", encoding="utf-8") as f:
         data = f.read()
@@ -80,7 +81,8 @@ def search_dataset(
 
     search_results = []
 
-    index_version = get_index_version(index_type)
+    index_version = get_index_version(index_type,
+                                      index_directory)
 
     for question in tqdm(
         dataset.rag_questions,

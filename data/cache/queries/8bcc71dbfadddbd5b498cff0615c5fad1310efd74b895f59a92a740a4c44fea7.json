@@ -1,0 +1,31 @@
+{
+  "question_id": "dab5d35d-02a9-4ef3-a604-2ef45c2327c2",
+  "question": "How do you access the parsed response from OpenAI's structured output completion in vLLM?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/structured_outputs.md",
+      "first_character_index": 7520,
+      "last_character_index": 9520
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/structured_outputs.md",
+      "first_character_index": 5640,
+      "last_character_index": 7640
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/structured_outputs.md",
+      "first_character_index": 9400,
+      "last_character_index": 11400
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/structured_outputs.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/deployment/frameworks/autogen.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    }
+  ]
+}
