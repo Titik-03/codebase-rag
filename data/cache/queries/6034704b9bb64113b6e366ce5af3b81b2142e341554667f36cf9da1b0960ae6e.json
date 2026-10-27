@@ -1,0 +1,31 @@
+{
+  "question_id": "cli-query",
+  "question": "what is kv-cache",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/configuration/optimization.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/utils_/test_utils.py",
+      "first_character_index": 14356,
+      "last_character_index": 15995
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/disagg_prefill.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/v1/core/test_kv_cache_utils.py",
+      "first_character_index": 25133,
+      "last_character_index": 26264
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/sleep_mode.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    }
+  ]
+}

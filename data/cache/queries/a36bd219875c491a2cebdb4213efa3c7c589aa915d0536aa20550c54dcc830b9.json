@@ -1,0 +1,31 @@
+{
+  "question_id": "cli-query",
+  "question": "what a kv-cache",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/disagg_prefill.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/kv_transfer/kv_connector/v1/base.py",
+      "first_character_index": 8123,
+      "last_character_index": 8990
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/configuration/optimization.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/modelopt.py",
+      "first_character_index": 25440,
+      "last_character_index": 25859
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/quantized_kvcache.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    }
+  ]
+}
