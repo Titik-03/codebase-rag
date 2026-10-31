@@ -7,6 +7,6 @@ __pycache__/
 .vscode/
 
 # Processed data and search outputs
-data/processed/
+# data/processed/
 data/output/
 
