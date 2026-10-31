@@ -80,9 +80,9 @@ def semantic_retrieve(
     )
 if __name__ == "__main__":
     result = semantic_retrieve(
-        question_id="test-code-001",
+        question_id="test-docs-001",
         query="How does vLLM allocate KV cache blocks?",
-        index_type="code",
+        index_type="docs",
         k=5
     )
 
