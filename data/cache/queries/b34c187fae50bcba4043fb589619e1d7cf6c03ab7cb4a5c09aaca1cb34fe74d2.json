@@ -1,0 +1,31 @@
+{
+  "question_id": "4d752f03-1006-4df9-9fde-98b947c79f66",
+  "question": "What is the default value of the pin_memory parameter in MultiModalKwargs._try_stack method?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/multimodal/inputs.py",
+      "first_character_index": 24679,
+      "last_character_index": 25706
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/multimodal/inputs.py",
+      "first_character_index": 22844,
+      "last_character_index": 24655
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/multimodal/utils.py",
+      "first_character_index": 12535,
+      "last_character_index": 14049
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/multimodal/inputs.py",
+      "first_character_index": 7768,
+      "last_character_index": 9740
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/platforms/interface.py",
+      "first_character_index": 12693,
+      "last_character_index": 13188
+    }
+  ]
+}

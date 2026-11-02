@@ -1,0 +1,56 @@
+{
+  "question_id": "8b26cc94-d38c-4cdf-b3c6-359125c5800c",
+  "question": "What happens when intermediate_tensors is None in a non-first rank in GraniteMoeHybrid model?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/granitemoehybrid.py",
+      "first_character_index": 15873,
+      "last_character_index": 16439
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/worker/gpu_model_runner.py",
+      "first_character_index": 73311,
+      "last_character_index": 73536
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/worker/model_runner.py",
+      "first_character_index": 90433,
+      "last_character_index": 90748
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/worker/gpu_model_runner.py",
+      "first_character_index": 109207,
+      "last_character_index": 109768
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/solar.py",
+      "first_character_index": 12412,
+      "last_character_index": 12835
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/bamba.py",
+      "first_character_index": 13227,
+      "last_character_index": 13650
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/worker/gpu_model_runner.py",
+      "first_character_index": 64525,
+      "last_character_index": 66027
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/nemotron_h.py",
+      "first_character_index": 13884,
+      "last_character_index": 14307
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/minimax_text_01.py",
+      "first_character_index": 42185,
+      "last_character_index": 42615
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/arcee.py",
+      "first_character_index": 9441,
+      "last_character_index": 11283
+    }
+  ]
+}

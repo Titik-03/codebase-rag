@@ -1,0 +1,31 @@
+{
+  "question_id": "df5084f8-4378-43c9-aaf1-55147460923a",
+  "question": "What is the constant value for NVML_FI_DEV_NVLINK_RECOVERY_ERROR_COUNT_TOTAL in vLLM's pynvml module?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/third_party/pynvml.py",
+      "first_character_index": 21787,
+      "last_character_index": 23752
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/third_party/pynvml.py",
+      "first_character_index": 25830,
+      "last_character_index": 27792
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/third_party/pynvml.py",
+      "first_character_index": 19776,
+      "last_character_index": 21743
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/third_party/pynvml.py",
+      "first_character_index": 29863,
+      "last_character_index": 31831
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/third_party/pynvml.py",
+      "first_character_index": 33782,
+      "last_character_index": 35752
+    }
+  ]
+}

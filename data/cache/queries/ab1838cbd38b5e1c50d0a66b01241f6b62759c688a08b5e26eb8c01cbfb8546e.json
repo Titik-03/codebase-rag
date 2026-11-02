@@ -1,0 +1,31 @@
+{
+  "question_id": "2afc1d73-f2a8-410f-ac60-e7721be5094b",
+  "question": "Where can I find vLLM setup and installation instructions for Google TPU?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/configuration/tpu.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/google_tpu.md",
+      "first_character_index": 5640,
+      "last_character_index": 7640
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/offline_inference/profiling_tpu/README.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/google_tpu.md",
+      "first_character_index": 3760,
+      "last_character_index": 5760
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/google_tpu.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    }
+  ]
+}

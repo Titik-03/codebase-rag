@@ -1,0 +1,31 @@
+{
+  "question_id": "c544d846-d47c-4254-9ff4-a79467b234ce",
+  "question": "How many bytes are allocated for the internal field in ncclUniqueId structure in vLLM's PyNCCL wrapper?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/device_communicators/pynccl_wrapper.py",
+      "first_character_index": 10843,
+      "last_character_index": 11173
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/device_communicators/pynccl_wrapper.py",
+      "first_character_index": 10641,
+      "last_character_index": 10837
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/device_allocator/cumem.py",
+      "first_character_index": 10715,
+      "last_character_index": 11017
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/device_communicators/pynccl_wrapper.py",
+      "first_character_index": 15519,
+      "last_character_index": 15656
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/benchmarks/serve.py",
+      "first_character_index": 43733,
+      "last_character_index": 44176
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "question_id": "c7d662bf-045b-4657-9ddc-94edcbfee057",
+  "question": "What is the default value for sparse_attention_threshold in vLLM's dual chunk flash attention configuration?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/dual_chunk_flash_attn.py",
+      "first_character_index": 13868,
+      "last_character_index": 13983
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/dual_chunk_flash_attn.py",
+      "first_character_index": 25539,
+      "last_character_index": 25721
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/dual_chunk_flash_attn.py",
+      "first_character_index": 13701,
+      "last_character_index": 13859
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/dual_chunk_flash_attn.py",
+      "first_character_index": 13388,
+      "last_character_index": 13496
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/dual_chunk_flash_attn.py",
+      "first_character_index": 13992,
+      "last_character_index": 14098
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 54237,
+      "last_character_index": 55067
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/dual_chunk_flash_attn.py",
+      "first_character_index": 13505,
+      "last_character_index": 13692
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/rotary_embedding/__init__.py",
+      "first_character_index": 1698,
+      "last_character_index": 2079
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/dual_chunk_flash_attn.py",
+      "first_character_index": 14214,
+      "last_character_index": 14719
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/dual_chunk_flash_attn.py",
+      "first_character_index": 13045,
+      "last_character_index": 13091
+    }
+  ]
+}

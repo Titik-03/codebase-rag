@@ -1,0 +1,56 @@
+{
+  "question_id": "09fcfefe-9859-4ce5-b2fb-cfe019fb9bb1",
+  "question": "What is the default value of the VLLM_ROCM_USE_AITER_MHA environment variable in vLLM?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/envs.py",
+      "first_character_index": 30203,
+      "last_character_index": 32203
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/envs.py",
+      "first_character_index": 4312,
+      "last_character_index": 4348
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/attention/backends/triton_attn.py",
+      "first_character_index": 7227,
+      "last_character_index": 7507
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/platforms/rocm.py",
+      "first_character_index": 9187,
+      "last_character_index": 9720
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/platforms/rocm.py",
+      "first_character_index": 6163,
+      "last_character_index": 6663
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/envs.py",
+      "first_character_index": 50675,
+      "last_character_index": 52109
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/models/language/generation/test_common.py",
+      "first_character_index": 3770,
+      "last_character_index": 4228
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/utils/flashinfer.py",
+      "first_character_index": 5222,
+      "last_character_index": 6131
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/kernels/moe/test_rocm_aiter_topk.py",
+      "first_character_index": 424,
+      "last_character_index": 1663
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/kernels/attention/test_encoder_decoder_attn.py",
+      "first_character_index": 29929,
+      "last_character_index": 30465
+    }
+  ]
+}

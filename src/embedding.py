@@ -4,13 +4,14 @@ from pathlib import Path
 import pickle
 from .retrieval import get_sources
 from .models import MinimalSearchResults
-
+import hashlib
+import json
 
 
 model = SentenceTransformer(
-    "sentence-transformers/all-MiniLM-L6-v2",
-    device="cpu"
+    "sentence-transformers/all-MiniLM-L6-v2"
 )
+
 
 def embed_query(query: str):
     tokens = model.encode(
@@ -19,28 +20,70 @@ def embed_query(query: str):
     )
     return tokens
 
-def build_embeddings(index_type: str):
 
-    with open(f"data/processed/{index_type}_chunks.pkl", "rb") as f:
+def chunks_fingerprint(chunks):
+    hasher = hashlib.sha256()
+    hasher.update(b"all-MiniLM-L6-v2:normalized:v1")
+    for chunk in chunks:
+        data = [
+            chunk["file_path"],
+            chunk["first_character_index"],
+            chunk["last_character_index"],
+            chunk["text"]
+        ]
+        encoded = json.dumps(data, ensure_ascii=True).encode("utf-8")
+        hasher.update(len(encoded).to_bytes(8, "big"))
+        hasher.update(encoded)
+
+    return hasher.hexdigest()
+
+
+def build_embeddings(index_type: str):
+    if index_type not in ("docs", "code", "combined"):
+        raise ValueError("Invalid index type")
+
+    base = Path("data/processed")
+
+    with open(base / f"{index_type}_chunks.pkl", "rb") as f:
         chunks = pickle.load(f)
 
-    path = Path(f"data/processed/{index_type}_embeddings.npy")
+    embedding_path = base / f"{index_type}_embeddings.npy"
+    fingerprint_path = base / f"{index_type}_embeddings.sha256"
 
-    if not path.is_file():
-        txt = [chunk["text"] for chunk in chunks]
+    current_hash = chunks_fingerprint(chunks)
+
+    valid = (
+        embedding_path.exists()
+        and fingerprint_path.exists()
+        and fingerprint_path.read_text().strip() == current_hash
+    )
+
+    if valid:
+        embeddings = np.load(embedding_path)
+
+        valid = embeddings.shape == (
+            len(chunks),
+            model.get_sentence_embedding_dimension()
+        )
+
+    if not valid:
+        print(f"Building {index_type} embeddings...")
+
+        texts = [chunk["text"] for chunk in chunks]
 
         embeddings = model.encode(
-            txt,
+            texts,
             normalize_embeddings=True,
-            batch_size=32,
+            batch_size=64,
             show_progress_bar=True
         )
 
-        np.save(path, embeddings)
+        np.save(embedding_path, embeddings)
 
-    embeddings = np.load(path)
+        fingerprint_path.write_text(current_hash)
 
     return chunks, embeddings
+
 
 def semantic_search(query: str, index_type: str, k: int = 5):
     if k <= 0:
@@ -61,6 +104,7 @@ def semantic_search(query: str, index_type: str, k: int = 5):
 
     return results
 
+
 def semantic_retrieve(
     question_id: str,
     query: str,
@@ -78,12 +122,12 @@ def semantic_retrieve(
         question=query,
         retrieved_sources=sources
     )
+
+
 if __name__ == "__main__":
-    result = semantic_retrieve(
-        question_id="test-docs-001",
-        query="How does vLLM allocate KV cache blocks?",
-        index_type="docs",
+    results = semantic_search(
+        query="How does vLLM allocate GPU memory?",
+        index_type="code",
         k=5
     )
-
-    print(result.model_dump_json(indent=2))
+    print(results)

@@ -1,0 +1,31 @@
+{
+  "question_id": "a1660e69-44a1-48da-a2a7-5a84be305016",
+  "question": "What is the default value of the spec_step_index parameter in DeepSeekMultiTokenPredictor's forward method?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/utils/__init__.py",
+      "first_character_index": 99851,
+      "last_character_index": 100338
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 122322,
+      "last_character_index": 123062
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/models/multimodal/generation/test_mllama.py",
+      "first_character_index": 19795,
+      "last_character_index": 19945
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/lora/test_layers.py",
+      "first_character_index": 4758,
+      "last_character_index": 5430
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/core/sched/interface.py",
+      "first_character_index": 652,
+      "last_character_index": 1863
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "question_id": "da1e13f1-5be1-4854-ac7c-4ee8f6508469",
+  "question": "What's the default value of min_stats_update_interval_ms in DPCoordinatorProc's __init__ method?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/engine/coordinator.py",
+      "first_character_index": 4418,
+      "last_character_index": 4746
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/engine/coordinator.py",
+      "first_character_index": 4770,
+      "last_character_index": 5408
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/engine/coordinator.py",
+      "first_character_index": 7474,
+      "last_character_index": 7571
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/utils/__init__.py",
+      "first_character_index": 99851,
+      "last_character_index": 100338
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 76992,
+      "last_character_index": 77133
+    }
+  ]
+}

@@ -6,7 +6,14 @@ from .indexing import build_index
 from functools import lru_cache
 from .retrieval import load_data, search as retrieve
 from .retrieval import search_dataset as retrieve_dataset, dump_json
+from .hybrid import hybrid_search
 from .evaluation import evaluate_dataset
+from .combined_search import (
+    combined_search,
+    load_combined_index,
+    build_and_save_combined
+)
+from .retrieval import get_sources
 from .models import MinimalSearchResults, StudentSearchResults, RagDataset
 from .cache import (
     make_cache_key,
@@ -14,6 +21,7 @@ from .cache import (
     load_cached_result,
     save_cached_result
 )
+
 
 @lru_cache(maxsize=2)
 def load_index(
@@ -28,6 +36,22 @@ def load_index(
     metadata = load_data(path / f"{name}_metadata.pkl")
 
     return chunks, index_chunks, inverted, metadata
+
+
+def index_command(
+    max_chunk_size: int = 2000,
+    raw_directory: str = "data/raw/vllm-0.10.1",
+    index_directory: str = "data/processed"
+):
+    try:
+        build_index(
+            max_chunk_size=max_chunk_size,
+            raw_directory=raw_directory,
+            index_directory=index_directory
+        )
+    except (ValueError, FileNotFoundError) as e:
+        print(f"Error: {e}", file=sys.stderr)
+        sys.exit(1)
 
 
 def search_dataset_command(
@@ -67,18 +91,33 @@ def search_dataset_command(
     print(f"Results saved to: {output_path}")
 
 
-def merge_results(result, k):
-    merged = []
-    docs = result["docs"]
-    code = result["code"]
-    for i in range(max(len(docs), len(code))):
-        if i < len(docs):
-            merged.append(docs[i])
-        if i < len(code):
-            merged.append(code[i])
-        if len(merged) >= k:
-            break
-    return merged[:k]
+def hybrid_command(
+    query: str,
+    k: int = 5,
+    candidate_k: int = 20
+):
+    validate_query(query, k)
+
+    if candidate_k <= 0:
+        raise ValueError("candidate_k must be positive")
+
+    results = hybrid_search(
+        query,
+        k=k,
+        candidate_k=candidate_k
+    )
+
+    chunks, _, _, _ = load_combined_index()
+
+    sources = get_sources(results, chunks)
+
+    final_result = MinimalSearchResults(
+        question_id="hybrid-query",
+        question=query,
+        retrieved_sources=sources
+    )
+
+    print(final_result.model_dump_json(indent=2))
 
 
 def search_both(
@@ -88,39 +127,34 @@ def search_both(
 ):
     validate_query(query, k)
 
-    docs_version = get_index_version("docs", index_directory)
-    code_version = get_index_version("code", index_directory)
-    index_version = docs_version + ":" + code_version
+    index_version = get_index_version(
+        "combined",
+        index_directory
+    )
 
-    cache_key = make_cache_key(query, k, index_version) 
+    cache_key = make_cache_key(
+        query,
+        k,
+        index_version
+    )
+
     cached = load_cached_result(cache_key)
 
     if cached is not None:
         return cached
 
-    results = {}
-    for index_type in ("docs", "code"):
-        chunks, index_chunks, inverted, metadata = load_index(
-            index_type,
-            index_directory
-        )
-        result = retrieve(
-            question_id="cli-query",
-            query=query,
-            chunks=chunks,
-            index_chunks=index_chunks,
-            inverted=inverted,
-            avgdl=metadata["avgdl"],
-            k=k
-        )
+    chunks, _, _, _ = load_combined_index()
 
-        results[index_type] = result.retrieved_sources
-    merged_sources = merge_results(results, k)
+    results = combined_search(query, k)
+
+    sources = get_sources(results, chunks)
+
     final_result = MinimalSearchResults(
         question_id="cli-query",
         question=query,
-        retrieved_sources=merged_sources
+        retrieved_sources=sources
     )
+
     save_cached_result(cache_key, final_result)
 
     return final_result
@@ -134,19 +168,24 @@ def search_command(
     result = search_both(query, k, index_directory)
     print(result.model_dump_json(indent=2))
 
+
 def query_answer(
     query: str,
     k: int = 5,
     index_directory: str = "data/processed"
 ):
-    results = search_both(query, k, index_directory)
+    try:
+        results = search_both(query, k, index_directory)
 
-    from .generation import generate_answer
+        from .generation import generate_answer
 
-    answer = generate_answer(
-        question=query,
-        sources=results.retrieved_sources
-    )
+        answer = generate_answer(
+            question=query,
+            sources=results.retrieved_sources
+        )
+    except (ValueError, FileNotFoundError) as e:
+        print(f"Error: {e}", file=sys.stderr)
+        sys.exit(1)
 
     return answer
 
@@ -187,22 +226,26 @@ def evaluate_command(
 
 
 def validate_query(query: str, k: int):
+    if not isinstance(query, str):
+        raise ValueError("Query must be a string")
+
     if not query.strip():
         raise ValueError("Query cannot be empty")
 
-    if k <= 0:
-        raise ValueError("k must be greater than 0")
+    if not isinstance(k, int) or isinstance(k, bool) or k <= 0:
+        raise ValueError("k must be a positive integer")
 
 
 if __name__ == "__main__":
     try:
         fire.Fire({
-            "index": build_index,
+            "index": index_command,
             "search": search_command,
             "search_dataset": search_dataset_command,
             "answer": query_answer,
             "answer_dataset": answer_dataset_command,
-            "evaluate": evaluate_command
+            "evaluate": evaluate_command,
+            "hybrid": hybrid_command
         })
 
     except (ValueError, FileNotFoundError)as e:

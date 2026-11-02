@@ -1,0 +1,56 @@
+{
+  "question_id": "7dc580d4-8202-40e0-bc92-f044d89cc23d",
+  "question": "What is the default type hint for the request_handling_thread attribute in SimpleBuffer's __init__ method?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/kv_transfer/kv_lookup_buffer/simple_buffer.py",
+      "first_character_index": 8194,
+      "last_character_index": 8779
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/kv_transfer/kv_lookup_buffer/simple_buffer.py",
+      "first_character_index": 8785,
+      "last_character_index": 9155
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 13326,
+      "last_character_index": 13592
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 127639,
+      "last_character_index": 127916
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/engine/arg_utils.py",
+      "first_character_index": 3906,
+      "last_character_index": 5521
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/kv_transfer/kv_lookup_buffer/simple_buffer.py",
+      "first_character_index": 877,
+      "last_character_index": 1787
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/engine/core.py",
+      "first_character_index": 17944,
+      "last_character_index": 19297
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/utils/__init__.py",
+      "first_character_index": 105048,
+      "last_character_index": 106511
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/engine/arg_utils.py",
+      "first_character_index": 2093,
+      "last_character_index": 3903
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/worker/worker_base.py",
+      "first_character_index": 18182,
+      "last_character_index": 18555
+    }
+  ]
+}

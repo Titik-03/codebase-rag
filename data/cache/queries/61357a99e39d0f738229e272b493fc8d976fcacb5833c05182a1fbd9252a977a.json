@@ -1,0 +1,56 @@
+{
+  "question_id": "37c64d82-3867-4c52-9f8c-5cc2b4d100cb",
+  "question": "Which quantization implementations in vLLM support AMD GPUs?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/quark.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/supported_hardware.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/README.md",
+      "first_character_index": 1880,
+      "last_character_index": 3251
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/fp8.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/quark.md",
+      "first_character_index": 7520,
+      "last_character_index": 9520
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/requirements/rocm.txt",
+      "first_character_index": 0,
+      "last_character_index": 457
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/quark.md",
+      "first_character_index": 9400,
+      "last_character_index": 10272
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/README.md",
+      "first_character_index": 7520,
+      "last_character_index": 9520
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/quantized_kvcache.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/gptqmodel.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    }
+  ]
+}

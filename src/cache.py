@@ -41,6 +41,7 @@ def get_index_version(
         serialized.encode("utf-8")
     ).hexdigest()
 
+
 def load_cached_result(
     cache_key: str,
     cache_directory: str = "data/cache/queries"

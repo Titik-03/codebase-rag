@@ -1,0 +1,56 @@
+{
+  "question_id": "a35f8e5c-b4f2-48e4-95b4-5466dfd6dc77",
+  "question": "What type of GGUF models does vLLM currently support loading?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/gguf.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/pooling_models.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/pooling_models.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/pooling_models.md",
+      "first_character_index": 7520,
+      "last_character_index": 9520
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/cpu.md",
+      "first_character_index": 9400,
+      "last_character_index": 9927
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/aws_neuron.md",
+      "first_character_index": 5640,
+      "last_character_index": 7640
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/offline_inference/basic/README.md",
+      "first_character_index": 1880,
+      "last_character_index": 2983
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/multimodal_inputs.md",
+      "first_character_index": 13160,
+      "last_character_index": 15160
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/usage/v1_guide.md",
+      "first_character_index": 3760,
+      "last_character_index": 5760
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "question_id": "139f769a-2b16-4331-b997-647e5f96a283",
+  "question": "What value does GptOssForCausalLMConfig set as the default reasoning_backend when it's an empty string?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/compilation.py",
+      "first_character_index": 6828,
+      "last_character_index": 7455
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/kernels/attention/test_encoder_decoder_attn.py",
+      "first_character_index": 29929,
+      "last_character_index": 30465
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/structured_output/__init__.py",
+      "first_character_index": 2050,
+      "last_character_index": 3187
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/engine/arg_utils.py",
+      "first_character_index": 27860,
+      "last_character_index": 28125
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/engine/arg_utils.py",
+      "first_character_index": 19155,
+      "last_character_index": 19211
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 128509,
+      "last_character_index": 128536
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/entrypoints/openai/serving_responses.py",
+      "first_character_index": 8405,
+      "last_character_index": 9461
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/reasoning/abs_reasoning_parsers.py",
+      "first_character_index": 3079,
+      "last_character_index": 3767
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/v1/kv_connector/nixl_integration/test_disagg_accuracy.py",
+      "first_character_index": 2958,
+      "last_character_index": 3178
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/config.py",
+      "first_character_index": 9570,
+      "last_character_index": 10873
+    }
+  ]
+}

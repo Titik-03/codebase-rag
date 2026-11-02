@@ -1,0 +1,31 @@
+{
+  "question_id": "794540e4-c04d-4085-9dac-baf3daa46e77",
+  "question": "What is the default value for mlp_bias in ExaoneGatedMLP initialization?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/exaone.py",
+      "first_character_index": 10319,
+      "last_character_index": 10632
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/transformers_utils/configs/nemotron.py",
+      "first_character_index": 7664,
+      "last_character_index": 7688
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/transformers_utils/configs/nemotron_h.py",
+      "first_character_index": 10702,
+      "last_character_index": 10726
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/falcon.py",
+      "first_character_index": 11998,
+      "last_character_index": 13972
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/transformers_utils/configs/nemotron.py",
+      "first_character_index": 4880,
+      "last_character_index": 5628
+    }
+  ]
+}

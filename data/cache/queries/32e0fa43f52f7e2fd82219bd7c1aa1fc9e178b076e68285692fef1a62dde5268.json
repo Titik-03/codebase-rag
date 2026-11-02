@@ -1,0 +1,56 @@
+{
+  "question_id": "7f7f55d5-4c44-427e-9427-d68d68a0e5d6",
+  "question": "What are the supported group sizes for GPTQ quantization in vLLM?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/benchmarks/kernels/benchmark_marlin.py",
+      "first_character_index": 2560,
+      "last_character_index": 2711
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/gptq_marlin_24.py",
+      "first_character_index": 1210,
+      "last_character_index": 2756
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/benchmarks/kernels/benchmark_marlin.py",
+      "first_character_index": 2716,
+      "last_character_index": 2856
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/kernels/mixed_precision/conch.py",
+      "first_character_index": 756,
+      "last_character_index": 1759
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/kernels/mixed_precision/marlin.py",
+      "first_character_index": 946,
+      "last_character_index": 1991
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/rtn.py",
+      "first_character_index": 12313,
+      "last_character_index": 12681
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/gptq_bitblas.py",
+      "first_character_index": 4081,
+      "last_character_index": 4304
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/kernels/quantization/test_marlin_gemm.py",
+      "first_character_index": 107,
+      "last_character_index": 2094
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/benchmarks/kernels/benchmark_marlin.py",
+      "first_character_index": 108,
+      "last_character_index": 1780
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/models/quantization/test_gptq_marlin.py",
+      "first_character_index": 107,
+      "last_character_index": 1187
+    }
+  ]
+}

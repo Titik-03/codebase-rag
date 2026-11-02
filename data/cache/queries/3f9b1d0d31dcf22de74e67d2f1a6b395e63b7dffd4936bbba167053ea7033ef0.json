@@ -1,0 +1,56 @@
+{
+  "question_id": "66a5de02-e096-4110-869d-e98121c5f9ad",
+  "question": "What happens when cache_dtype starts with \"fp8\" in FlashAttentionBackend?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/attention/backends/flashinfer.py",
+      "first_character_index": 23433,
+      "last_character_index": 23640
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/utils/__init__.py",
+      "first_character_index": 36853,
+      "last_character_index": 37387
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/utils/__init__.py",
+      "first_character_index": 37506,
+      "last_character_index": 38058
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/platforms/cpu.py",
+      "first_character_index": 5414,
+      "last_character_index": 5642
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/utils/__init__.py",
+      "first_character_index": 32467,
+      "last_character_index": 34156
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/attention/backends/flash_attn.py",
+      "first_character_index": 11007,
+      "last_character_index": 12115
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/cache.py",
+      "first_character_index": 7941,
+      "last_character_index": 8455
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/utils/__init__.py",
+      "first_character_index": 36316,
+      "last_character_index": 36476
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/worker/tpu_worker.py",
+      "first_character_index": 2865,
+      "last_character_index": 3081
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/utils/__init__.py",
+      "first_character_index": 34159,
+      "last_character_index": 35941
+    }
+  ]
+}

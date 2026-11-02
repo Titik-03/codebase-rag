@@ -1,0 +1,56 @@
+{
+  "question_id": "cbff93d4-08d7-4636-a2bb-234ffbce86a8",
+  "question": "What is the return type of the _get_patch_repl method in vLLM's step3_vl model?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/step3_vl.py",
+      "first_character_index": 14112,
+      "last_character_index": 14644
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/step3_vl.py",
+      "first_character_index": 14650,
+      "last_character_index": 15164
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/step3_vl.py",
+      "first_character_index": 12814,
+      "last_character_index": 13659
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/step3_vl.py",
+      "first_character_index": 12529,
+      "last_character_index": 12808
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/step3_vl.py",
+      "first_character_index": 33507,
+      "last_character_index": 33711
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/step3_vl.py",
+      "first_character_index": 36169,
+      "last_character_index": 36228
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/transformers_utils/configs/step3_vl.py",
+      "first_character_index": 1174,
+      "last_character_index": 1199
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/step3_vl.py",
+      "first_character_index": 17620,
+      "last_character_index": 17782
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/step3_vl.py",
+      "first_character_index": 15655,
+      "last_character_index": 17610
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/step3_vl.py",
+      "first_character_index": 38036,
+      "last_character_index": 38047
+    }
+  ]
+}

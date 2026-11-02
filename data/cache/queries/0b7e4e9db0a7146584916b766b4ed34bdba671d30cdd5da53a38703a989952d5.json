@@ -1,0 +1,31 @@
+{
+  "question_id": "a99a010d-4de4-4f17-ac4f-bf31f19db7ea",
+  "question": "What parameter type does the copy_operation parameter accept in NixlConnector's set_host_xfer_buffer_ops method?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/kv_transfer/kv_connector/v1/nixl_connector.py",
+      "first_character_index": 7005,
+      "last_character_index": 7190
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/kv_transfer/kv_connector/v1/base.py",
+      "first_character_index": 4802,
+      "last_character_index": 5060
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/kv_transfer/kv_connector/v1/nixl_connector.py",
+      "first_character_index": 27233,
+      "last_character_index": 27450
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/worker/tpu_model_runner.py",
+      "first_character_index": 80129,
+      "last_character_index": 80299
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/kv_transfer/kv_connector/v1/nixl_connector.py",
+      "first_character_index": 45532,
+      "last_character_index": 46228
+    }
+  ]
+}

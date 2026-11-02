@@ -1,0 +1,31 @@
+{
+  "question_id": "716dd176-b2d7-4613-825a-4ac84b01aab7",
+  "question": "Where can I find information about using generative models in vLLM?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 33840,
+      "last_character_index": 35840
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/CONTRIBUTING.md",
+      "first_character_index": 0,
+      "last_character_index": 140
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/serving/parallelism_scaling.md",
+      "first_character_index": 9400,
+      "last_character_index": 11171
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 11280,
+      "last_character_index": 13280
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/usage/reproducibility.md",
+      "first_character_index": 1880,
+      "last_character_index": 2397
+    }
+  ]
+}

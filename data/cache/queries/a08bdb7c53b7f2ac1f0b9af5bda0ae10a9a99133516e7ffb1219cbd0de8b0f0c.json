@@ -1,0 +1,56 @@
+{
+  "question_id": "c4719e12-9d08-42c7-b245-d9f379fc921b",
+  "question": "What are the different types of handshakes performed during vLLM engine startup based on data parallelism configuration?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/fused_moe/config.py",
+      "first_character_index": 6207,
+      "last_character_index": 8207
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/engine/core.py",
+      "first_character_index": 23269,
+      "last_character_index": 24295
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/fused_moe/config.py",
+      "first_character_index": 8157,
+      "last_character_index": 9272
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/benchmarks/datasets.py",
+      "first_character_index": 29391,
+      "last_character_index": 29695
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/benchmarks/benchmark_dataset.py",
+      "first_character_index": 16954,
+      "last_character_index": 17258
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 110003,
+      "last_character_index": 110331
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/lora/layers.py",
+      "first_character_index": 18362,
+      "last_character_index": 18660
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/engine/utils.py",
+      "first_character_index": 2102,
+      "last_character_index": 2377
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/models/multimodal/generation/test_maverick.py",
+      "first_character_index": 6005,
+      "last_character_index": 6064
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/worker/tpu_model_runner.py",
+      "first_character_index": 76343,
+      "last_character_index": 76543
+    }
+  ]
+}

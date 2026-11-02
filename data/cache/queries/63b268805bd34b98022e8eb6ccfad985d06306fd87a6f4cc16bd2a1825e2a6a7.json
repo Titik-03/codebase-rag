@@ -1,0 +1,56 @@
+{
+  "question_id": "fb241d75-e33a-4218-9da3-7da5d842fa67",
+  "question": "What is the bias attribute set to when the bias parameter is False in vLLM's linear layer?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/linear.py",
+      "first_character_index": 23898,
+      "last_character_index": 25049
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/linear.py",
+      "first_character_index": 36583,
+      "last_character_index": 37999
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/tpu_distributed_utils.py",
+      "first_character_index": 2425,
+      "last_character_index": 4003
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/linear.py",
+      "first_character_index": 10420,
+      "last_character_index": 11000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/xformers.py",
+      "first_character_index": 5895,
+      "last_character_index": 6392
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/linear.py",
+      "first_character_index": 14370,
+      "last_character_index": 14869
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/attention/backends/cpu_attn.py",
+      "first_character_index": 5027,
+      "last_character_index": 5521
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/linear.py",
+      "first_character_index": 52286,
+      "last_character_index": 53739
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/phi4mm_utils.py",
+      "first_character_index": 20859,
+      "last_character_index": 22859
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/parameter.py",
+      "first_character_index": 689,
+      "last_character_index": 909
+    }
+  ]
+}

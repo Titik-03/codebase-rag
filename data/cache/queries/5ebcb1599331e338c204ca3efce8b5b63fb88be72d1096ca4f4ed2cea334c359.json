@@ -1,0 +1,56 @@
+{
+  "question_id": "08757840-9e47-451a-914c-b83a3a247da3",
+  "question": "How do you install Llama Stack to use with vLLM?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/deployment/integrations/llamastack.md",
+      "first_character_index": 0,
+      "last_character_index": 954
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/deployment/integrations/production-stack.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/lora.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/deployment/integrations/production-stack.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/deployment/k8s.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/online_serving/prometheus_grafana/README.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/benchmarks/auto_tune/README.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/deployment/integrations/production-stack.md",
+      "first_character_index": 3760,
+      "last_character_index": 5720
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu/rocm.inc.md",
+      "first_character_index": 5640,
+      "last_character_index": 7640
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/quark.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    }
+  ]
+}

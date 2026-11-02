@@ -1,0 +1,56 @@
+{
+  "question_id": "cc0122c5-40dd-49f1-82ef-a809228ccf7b",
+  "question": "Which vLLM model class supports Phi-4 and Phi-3 models?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/offline_inference/basic/README.md",
+      "first_character_index": 1880,
+      "last_character_index": 2983
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 20680,
+      "last_character_index": 22680
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/multimodal_inputs.md",
+      "first_character_index": 11280,
+      "last_character_index": 13280
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 39480,
+      "last_character_index": 41480
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/hardware_supported_models/tpu.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/lora.md",
+      "first_character_index": 11280,
+      "last_character_index": 13280
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/requirements/common.txt",
+      "first_character_index": 1880,
+      "last_character_index": 2474
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/multimodal_inputs.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 48880,
+      "last_character_index": 50880
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/serving/openai_compatible_server.md",
+      "first_character_index": 9400,
+      "last_character_index": 11400
+    }
+  ]
+}

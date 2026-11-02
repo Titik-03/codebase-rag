@@ -1,0 +1,56 @@
+{
+  "question_id": "0a7d0972-098a-4343-9951-8dd34acf3085",
+  "question": "What error is raised when image_embeds is not a torch.Tensor in LlavaOnevision?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/internvl.py",
+      "first_character_index": 40859,
+      "last_character_index": 41242
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/idefics3.py",
+      "first_character_index": 22176,
+      "last_character_index": 22572
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/paligemma.py",
+      "first_character_index": 10692,
+      "last_character_index": 11969
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/florence2.py",
+      "first_character_index": 32664,
+      "last_character_index": 34051
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/qwen2_vl.py",
+      "first_character_index": 41299,
+      "last_character_index": 43036
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/tarsier.py",
+      "first_character_index": 17597,
+      "last_character_index": 18822
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/llava.py",
+      "first_character_index": 23933,
+      "last_character_index": 24661
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/qwen2_5_vl.py",
+      "first_character_index": 35893,
+      "last_character_index": 37600
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/minimax_vl_01.py",
+      "first_character_index": 11315,
+      "last_character_index": 12553
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/qwen2_5_omni_thinker.py",
+      "first_character_index": 21433,
+      "last_character_index": 23158
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "question_id": "15f860cf-b956-43bb-a22a-47eaf5e98ba9",
+  "question": "What are the main goals of vLLM V1's architecture redesign?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/benchmarks/README.md",
+      "first_character_index": 3760,
+      "last_character_index": 5760
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 43240,
+      "last_character_index": 45240
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/usage/v1_guide.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/design/multiprocessing.md",
+      "first_character_index": 3760,
+      "last_character_index": 5760
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/spec_decode.md",
+      "first_character_index": 7520,
+      "last_character_index": 9520
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 47000,
+      "last_character_index": 49000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/usage/usage_stats.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/offline_inference/openai_batch/README.md",
+      "first_character_index": 11280,
+      "last_character_index": 13280
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 9400,
+      "last_character_index": 11400
+    }
+  ]
+}

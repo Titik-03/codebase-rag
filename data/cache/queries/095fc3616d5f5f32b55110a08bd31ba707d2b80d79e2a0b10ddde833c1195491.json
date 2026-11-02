@@ -1,0 +1,56 @@
+{
+  "question_id": "da6028b7-45d8-4747-8a91-a0fcf4144e27",
+  "question": "Which hidden_act values trigger the use of BertWithRopeGatedMLP instead of BertWithRopeMLP in vLLM's BERT with RoPE model?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/bert_with_rope.py",
+      "first_character_index": 13366,
+      "last_character_index": 14451
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/gemma.py",
+      "first_character_index": 2308,
+      "last_character_index": 3433
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/bert_with_rope.py",
+      "first_character_index": 7284,
+      "last_character_index": 8603
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/bert_with_rope.py",
+      "first_character_index": 6062,
+      "last_character_index": 7281
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 12413,
+      "last_character_index": 12544
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/transformers_utils/configs/arctic.py",
+      "first_character_index": 2914,
+      "last_character_index": 4914
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/utils.py",
+      "first_character_index": 24949,
+      "last_character_index": 26204
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/qwen.py",
+      "first_character_index": 1788,
+      "last_character_index": 2960
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/transformers_utils/config.py",
+      "first_character_index": 24534,
+      "last_character_index": 24957
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/bert_with_rope.py",
+      "first_character_index": 11375,
+      "last_character_index": 12601
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "question_id": "e4216374-c12f-4f56-a6f6-0edd051798ba",
+  "question": "What is the default value for the axis parameter in the swap_every_two_rows function in vLLM's mxfp4 quantization layer?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/mxfp4.py",
+      "first_character_index": 13558,
+      "last_character_index": 13606
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/mxfp4.py",
+      "first_character_index": 13619,
+      "last_character_index": 13663
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/mxfp4.py",
+      "first_character_index": 13485,
+      "last_character_index": 13545
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/mxfp4.py",
+      "first_character_index": 12878,
+      "last_character_index": 13471
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/core/block_manager.py",
+      "first_character_index": 19883,
+      "last_character_index": 20569
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/offline_inference/chat_with_tools.py",
+      "first_character_index": 2111,
+      "last_character_index": 4084
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/v1/entrypoints/llm/test_struct_output_generate.py",
+      "first_character_index": 16062,
+      "last_character_index": 17207
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/phi4mm_audio.py",
+      "first_character_index": 3041,
+      "last_character_index": 5041
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/_custom_ops.py",
+      "first_character_index": 44099,
+      "last_character_index": 44912
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/online_serving/openai_chat_completion_client_with_tools_required.py",
+      "first_character_index": 567,
+      "last_character_index": 2567
+    }
+  ]
+}

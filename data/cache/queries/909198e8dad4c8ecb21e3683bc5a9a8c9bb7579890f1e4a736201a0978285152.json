@@ -1,0 +1,56 @@
+{
+  "question_id": "8c662572-36ad-4c6f-9f3a-c766b606bf99",
+  "question": "How do you use a GGUF model directly through the LLM entrypoint in vLLM?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/gguf.md",
+      "first_character_index": 1880,
+      "last_character_index": 3490
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/model/registration.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/auto_awq.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/gptqmodel.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/gguf.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/aws_neuron.md",
+      "first_character_index": 3760,
+      "last_character_index": 5760
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/quark.md",
+      "first_character_index": 5640,
+      "last_character_index": 7640
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/extensions/tensorizer.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/design/arch_overview.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/extensions/tensorizer.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    }
+  ]
+}

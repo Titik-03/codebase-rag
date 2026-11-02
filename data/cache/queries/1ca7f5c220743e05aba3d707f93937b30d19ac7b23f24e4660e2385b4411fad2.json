@@ -1,0 +1,56 @@
+{
+  "question_id": "b8be43f3-f678-410a-b336-188b66a2fc6b",
+  "question": "What are the supported hidden sizes for DeepEP low-latency kernels in vLLM?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/kernels/moe/test_deepep_moe.py",
+      "first_character_index": 15434,
+      "last_character_index": 16573
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/platforms/cuda.py",
+      "first_character_index": 6794,
+      "last_character_index": 7515
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/kernels/moe/test_deepep_moe.py",
+      "first_character_index": 11729,
+      "last_character_index": 11868
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/fused_moe/deepep_ll_prepare_finalize.py",
+      "first_character_index": 1389,
+      "last_character_index": 1455
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/fused_moe/deepep_ll_prepare_finalize.py",
+      "first_character_index": 4699,
+      "last_character_index": 4877
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/device_communicators/all2all.py",
+      "first_character_index": 7464,
+      "last_character_index": 7538
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/kernels/moe/test_deepep_moe.py",
+      "first_character_index": 4673,
+      "last_character_index": 5126
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/kernels/moe/test_deepep_moe.py",
+      "first_character_index": 12307,
+      "last_character_index": 12364
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/fused_moe/config.py",
+      "first_character_index": 5677,
+      "last_character_index": 5821
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/envs.py",
+      "first_character_index": 41903,
+      "last_character_index": 43903
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "question_id": "ea812b8d-317d-48bd-a149-bf73747592d5",
+  "question": "What is the type hint for the kv_range_for_decode parameter in the _attention_with_mask method?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/mllama.py",
+      "first_character_index": 65603,
+      "last_character_index": 66004
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/mllama.py",
+      "first_character_index": 48427,
+      "last_character_index": 49350
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/mllama.py",
+      "first_character_index": 36968,
+      "last_character_index": 37959
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/models/multimodal/generation/test_mllama.py",
+      "first_character_index": 22169,
+      "last_character_index": 23819
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/engine/arg_utils.py",
+      "first_character_index": 3906,
+      "last_character_index": 5521
+    }
+  ]
+}

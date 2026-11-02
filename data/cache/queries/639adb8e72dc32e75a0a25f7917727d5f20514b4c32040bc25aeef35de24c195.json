@@ -1,0 +1,56 @@
+{
+  "question_id": "9759941c-1d9e-4410-a356-2b9b6338dab6",
+  "question": "What is the default value for VLLM_LOG_STATS_INTERVAL environment variable in vLLM?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/envs.py",
+      "first_character_index": 1573,
+      "last_character_index": 1609
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/engine/metrics.py",
+      "first_character_index": 21925,
+      "last_character_index": 22637
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/envs.py",
+      "first_character_index": 16553,
+      "last_character_index": 18553
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/entrypoints/openai/api_server.py",
+      "first_character_index": 5912,
+      "last_character_index": 6807
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/engine/metrics.py",
+      "first_character_index": 12295,
+      "last_character_index": 13572
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/engine/llm_engine.py",
+      "first_character_index": 13822,
+      "last_character_index": 15057
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/model_loader/tensorizer.py",
+      "first_character_index": 8133,
+      "last_character_index": 8928
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/engine/coordinator.py",
+      "first_character_index": 4418,
+      "last_character_index": 4746
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/envs.py",
+      "first_character_index": 10703,
+      "last_character_index": 12703
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/engine/metrics.py",
+      "first_character_index": 14335,
+      "last_character_index": 16286
+    }
+  ]
+}

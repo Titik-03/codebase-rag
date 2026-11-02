@@ -7,17 +7,18 @@ from pathlib import Path
 
 app = FastAPI()
 
+
 class SearchRequest(BaseModel):
     query: str
     k: int = Field(default=5, ge=1)
 
 
-def indexes_exist(index_directory = "data/processed"):
+def indexes_exist(index_directory="data/processed"):
     for name in ("docs", "code"):
         for suffix in ("chunks", "index", "inverted_index", "metadata"):
-            if not (Path(index_directory) / f"{name}_{suffix}.pkl").is_file() :
+            if not (Path(index_directory) / f"{name}_{suffix}.pkl").is_file():
                 return False
-    return True 
+    return True
 
 
 @app.post("/ask", response_class=HTMLResponse)
@@ -35,15 +36,18 @@ def ask(query: str = Form(...)):
     )
 
     return html
-    
+
+
 @app.get("/", response_class=HTMLResponse)
 def homepage():
     html = Path("templates/index.html").read_text(encoding="utf-8")
     return html
 
+
 @app.post("/search")
 def search(request: SearchRequest):
     return search_both(request.query, request.k)
+
 
 @app.post("/answer")
 def answer(request: SearchRequest):

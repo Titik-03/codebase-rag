@@ -1,0 +1,31 @@
+{
+  "question_id": "ce1a4fb2-2386-462d-9e53-7c343d769c9a",
+  "question": "What environment variable does vLLM's collect_env.py check as a fallback when CUDNN library detection fails?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/entrypoints/cli/collect_env.py",
+      "first_character_index": 108,
+      "last_character_index": 1068
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/collect_env.py",
+      "first_character_index": 25980,
+      "last_character_index": 26037
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/collect_env.py",
+      "first_character_index": 18675,
+      "last_character_index": 19244
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/collect_env.py",
+      "first_character_index": 24109,
+      "last_character_index": 24532
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/collect_env.py",
+      "first_character_index": 27420,
+      "last_character_index": 27462
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "question_id": "0edd143f-0b0d-4198-a2a9-eff52a74e835",
+  "question": "What dimensions does the input tensor x need to have in get_col_major_tma_aligned_tensor function?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/utils/fp8_utils.py",
+      "first_character_index": 23738,
+      "last_character_index": 25183
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/fp8.py",
+      "first_character_index": 33350,
+      "last_character_index": 33905
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/benchmarks/kernels/deepgemm/benchmark_fp8_block_dense_gemm.py",
+      "first_character_index": 1546,
+      "last_character_index": 1615
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/fp8.py",
+      "first_character_index": 40404,
+      "last_character_index": 41425
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/utils/fp8_utils.py",
+      "first_character_index": 22878,
+      "last_character_index": 23563
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/benchmarks/kernels/deepgemm/benchmark_fp8_block_dense_gemm.py",
+      "first_character_index": 137,
+      "last_character_index": 483
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/utils/fp8_utils.py",
+      "first_character_index": 12560,
+      "last_character_index": 13311
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/compilation/noop_elimination.py",
+      "first_character_index": 5510,
+      "last_character_index": 6578
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/parallel_state.py",
+      "first_character_index": 12696,
+      "last_character_index": 13725
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/utils.py",
+      "first_character_index": 10802,
+      "last_character_index": 12525
+    }
+  ]
+}

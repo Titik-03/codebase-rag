@@ -1,0 +1,56 @@
+{
+  "question_id": "d28499a0-6f8a-4b63-b7f4-2748ef1322a8",
+  "question": "What version of ROCm does vLLM support for AMD GPUs?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu/rocm.inc.md",
+      "first_character_index": 3760,
+      "last_character_index": 5760
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu/rocm.inc.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/requirements/rocm.txt",
+      "first_character_index": 0,
+      "last_character_index": 457
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu/rocm.inc.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 3760,
+      "last_character_index": 5760
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu/rocm.inc.md",
+      "first_character_index": 7520,
+      "last_character_index": 9358
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu.md",
+      "first_character_index": 1880,
+      "last_character_index": 3178
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu/rocm.inc.md",
+      "first_character_index": 5640,
+      "last_character_index": 7640
+    }
+  ]
+}

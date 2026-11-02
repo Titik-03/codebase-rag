@@ -1,0 +1,31 @@
+{
+  "question_id": "3620bb65-9be5-4959-88b6-74552f6e3be2",
+  "question": "What three requirements must a custom model meet to be compatible with vLLM's Transformers backend?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 3760,
+      "last_character_index": 5760
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/model/basic.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/offline_inference/openai_batch/README.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    }
+  ]
+}

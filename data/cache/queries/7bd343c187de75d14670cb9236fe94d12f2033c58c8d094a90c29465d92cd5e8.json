@@ -1,0 +1,56 @@
+{
+  "question_id": "cb029768-8ff0-43dd-b825-c39906930e62",
+  "question": "What string is appended to vllm_factors when lora_config is None in vLLM's configuration hash computation?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 143311,
+      "last_character_index": 143734
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 105813,
+      "last_character_index": 106807
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/scheduler.py",
+      "first_character_index": 6846,
+      "last_character_index": 7618
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 77890,
+      "last_character_index": 78662
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 110337,
+      "last_character_index": 111109
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 114043,
+      "last_character_index": 114815
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 128694,
+      "last_character_index": 129466
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 132081,
+      "last_character_index": 132853
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 135533,
+      "last_character_index": 136305
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 142397,
+      "last_character_index": 142538
+    }
+  ]
+}

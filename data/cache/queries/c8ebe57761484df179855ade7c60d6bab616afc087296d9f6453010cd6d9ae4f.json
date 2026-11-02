@@ -1,0 +1,56 @@
+{
+  "question_id": "a8cf16d1-b44b-474b-b137-f576c8d2b410",
+  "question": "Which device does vLLM's CpuGpuBlockAllocator use for copy-on-write operations and prefix caching?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/core/block/common.py",
+      "first_character_index": 4488,
+      "last_character_index": 5143
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/core/block/common.py",
+      "first_character_index": 2984,
+      "last_character_index": 3382
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/core/block/naive_block.py",
+      "first_character_index": 12644,
+      "last_character_index": 13581
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/core/block/prefix_caching_block.py",
+      "first_character_index": 21333,
+      "last_character_index": 21678
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/core/block/prefix_caching_block.py",
+      "first_character_index": 20520,
+      "last_character_index": 21327
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/core/block/cpu_gpu_block_allocator.py",
+      "first_character_index": 12236,
+      "last_character_index": 12679
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/core/block/prefix_caching_block.py",
+      "first_character_index": 1768,
+      "last_character_index": 2397
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/core/block/cpu_gpu_block_allocator.py",
+      "first_character_index": 1193,
+      "last_character_index": 2291
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/core/block/cpu_gpu_block_allocator.py",
+      "first_character_index": 13023,
+      "last_character_index": 13306
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/core/block/test_block_table.py",
+      "first_character_index": 1661,
+      "last_character_index": 3521
+    }
+  ]
+}

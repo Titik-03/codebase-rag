@@ -1,0 +1,56 @@
+{
+  "question_id": "5d89ffe4-2a21-484e-bbe5-a5f3f743e4ca",
+  "question": "What is the default value of the stream parameter in vLLM's OpenAI protocol transcription request?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/entrypoints/openai/serving_transcription.py",
+      "first_character_index": 1601,
+      "last_character_index": 2338
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/entrypoints/openai/serving_transcription.py",
+      "first_character_index": 2344,
+      "last_character_index": 3179
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/entrypoints/openai/protocol.py",
+      "first_character_index": 17112,
+      "last_character_index": 17377
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/entrypoints/openai/protocol.py",
+      "first_character_index": 72851,
+      "last_character_index": 73116
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/entrypoints/openai/protocol.py",
+      "first_character_index": 17852,
+      "last_character_index": 18248
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/entrypoints/openai/protocol.py",
+      "first_character_index": 53250,
+      "last_character_index": 53646
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/entrypoints/openai/protocol.py",
+      "first_character_index": 73787,
+      "last_character_index": 74183
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/entrypoints/openai/serving_transcription.py",
+      "first_character_index": 3868,
+      "last_character_index": 4574
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/benchmarks/serve.py",
+      "first_character_index": 31045,
+      "last_character_index": 31592
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/benchmarks/benchmark_serving.py",
+      "first_character_index": 37189,
+      "last_character_index": 37736
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "question_id": "dc9d8213-efbd-4d3c-a153-929de5b80f67",
+  "question": "What data type are the g_idx sort indices converted to in GPTQ Marlin quantization?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/benchmarks/kernels/benchmark_marlin.py",
+      "first_character_index": 4620,
+      "last_character_index": 5285
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/kernels/mixed_precision/marlin.py",
+      "first_character_index": 3877,
+      "last_character_index": 4298
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/gptq_marlin.py",
+      "first_character_index": 20465,
+      "last_character_index": 20572
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/gptq_marlin.py",
+      "first_character_index": 20898,
+      "last_character_index": 21003
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/gptq_marlin.py",
+      "first_character_index": 22306,
+      "last_character_index": 22410
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/gptq_marlin.py",
+      "first_character_index": 22423,
+      "last_character_index": 22525
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/gptq_marlin.py",
+      "first_character_index": 21696,
+      "last_character_index": 22159
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/utils/marlin_utils_test.py",
+      "first_character_index": 3008,
+      "last_character_index": 4224
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/kernels/quantization/test_marlin_gemm.py",
+      "first_character_index": 3147,
+      "last_character_index": 4810
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/gptq_marlin.py",
+      "first_character_index": 14045,
+      "last_character_index": 14085
+    }
+  ]
+}

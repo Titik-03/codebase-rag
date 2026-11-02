@@ -1,0 +1,56 @@
+{
+  "question_id": "84207edf-29fd-418d-9fc3-db55b48bc558",
+  "question": "What error is raised when CMake executable cannot be found during vLLM build process?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/incremental_build.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/incremental_build.md",
+      "first_character_index": 3760,
+      "last_character_index": 5760
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 28200,
+      "last_character_index": 30200
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/cpu/apple.inc.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu/cuda.inc.md",
+      "first_character_index": 5640,
+      "last_character_index": 7640
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 11280,
+      "last_character_index": 13280
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 33840,
+      "last_character_index": 35840
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu/rocm.inc.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    }
+  ]
+}

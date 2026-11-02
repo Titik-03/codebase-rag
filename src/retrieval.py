@@ -124,6 +124,7 @@ def search_dataset(
         k=k
     )
 
+
 def dump_json(result, output_path):
     output_path = Path(output_path)
 

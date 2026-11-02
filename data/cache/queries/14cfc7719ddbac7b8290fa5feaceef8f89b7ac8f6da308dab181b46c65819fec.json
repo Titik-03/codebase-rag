@@ -1,0 +1,31 @@
+{
+  "question_id": "cc784ab6-ef8a-402d-b874-4160ec7c87f1",
+  "question": "What determines whether custom allreduce is enabled in vLLM's CudaCommunicator?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/device_communicators/custom_all_reduce.py",
+      "first_character_index": 2239,
+      "last_character_index": 2512
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/compilation.py",
+      "first_character_index": 2109,
+      "last_character_index": 4043
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/device_communicators/cuda_communicator.py",
+      "first_character_index": 754,
+      "last_character_index": 1042
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/device_communicators/quick_all_reduce.py",
+      "first_character_index": 1812,
+      "last_character_index": 2802
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/compilation.py",
+      "first_character_index": 8286,
+      "last_character_index": 8708
+    }
+  ]
+}

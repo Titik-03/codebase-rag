@@ -10,3 +10,24 @@ __pycache__/
 # data/processed/
 data/output/
 
+
+data/cache/
+data/output/
+evaluations/
+data/processed/*_index.pkl
+data/processed/*_inverted_index.pkl
+data/processed/*_metadata.pkl
+data/processed/*.stale.npy
+
+data/datasets/private/
+data/AnsweredQuestions/
+data/UnansweredQuestions/
+
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+
+eval.html
+moulinette-ubuntu

@@ -1,0 +1,31 @@
+{
+  "question_id": "b336583e-9dcd-44cc-aa87-a2337f0f2d7d",
+  "question": "What parameter does vLLM set according to different quantization schemes to support weight quantization in linear layers?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/model/basic.md",
+      "first_character_index": 5640,
+      "last_character_index": 7640
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/fp8.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/model/basic.md",
+      "first_character_index": 3760,
+      "last_character_index": 5760
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/supported_hardware.md",
+      "first_character_index": 1880,
+      "last_character_index": 2698
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/int4.md",
+      "first_character_index": 3760,
+      "last_character_index": 5760
+    }
+  ]
+}

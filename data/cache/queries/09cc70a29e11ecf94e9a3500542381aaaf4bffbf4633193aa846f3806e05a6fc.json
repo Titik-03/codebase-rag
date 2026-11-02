@@ -1,0 +1,56 @@
+{
+  "question_id": "ba3be45c-5a73-4c3a-a4c9-4d2ab2e55c08",
+  "question": "What is the default value of the device parameter in LoRAModel.from_local_checkpoint?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/lora/test_lora_checkpoints.py",
+      "first_character_index": 2450,
+      "last_character_index": 3886
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/lora/test_lora_checkpoints.py",
+      "first_character_index": 1490,
+      "last_character_index": 1792
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/lora/test_lora_checkpoints.py",
+      "first_character_index": 2138,
+      "last_character_index": 2445
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/lora/models.py",
+      "first_character_index": 7849,
+      "last_character_index": 8423
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/transformers_utils/configs/arctic.py",
+      "first_character_index": 964,
+      "last_character_index": 2964
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/benchmarks/datasets.py",
+      "first_character_index": 29391,
+      "last_character_index": 29695
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/benchmarks/benchmark_dataset.py",
+      "first_character_index": 16954,
+      "last_character_index": 17258
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/models/multimodal/generation/test_mllama.py",
+      "first_character_index": 19795,
+      "last_character_index": 19945
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/cache.py",
+      "first_character_index": 4222,
+      "last_character_index": 4444
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/model_loader/weight_utils.py",
+      "first_character_index": 27468,
+      "last_character_index": 28174
+    }
+  ]
+}

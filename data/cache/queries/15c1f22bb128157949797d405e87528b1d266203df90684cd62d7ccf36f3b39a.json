@@ -1,0 +1,56 @@
+{
+  "question_id": "4546f17e-c328-4247-ad9a-0cbd94998930",
+  "question": "What argument must all vLLM modules include in their constructor for runtime support and quantization?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/model/basic.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/fp8.md",
+      "first_character_index": 3760,
+      "last_character_index": 5619
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/design/arch_overview.md",
+      "first_character_index": 5640,
+      "last_character_index": 7640
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/design/huggingface_integration.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/design/arch_overview.md",
+      "first_character_index": 9400,
+      "last_character_index": 10967
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/aws_neuron.md",
+      "first_character_index": 3760,
+      "last_character_index": 5760
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/offline_inference/basic/README.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 3760,
+      "last_character_index": 5760
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/fp8.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/plugins/lora_resolvers/README.md",
+      "first_character_index": 0,
+      "last_character_index": 830
+    }
+  ]
+}

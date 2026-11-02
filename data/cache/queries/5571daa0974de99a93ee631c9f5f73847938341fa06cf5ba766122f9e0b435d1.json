@@ -1,0 +1,56 @@
+{
+  "question_id": "eb669e1a-613f-4df5-85f0-8a95a3da147a",
+  "question": "What is the default value of the prefix parameter in MiniMaxText01ForCausalLM's __init__ method?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/utils/__init__.py",
+      "first_character_index": 99851,
+      "last_character_index": 100338
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 76992,
+      "last_character_index": 77133
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 14229,
+      "last_character_index": 14528
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 81939,
+      "last_character_index": 82090
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 134738,
+      "last_character_index": 134904
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/engine/core.py",
+      "first_character_index": 52296,
+      "last_character_index": 52604
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 111944,
+      "last_character_index": 112081
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 50210,
+      "last_character_index": 50639
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/models/multimodal/generation/test_mllama.py",
+      "first_character_index": 19795,
+      "last_character_index": 19945
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 13326,
+      "last_character_index": 13592
+    }
+  ]
+}

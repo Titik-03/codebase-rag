@@ -1,0 +1,56 @@
+{
+  "question_id": "a19b4fa6-02f5-444e-9ff7-85faa9c839f8",
+  "question": "What is the default image format used in the encode_base64 method of vLLM's image processing?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/multimodal/utils.py",
+      "first_character_index": 10000,
+      "last_character_index": 11459
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/multimodal/video.py",
+      "first_character_index": 6631,
+      "last_character_index": 7146
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/multimodal/image.py",
+      "first_character_index": 3424,
+      "last_character_index": 3793
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/online_serving/openai_chat_completion_client_for_multimodal.py",
+      "first_character_index": 1871,
+      "last_character_index": 3494
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/models/multimodal/generation/test_mllama.py",
+      "first_character_index": 19795,
+      "last_character_index": 19945
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/models/multimodal/generation/test_mllama.py",
+      "first_character_index": 20851,
+      "last_character_index": 21099
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/models/multimodal/generation/test_mllama.py",
+      "first_character_index": 20307,
+      "last_character_index": 20468
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/benchmarks/datasets.py",
+      "first_character_index": 9159,
+      "last_character_index": 10895
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/benchmarks/benchmark_dataset.py",
+      "first_character_index": 8395,
+      "last_character_index": 10094
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/entrypoints/test_chat_utils.py",
+      "first_character_index": 5898,
+      "last_character_index": 6631
+    }
+  ]
+}

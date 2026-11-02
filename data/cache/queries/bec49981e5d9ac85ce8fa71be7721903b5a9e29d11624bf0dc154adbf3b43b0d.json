@@ -1,0 +1,56 @@
+{
+  "question_id": "1143f5a0-47cc-4072-982f-9e12db2601d8",
+  "question": "What file should you refer to when deploying vLLM on Kubernetes with AMD ROCm GPUs like MI300X?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu/rocm.inc.md",
+      "first_character_index": 3760,
+      "last_character_index": 5760
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu/rocm.inc.md",
+      "first_character_index": 5640,
+      "last_character_index": 7640
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/deployment/k8s.md",
+      "first_character_index": 5640,
+      "last_character_index": 7640
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/deployment/k8s.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu/rocm.inc.md",
+      "first_character_index": 7520,
+      "last_character_index": 9358
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/deployment/k8s.md",
+      "first_character_index": 7520,
+      "last_character_index": 9520
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/deployment/integrations/production-stack.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu/rocm.inc.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/deployment/k8s.md",
+      "first_character_index": 11280,
+      "last_character_index": 11848
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu/rocm.inc.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    }
+  ]
+}

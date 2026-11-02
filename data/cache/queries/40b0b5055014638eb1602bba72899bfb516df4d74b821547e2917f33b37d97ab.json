@@ -1,0 +1,31 @@
+{
+  "question_id": "8cb284ad-ec64-4189-ad3a-dd1bcd05bc09",
+  "question": "What error is raised when full attention group ids and other attention group ids interleave in HybridKVCacheCoordinator?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/core/kv_cache_coordinator.py",
+      "first_character_index": 12110,
+      "last_character_index": 12780
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/core/kv_cache_coordinator.py",
+      "first_character_index": 10163,
+      "last_character_index": 11033
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/core/kv_cache_coordinator.py",
+      "first_character_index": 13442,
+      "last_character_index": 13849
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/core/kv_cache_coordinator.py",
+      "first_character_index": 10064,
+      "last_character_index": 10109
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/core/kv_cache_coordinator.py",
+      "first_character_index": 11409,
+      "last_character_index": 11509
+    }
+  ]
+}

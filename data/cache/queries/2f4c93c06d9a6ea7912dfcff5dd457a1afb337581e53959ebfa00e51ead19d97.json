@@ -1,0 +1,56 @@
+{
+  "question_id": "1b654747-9a54-4b79-a348-8b2b4097d919",
+  "question": "What dtype and device are used when converting pooled_data in PoolingRequestOutput.from_seq_group?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/outputs.py",
+      "first_character_index": 14779,
+      "last_character_index": 16734
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/pooler.py",
+      "first_character_index": 14228,
+      "last_character_index": 15683
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/pooler.py",
+      "first_character_index": 11624,
+      "last_character_index": 13616
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/pooler.py",
+      "first_character_index": 20670,
+      "last_character_index": 21766
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/engine/llm_engine.py",
+      "first_character_index": 34876,
+      "last_character_index": 35175
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/outputs.py",
+      "first_character_index": 18676,
+      "last_character_index": 20213
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/pooler.py",
+      "first_character_index": 15686,
+      "last_character_index": 16383
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/outputs.py",
+      "first_character_index": 16748,
+      "last_character_index": 18673
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/gritlm.py",
+      "first_character_index": 5849,
+      "last_character_index": 6440
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/worker/model_runner.py",
+      "first_character_index": 29045,
+      "last_character_index": 29211
+    }
+  ]
+}

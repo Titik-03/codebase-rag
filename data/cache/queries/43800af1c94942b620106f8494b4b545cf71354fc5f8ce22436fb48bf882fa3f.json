@@ -1,0 +1,56 @@
+{
+  "question_id": "b8a46091-2a26-469e-82a7-a226be9cfce4",
+  "question": "What GPU compute capability is required for INT8 computation in vLLM?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/int8.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/fp8.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/int4.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/design/metrics.md",
+      "first_character_index": 24440,
+      "last_character_index": 26440
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/gpu/cuda.inc.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/cpu.md",
+      "first_character_index": 9400,
+      "last_character_index": 9927
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/supported_hardware.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/README.md",
+      "first_character_index": 7520,
+      "last_character_index": 9520
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/serving/parallelism_scaling.md",
+      "first_character_index": 7520,
+      "last_character_index": 9520
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/design/torch_compile.md",
+      "first_character_index": 5640,
+      "last_character_index": 7640
+    }
+  ]
+}

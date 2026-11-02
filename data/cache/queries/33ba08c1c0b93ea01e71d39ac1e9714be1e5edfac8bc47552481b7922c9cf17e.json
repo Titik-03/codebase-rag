@@ -1,0 +1,56 @@
+{
+  "question_id": "7f1f9e3f-3c3a-4ad0-a8e8-084cadb62152",
+  "question": "What is the default value of the attn_type parameter in CPUAttentionImpl's _run_sdpa_forward method?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/utils.py",
+      "first_character_index": 23502,
+      "last_character_index": 24182
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/kernels/attention/test_encoder_decoder_attn.py",
+      "first_character_index": 23064,
+      "last_character_index": 24995
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/flash_attn.py",
+      "first_character_index": 40766,
+      "last_character_index": 41381
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/attention/backends/cpu_attn.py",
+      "first_character_index": 23133,
+      "last_character_index": 24485
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/kernels/attention/test_encoder_decoder_attn.py",
+      "first_character_index": 24998,
+      "last_character_index": 26989
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/rocm_flash_attn.py",
+      "first_character_index": 27732,
+      "last_character_index": 28777
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/kernels/attention/test_encoder_decoder_attn.py",
+      "first_character_index": 27284,
+      "last_character_index": 28834
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/utils/__init__.py",
+      "first_character_index": 99851,
+      "last_character_index": 100338
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/attention/backends/cpu_attn.py",
+      "first_character_index": 8688,
+      "last_character_index": 9638
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/entrypoints/openai/test_run_batch.py",
+      "first_character_index": 3384,
+      "last_character_index": 4708
+    }
+  ]
+}

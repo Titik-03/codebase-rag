@@ -1,0 +1,56 @@
+{
+  "question_id": "d260be95-8d36-46da-a6f1-13bac87bbb5b",
+  "question": "What are the default values of use_cuda_graph and cascade_attn_enabled in vLLM's CPUModelRunner?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/worker/cpu_model_runner.py",
+      "first_character_index": 634,
+      "last_character_index": 988
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/worker/gpu_model_runner.py",
+      "first_character_index": 7194,
+      "last_character_index": 7264
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/flashinfer.py",
+      "first_character_index": 15413,
+      "last_character_index": 16593
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/flash_attn.py",
+      "first_character_index": 5530,
+      "last_character_index": 5550
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/placeholder_attn.py",
+      "first_character_index": 3043,
+      "last_character_index": 3063
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/differential_flash_attn.py",
+      "first_character_index": 5973,
+      "last_character_index": 5993
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/rocm_flash_attn.py",
+      "first_character_index": 4599,
+      "last_character_index": 4619
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/worker/test_model_runner.py",
+      "first_character_index": 5184,
+      "last_character_index": 5228
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/worker/test_model_runner.py",
+      "first_character_index": 10579,
+      "last_character_index": 10622
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/worker/enc_dec_model_runner.py",
+      "first_character_index": 21172,
+      "last_character_index": 22231
+    }
+  ]
+}

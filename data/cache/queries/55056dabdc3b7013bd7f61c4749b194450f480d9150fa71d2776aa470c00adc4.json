@@ -1,0 +1,56 @@
+{
+  "question_id": "fc24d926-7937-431e-8919-7223cbee82ec",
+  "question": "What mechanism does vLLM use to minimize graph compilations when serving models on Intel Gaudi accelerators?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/intel_gaudi.md",
+      "first_character_index": 5640,
+      "last_character_index": 7640
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/intel_gaudi.md",
+      "first_character_index": 7520,
+      "last_character_index": 9520
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/intel_gaudi.md",
+      "first_character_index": 13160,
+      "last_character_index": 15160
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/README.md",
+      "first_character_index": 1880,
+      "last_character_index": 3251
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/inc.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/intel_gaudi.md",
+      "first_character_index": 24440,
+      "last_character_index": 26440
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/intel_gaudi.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/intel_gaudi.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/intel_gaudi.md",
+      "first_character_index": 3760,
+      "last_character_index": 5760
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/README.md",
+      "first_character_index": 0,
+      "last_character_index": 1157
+    }
+  ]
+}

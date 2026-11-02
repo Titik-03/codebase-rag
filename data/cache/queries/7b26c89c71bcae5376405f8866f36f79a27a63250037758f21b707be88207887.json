@@ -1,0 +1,31 @@
+{
+  "question_id": "e3f2374c-9598-469e-bdae-a2f0962044e2",
+  "question": "What are the three key abstractions used for disaggregated prefilling in vLLM?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/disagg_prefill.md",
+      "first_character_index": 3760,
+      "last_character_index": 5760
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/kv_transfer/README.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/disagg_prefill.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/disagg_prefill.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/kv_transfer/README.md",
+      "first_character_index": 1880,
+      "last_character_index": 2006
+    }
+  ]
+}

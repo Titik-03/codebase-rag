@@ -1,0 +1,56 @@
+{
+  "question_id": "00bc8e7c-1b30-41c7-9066-4399838c6391",
+  "question": "What exception does _PlaceholderModuleAttr raise in its __getattr__ method?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/utils/__init__.py",
+      "first_character_index": 82705,
+      "last_character_index": 84569
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/worker/worker_base.py",
+      "first_character_index": 24183,
+      "last_character_index": 25088
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/utils/__init__.py",
+      "first_character_index": 78460,
+      "last_character_index": 78802
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/platforms/interface.py",
+      "first_character_index": 16915,
+      "last_character_index": 17257
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 50210,
+      "last_character_index": 50639
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/compilation/cuda_graph.py",
+      "first_character_index": 3828,
+      "last_character_index": 4152
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/utils/__init__.py",
+      "first_character_index": 78808,
+      "last_character_index": 79032
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/worker/worker_base.py",
+      "first_character_index": 25094,
+      "last_character_index": 25164
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/model_loader/bitsandbytes_loader.py",
+      "first_character_index": 21279,
+      "last_character_index": 22914
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/executor/multiproc_executor.py",
+      "first_character_index": 22735,
+      "last_character_index": 23986
+    }
+  ]
+}

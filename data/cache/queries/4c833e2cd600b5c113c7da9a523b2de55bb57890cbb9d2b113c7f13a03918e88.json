@@ -1,0 +1,56 @@
+{
+  "question_id": "9f0f951d-7822-4b1d-bbd7-42f1b9b71de9",
+  "question": "What are the default values for cache_config and quant_config parameters in Qwen2MoeDecoderLayer's __init__ method?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/aria.py",
+      "first_character_index": 11826,
+      "last_character_index": 12516
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/qwen2_moe.py",
+      "first_character_index": 13799,
+      "last_character_index": 14916
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/granite_speech.py",
+      "first_character_index": 21875,
+      "last_character_index": 23046
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/dbrx.py",
+      "first_character_index": 11649,
+      "last_character_index": 12841
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/florence2.py",
+      "first_character_index": 19810,
+      "last_character_index": 20843
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/zamba2.py",
+      "first_character_index": 23288,
+      "last_character_index": 24641
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/opt.py",
+      "first_character_index": 11290,
+      "last_character_index": 11925
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/bert_with_rope.py",
+      "first_character_index": 15025,
+      "last_character_index": 16252
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/quantization/modelopt.py",
+      "first_character_index": 4836,
+      "last_character_index": 6424
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/bart.py",
+      "first_character_index": 24811,
+      "last_character_index": 25801
+    }
+  ]
+}

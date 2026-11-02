@@ -1,0 +1,56 @@
+{
+  "question_id": "3e8f866a-1db7-4116-9d56-1063dd3b233d",
+  "question": "What is the default value of intermediate_tensors parameter in the forward method of phi4mm model?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/compilation/decorators.py",
+      "first_character_index": 2096,
+      "last_character_index": 3927
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/roberta.py",
+      "first_character_index": 4152,
+      "last_character_index": 4966
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/worker/model_runner.py",
+      "first_character_index": 78965,
+      "last_character_index": 80550
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/utils/__init__.py",
+      "first_character_index": 99851,
+      "last_character_index": 100338
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/worker/model_runner.py",
+      "first_character_index": 90433,
+      "last_character_index": 90748
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/ultravox.py",
+      "first_character_index": 24105,
+      "last_character_index": 26044
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/entrypoints/openai/test_run_batch.py",
+      "first_character_index": 3384,
+      "last_character_index": 4708
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/compilation/multi_output_match.py",
+      "first_character_index": 857,
+      "last_character_index": 2049
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/executor/ray_utils.py",
+      "first_character_index": 5010,
+      "last_character_index": 6116
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/benchmarks/datasets.py",
+      "first_character_index": 29391,
+      "last_character_index": 29695
+    }
+  ]
+}

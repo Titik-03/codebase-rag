@@ -1,0 +1,56 @@
+{
+  "question_id": "786abebd-493d-4879-9293-f4330f630ae7",
+  "question": "What operation does ExecutorWithExternalLauncher use when reducing memory values across all ranks?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/executor/abstract.py",
+      "first_character_index": 3851,
+      "last_character_index": 4532
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/minicpm.py",
+      "first_character_index": 3131,
+      "last_character_index": 3389
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/olmoe.py",
+      "first_character_index": 2452,
+      "last_character_index": 2720
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/mixtral.py",
+      "first_character_index": 2730,
+      "last_character_index": 3000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/granitemoe.py",
+      "first_character_index": 2713,
+      "last_character_index": 2985
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/grok1.py",
+      "first_character_index": 2961,
+      "last_character_index": 3229
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/fused_moe/layer.py",
+      "first_character_index": 65206,
+      "last_character_index": 65634
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/distributed/eplb/eplb_state.py",
+      "first_character_index": 11763,
+      "last_character_index": 12605
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/executor/uniproc_executor.py",
+      "first_character_index": 4907,
+      "last_character_index": 5956
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/offline_inference/torchrun_example.py",
+      "first_character_index": 107,
+      "last_character_index": 1384
+    }
+  ]
+}

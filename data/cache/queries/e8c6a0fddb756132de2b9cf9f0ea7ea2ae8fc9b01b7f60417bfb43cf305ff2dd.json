@@ -1,0 +1,56 @@
+{
+  "question_id": "24e3e648-fb6a-41e1-9b7e-2f7cd65f3dd3",
+  "question": "Are deprecated features allowed to be removed in vLLM patch releases?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/deprecation_policy.md",
+      "first_character_index": 1880,
+      "last_character_index": 3566
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/deprecation_policy.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/RELEASE.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/usage/v1_guide.md",
+      "first_character_index": 9400,
+      "last_character_index": 10862
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/RELEASE.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/design/metrics.md",
+      "first_character_index": 18800,
+      "last_character_index": 20800
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/usage/v1_guide.md",
+      "first_character_index": 7520,
+      "last_character_index": 9520
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/model/multimodal.md",
+      "first_character_index": 18800,
+      "last_character_index": 20800
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/design/metrics.md",
+      "first_character_index": 20680,
+      "last_character_index": 22680
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/usage/metrics.md",
+      "first_character_index": 0,
+      "last_character_index": 1841
+    }
+  ]
+}

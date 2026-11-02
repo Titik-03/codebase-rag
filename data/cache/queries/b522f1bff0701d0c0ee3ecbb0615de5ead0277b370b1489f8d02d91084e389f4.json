@@ -1,0 +1,56 @@
+{
+  "question_id": "c4ca02cb-04b2-4f85-983b-c45fdcabd3c6",
+  "question": "What are the default values for sm_scale and logit_cap parameters in mla_decode_fwd_impl?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/ops/rocm_aiter_mla.py",
+      "first_character_index": 1137,
+      "last_character_index": 2888
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/ops/triton_decode_attention.py",
+      "first_character_index": 17764,
+      "last_character_index": 19250
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/ops/rocm_aiter_mla.py",
+      "first_character_index": 2891,
+      "last_character_index": 3696
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/flashinfer.py",
+      "first_character_index": 4479,
+      "last_character_index": 5597
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/ops/triton_decode_attention.py",
+      "first_character_index": 10782,
+      "last_character_index": 10853
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/flashinfer.py",
+      "first_character_index": 26675,
+      "last_character_index": 27350
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/attention/backends/utils.py",
+      "first_character_index": 9974,
+      "last_character_index": 11060
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/backends/flashinfer.py",
+      "first_character_index": 5600,
+      "last_character_index": 6535
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/ops/triton_decode_attention.py",
+      "first_character_index": 16216,
+      "last_character_index": 17761
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/attention/ops/chunked_prefill_paged_decode.py",
+      "first_character_index": 7816,
+      "last_character_index": 7883
+    }
+  ]
+}

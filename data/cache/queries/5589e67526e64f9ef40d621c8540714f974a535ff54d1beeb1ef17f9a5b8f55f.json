@@ -1,0 +1,31 @@
+{
+  "question_id": "efa50722-19a6-44a2-ab89-e554eb436899",
+  "question": "What model architectures does vLLM support for GPT-2 models?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/configuration/model_resolution.md",
+      "first_character_index": 0,
+      "last_character_index": 988
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/cpu.md",
+      "first_character_index": 9400,
+      "last_character_index": 9927
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tools/profiler/nsys_profile_tools/README.md",
+      "first_character_index": 3760,
+      "last_character_index": 5760
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 30080,
+      "last_character_index": 32080
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "question_id": "0b6820b3-7d2c-4958-a9f2-9dc66cb35596",
+  "question": "What fields are added to attention metadata classes when using make_kv_sharing_fast_prefill_attention_metadata in vLLM?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/attention/backends/utils.py",
+      "first_character_index": 26685,
+      "last_character_index": 27540
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/worker/gpu_model_runner.py",
+      "first_character_index": 43039,
+      "last_character_index": 43930
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/worker/gpu_model_runner.py",
+      "first_character_index": 43948,
+      "last_character_index": 44347
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/v1/e2e/test_kv_sharing_fast_prefill.py",
+      "first_character_index": 1297,
+      "last_character_index": 1348
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/engine/arg_utils.py",
+      "first_character_index": 19725,
+      "last_character_index": 19802
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/v1/e2e/test_kv_sharing_fast_prefill.py",
+      "first_character_index": 1407,
+      "last_character_index": 3140
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/engine/arg_utils.py",
+      "first_character_index": 33737,
+      "last_character_index": 33866
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/cache.py",
+      "first_character_index": 5571,
+      "last_character_index": 6000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/worker/gpu_model_runner.py",
+      "first_character_index": 38482,
+      "last_character_index": 39760
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/kernels/attention/test_encoder_decoder_attn.py",
+      "first_character_index": 36532,
+      "last_character_index": 37257
+    }
+  ]
+}

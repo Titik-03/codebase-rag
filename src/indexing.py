@@ -215,6 +215,7 @@ def process_chunks(
     save_data(path / f"{name}_inverted_index.pkl", inv)
     save_data(path / f"{name}_metadata.pkl", metadata)
 
+
 def build_index(max_chunk_size: int = 2000,
                 raw_directory: str = "data/raw/vllm-0.10.1",
                 index_directory: str = "data/processed"
@@ -225,13 +226,27 @@ def build_index(max_chunk_size: int = 2000,
         raw_directory,
         max_chunk_size=max_chunk_size
     )
+
     chunks_doc = chunk_markdown(
         raw_directory,
         max_chunk_size=max_chunk_size
     )
 
+    if not chunks_py:
+        raise ValueError(
+            f"No Python chunks found in '{raw_directory}'"
+        )
+
+    if not chunks_doc:
+        raise ValueError(
+            f"No documentation chunks found in '{raw_directory}'"
+        )
+
     process_chunks(chunks_py, "code", index_directory)
     process_chunks(chunks_doc, "docs", index_directory)
+
+    from .combined_search import build_and_save_combined
+    build_and_save_combined()
 
     print("Indexing finished.")
 

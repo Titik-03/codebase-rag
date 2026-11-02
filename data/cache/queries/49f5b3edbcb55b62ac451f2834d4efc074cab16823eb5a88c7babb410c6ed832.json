@@ -1,0 +1,31 @@
+{
+  "question_id": "8447d11b-fb89-4c9c-a8d9-6251ab28c7f6",
+  "question": "What quantization methods are supported and unsupported for vLLM on Intel Gaudi?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/inc.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/intel_gaudi.md",
+      "first_character_index": 3760,
+      "last_character_index": 5760
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/intel_gaudi.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/supported_hardware.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/quantization/supported_hardware.md",
+      "first_character_index": 1880,
+      "last_character_index": 2698
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "question_id": "2ecd9109-3c84-4513-8e9e-abc5af0cbdaf",
+  "question": "What is the return type of the _digest_histogram function in vLLM's metrics reader module?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/metrics/reader.py",
+      "first_character_index": 3700,
+      "last_character_index": 4777
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/metrics/reader.py",
+      "first_character_index": 2751,
+      "last_character_index": 3690
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/engine/metrics.py",
+      "first_character_index": 10486,
+      "last_character_index": 12292
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/offline_inference/metrics.py",
+      "first_character_index": 108,
+      "last_character_index": 1622
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/engine/metrics.py",
+      "first_character_index": 7634,
+      "last_character_index": 7874
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/metrics/loggers.py",
+      "first_character_index": 14571,
+      "last_character_index": 14796
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/metrics/reader.py",
+      "first_character_index": 108,
+      "last_character_index": 1578
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/offline_inference/chat_with_tools.py",
+      "first_character_index": 2111,
+      "last_character_index": 4084
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/entrypoints/test_chat_utils.py",
+      "first_character_index": 29026,
+      "last_character_index": 29768
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/tool_use/utils.py",
+      "first_character_index": 10042,
+      "last_character_index": 11359
+    }
+  ]
+}

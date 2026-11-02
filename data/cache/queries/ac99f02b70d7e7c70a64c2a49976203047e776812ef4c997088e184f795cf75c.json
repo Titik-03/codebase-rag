@@ -1,0 +1,56 @@
+{
+  "question_id": "01d5bf8f-c474-48bc-844e-272afee67ed3",
+  "question": "How do you pass image data to vLLM for multimodal inference?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/multimodal_inputs.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/multimodal_inputs.md",
+      "first_character_index": 18800,
+      "last_character_index": 20800
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/multimodal_inputs.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/model/multimodal.md",
+      "first_character_index": 5640,
+      "last_character_index": 7640
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/multimodal_inputs.md",
+      "first_character_index": 7520,
+      "last_character_index": 9520
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/design/mm_processing.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 33840,
+      "last_character_index": 35840
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 31960,
+      "last_character_index": 33960
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/contributing/model/multimodal.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/multimodal_inputs.md",
+      "first_character_index": 13160,
+      "last_character_index": 15160
+    }
+  ]
+}

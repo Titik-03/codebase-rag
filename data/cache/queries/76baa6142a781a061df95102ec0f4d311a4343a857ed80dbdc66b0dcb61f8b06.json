@@ -1,0 +1,56 @@
+{
+  "question_id": "5cb90304-8647-456c-82e6-d796b8be1a40",
+  "question": "What is the default value of vocab_size in BaseVisualTokenizerConfig?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 14229,
+      "last_character_index": 14528
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/logits_processor.py",
+      "first_character_index": 1139,
+      "last_character_index": 2016
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/layers/utils.py",
+      "first_character_index": 1498,
+      "last_character_index": 3354
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/v1/sample/test_sampler.py",
+      "first_character_index": 15999,
+      "last_character_index": 17586
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/v1/sample/test_sampler.py",
+      "first_character_index": 17760,
+      "last_character_index": 19089
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/transformers_utils/configs/arctic.py",
+      "first_character_index": 964,
+      "last_character_index": 2964
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/sample/rejection_sampler.py",
+      "first_character_index": 21172,
+      "last_character_index": 22421
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/sample/rejection_sampler.py",
+      "first_character_index": 4572,
+      "last_character_index": 5522
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/lora/models.py",
+      "first_character_index": 13949,
+      "last_character_index": 14402
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/sampling_params.py",
+      "first_character_index": 6319,
+      "last_character_index": 6843
+    }
+  ]
+}

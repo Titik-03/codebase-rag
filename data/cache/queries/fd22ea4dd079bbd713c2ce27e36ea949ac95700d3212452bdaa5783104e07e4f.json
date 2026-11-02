@@ -1,0 +1,56 @@
+{
+  "question_id": "c4f14fa2-381b-4129-a8d7-dab7691cb8c0",
+  "question": "How do you generate structured text output with a specific regex pattern in vLLM?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/structured_outputs.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/structured_outputs.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/online_serving/structured_outputs/README.md",
+      "first_character_index": 0,
+      "last_character_index": 1462
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/benchmarks/README.md",
+      "first_character_index": 11280,
+      "last_character_index": 13280
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/reasoning_outputs.md",
+      "first_character_index": 0,
+      "last_character_index": 2000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 43240,
+      "last_character_index": 45240
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/structured_outputs.md",
+      "first_character_index": 5640,
+      "last_character_index": 7640
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/structured_outputs.md",
+      "first_character_index": 9400,
+      "last_character_index": 11400
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 7520,
+      "last_character_index": 9520
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/features/structured_outputs.md",
+      "first_character_index": 3760,
+      "last_character_index": 5760
+    }
+  ]
+}

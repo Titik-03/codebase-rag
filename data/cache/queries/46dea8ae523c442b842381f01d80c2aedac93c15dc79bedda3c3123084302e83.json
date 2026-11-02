@@ -1,0 +1,31 @@
+{
+  "question_id": "30622359-490d-493a-8f1c-6f05f80bc91b",
+  "question": "What happens to input_ids when inputs_embeds is None in LlaVA-NeXT-Video's forward pass?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/llava_next_video.py",
+      "first_character_index": 16230,
+      "last_character_index": 17558
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/llava_onevision.py",
+      "first_character_index": 36024,
+      "last_character_index": 37664
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/llava_next_video.py",
+      "first_character_index": 15689,
+      "last_character_index": 16224
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/llava_onevision.py",
+      "first_character_index": 35029,
+      "last_character_index": 36018
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/llava_next.py",
+      "first_character_index": 22365,
+      "last_character_index": 22835
+    }
+  ]
+}

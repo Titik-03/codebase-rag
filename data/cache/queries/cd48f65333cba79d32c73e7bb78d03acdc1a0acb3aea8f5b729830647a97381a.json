@@ -1,0 +1,31 @@
+{
+  "question_id": "02b4ba56-66f8-4cf5-8d0a-621ea70030e7",
+  "question": "What are the compilation levels that cause do_not_compile to be set to True in vLLM's compilation decorator?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/compilation/decorators.py",
+      "first_character_index": 6249,
+      "last_character_index": 7078
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/compilation/decorators.py",
+      "first_character_index": 7352,
+      "last_character_index": 7457
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/compilation/decorators.py",
+      "first_character_index": 108,
+      "last_character_index": 1916
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 167357,
+      "last_character_index": 168698
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/compilation/compiler_interface.py",
+      "first_character_index": 18029,
+      "last_character_index": 18640
+    }
+  ]
+}

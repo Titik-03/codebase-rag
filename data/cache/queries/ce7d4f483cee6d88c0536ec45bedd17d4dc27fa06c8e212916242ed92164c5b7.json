@@ -1,0 +1,56 @@
+{
+  "question_id": "2adf7274-84f7-431e-9b20-28d79ee17d0a",
+  "question": "What modalities does the Qwen2.5-Omni model support in vLLM?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/examples/offline_inference/qwen2_5_omni/README.md",
+      "first_character_index": 0,
+      "last_character_index": 1142
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 41360,
+      "last_character_index": 43360
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 31960,
+      "last_character_index": 33960
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 47000,
+      "last_character_index": 49000
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/configuration/conserving_memory.md",
+      "first_character_index": 3760,
+      "last_character_index": 4960
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/supported_models.md",
+      "first_character_index": 33840,
+      "last_character_index": 35840
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/models/hardware_supported_models/tpu.md",
+      "first_character_index": 1880,
+      "last_character_index": 2434
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/getting_started/installation/cpu.md",
+      "first_character_index": 9400,
+      "last_character_index": 9927
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/benchmarks/README.md",
+      "first_character_index": 5640,
+      "last_character_index": 7640
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/docs/configuration/conserving_memory.md",
+      "first_character_index": 1880,
+      "last_character_index": 3880
+    }
+  ]
+}

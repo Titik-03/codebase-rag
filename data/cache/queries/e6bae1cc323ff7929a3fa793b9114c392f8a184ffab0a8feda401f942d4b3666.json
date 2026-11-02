@@ -1,0 +1,56 @@
+{
+  "question_id": "63e6aed9-82c1-43fc-a607-cc45839be8ff",
+  "question": "What parameter determines whether cropping is enabled when calculating image tokens in DeepSeek VL2's get_replacement_deepseek_vl2 function?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/deepseek_vl2.py",
+      "first_character_index": 9488,
+      "last_character_index": 10739
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/transformers_utils/processors/deepseek_vl2.py",
+      "first_character_index": 11782,
+      "last_character_index": 11969
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/transformers_utils/processors/deepseek_vl2.py",
+      "first_character_index": 13004,
+      "last_character_index": 13026
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/transformers_utils/processors/deepseek_vl2.py",
+      "first_character_index": 7865,
+      "last_character_index": 8055
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/transformers_utils/processors/deepseek_vl2.py",
+      "first_character_index": 11402,
+      "last_character_index": 11423
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/transformers_utils/processors/deepseek_vl2.py",
+      "first_character_index": 13680,
+      "last_character_index": 13725
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/transformers_utils/processors/deepseek_vl2.py",
+      "first_character_index": 3768,
+      "last_character_index": 3822
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/transformers_utils/processors/deepseek_vl2.py",
+      "first_character_index": 4056,
+      "last_character_index": 4115
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/deepseek_vl2.py",
+      "first_character_index": 20016,
+      "last_character_index": 20052
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/transformers_utils/processors/deepseek_vl2.py",
+      "first_character_index": 3117,
+      "last_character_index": 3145
+    }
+  ]
+}

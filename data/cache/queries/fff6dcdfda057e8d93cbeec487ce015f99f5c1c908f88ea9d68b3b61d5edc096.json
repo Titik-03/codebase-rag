@@ -1,0 +1,56 @@
+{
+  "question_id": "f3920065-238d-4537-bcc2-ed4fe144f655",
+  "question": "What is the minimum CUDA compiler version required to build NVFP4 quantization kernels in vLLM?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 20680,
+      "last_character_index": 22680
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 22560,
+      "last_character_index": 24560
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 13160,
+      "last_character_index": 15160
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 16920,
+      "last_character_index": 18920
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 18800,
+      "last_character_index": 20800
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 15040,
+      "last_character_index": 17040
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 9400,
+      "last_character_index": 11400
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 26320,
+      "last_character_index": 28320
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 24440,
+      "last_character_index": 26440
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/CMakeLists.txt",
+      "first_character_index": 28200,
+      "last_character_index": 30200
+    }
+  ]
+}

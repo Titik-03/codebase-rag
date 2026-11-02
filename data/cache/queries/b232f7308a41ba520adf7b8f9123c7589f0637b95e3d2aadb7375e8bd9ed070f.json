@@ -1,0 +1,56 @@
+{
+  "question_id": "715be5ca-7b95-4733-9a96-ab0479178b82",
+  "question": "What is the default value of the dynamic_image_size parameter in InternVL's _preprocess_video method?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/internvl.py",
+      "first_character_index": 20485,
+      "last_character_index": 21701
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/internvl.py",
+      "first_character_index": 19408,
+      "last_character_index": 20479
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/internvl.py",
+      "first_character_index": 18716,
+      "last_character_index": 19402
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/internvl.py",
+      "first_character_index": 17661,
+      "last_character_index": 18310
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/internvl.py",
+      "first_character_index": 11874,
+      "last_character_index": 12911
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/internvl.py",
+      "first_character_index": 16459,
+      "last_character_index": 17372
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/internvl.py",
+      "first_character_index": 10291,
+      "last_character_index": 11571
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/internvl.py",
+      "first_character_index": 14084,
+      "last_character_index": 14913
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/internvl.py",
+      "first_character_index": 12917,
+      "last_character_index": 13509
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/interns1.py",
+      "first_character_index": 3901,
+      "last_character_index": 5196
+    }
+  ]
+}

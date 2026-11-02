@@ -1,0 +1,56 @@
+{
+  "question_id": "14219845-46ce-4597-93bc-925793eced33",
+  "question": "What is the default value of inputs_embeds parameter in GemmaModel's forward method?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/bart.py",
+      "first_character_index": 20583,
+      "last_character_index": 21627
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/bart.py",
+      "first_character_index": 36753,
+      "last_character_index": 37852
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/utils.py",
+      "first_character_index": 16316,
+      "last_character_index": 18104
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/ultravox.py",
+      "first_character_index": 24105,
+      "last_character_index": 26044
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/interns1.py",
+      "first_character_index": 31093,
+      "last_character_index": 32182
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/skyworkr1v.py",
+      "first_character_index": 30978,
+      "last_character_index": 32313
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/internvl.py",
+      "first_character_index": 48687,
+      "last_character_index": 50022
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/nemotron_vl.py",
+      "first_character_index": 22379,
+      "last_character_index": 23714
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/pixtral.py",
+      "first_character_index": 16903,
+      "last_character_index": 18021
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/step3_vl.py",
+      "first_character_index": 41637,
+      "last_character_index": 42681
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "question_id": "03adf12e-e42c-419b-bcb7-e49802f88d32",
+  "question": "What is the default value of the eps parameter in vLLM's RMSNorm class?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/entrypoints/openai/protocol.py",
+      "first_character_index": 89079,
+      "last_character_index": 90828
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/entrypoints/openai/protocol.py",
+      "first_character_index": 83169,
+      "last_character_index": 85105
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/third_party/pynvml.py",
+      "first_character_index": 50871,
+      "last_character_index": 51641
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/models/multimodal/generation/test_mllama.py",
+      "first_character_index": 19795,
+      "last_character_index": 19945
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/transformers_utils/config.py",
+      "first_character_index": 26618,
+      "last_character_index": 28290
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/entrypoints/openai/tool_parsers/qwen3coder_tool_parser.py",
+      "first_character_index": 7988,
+      "last_character_index": 9547
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/benchmarks/datasets.py",
+      "first_character_index": 29391,
+      "last_character_index": 29695
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/benchmarks/benchmark_dataset.py",
+      "first_character_index": 16954,
+      "last_character_index": 17258
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/metrics/reader.py",
+      "first_character_index": 108,
+      "last_character_index": 1578
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/models/multimodal/generation/test_mllama.py",
+      "first_character_index": 20851,
+      "last_character_index": 21099
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "question_id": "96549d07-57ac-44eb-9a8f-a55dbaf8092e",
+  "question": "What are the default values for minClockMHz and maxClockMHz parameters in nvmlDeviceGetMinMaxClockOfPState?",
+  "retrieved_sources": [
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/third_party/pynvml.py",
+      "first_character_index": 203412,
+      "last_character_index": 205268
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/entrypoints/openai/protocol.py",
+      "first_character_index": 29536,
+      "last_character_index": 30446
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/llama4.py",
+      "first_character_index": 14008,
+      "last_character_index": 15076
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/blip2.py",
+      "first_character_index": 23463,
+      "last_character_index": 24611
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/core/block/cpu_gpu_block_allocator.py",
+      "first_character_index": 1193,
+      "last_character_index": 2291
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 140223,
+      "last_character_index": 140903
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/tests/entrypoints/openai/test_completion_with_function_calling.py",
+      "first_character_index": 6131,
+      "last_character_index": 6589
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/v1/kv_cache_interface.py",
+      "first_character_index": 1972,
+      "last_character_index": 2442
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/model_executor/models/glm4_1v.py",
+      "first_character_index": 57060,
+      "last_character_index": 58220
+    },
+    {
+      "file_path": "data/raw/vllm-0.10.1/vllm/config/__init__.py",
+      "first_character_index": 20590,
+      "last_character_index": 20873
+    }
+  ]
+}
