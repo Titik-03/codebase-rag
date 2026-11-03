@@ -13,7 +13,13 @@ from .combined_search import (
     load_combined_index,
 )
 from .retrieval import get_sources
-from .models import MinimalSearchResults, StudentSearchResults, RagDataset
+from .models import (
+    MinimalSearchResults,
+    MinimalAnswer,
+    StudentSearchResults,
+    StudentSearchResultsAndAnswer,
+    RagDataset
+)
 from .cache import (
     make_cache_key,
     get_index_version,
@@ -170,11 +176,55 @@ def search_both(
 def search_command(
     query: str,
     k: int = 5,
-    index_directory: str = "data/processed"
+    index_directory: str = "data/processed",
+    output_path: str = "data/output/search_results/single_search.json"
 ) -> None:
-    """Print the source locations retrieved for one query."""
+    """Search a single query and save the required JSON output."""
+
     result = search_both(query, k, index_directory)
-    print(result.model_dump_json(indent=2))
+
+    final_result = StudentSearchResults(
+        search_results=[result],
+        k=k
+    )
+
+    dump_json(final_result, output_path)
+
+    print(final_result.model_dump_json(indent=2))
+
+
+def answer_command(
+    query: str,
+    k: int = 5,
+    index_directory: str = "data/processed",
+    output_path: str = "data/output/search_results_and_answer/single_answer.json"
+) -> None:
+    """Answer one query and save the required JSON output."""
+
+    results = search_both(query, k, index_directory)
+
+    from .generation import generate_answer
+
+    answer = generate_answer(
+        question=query,
+        sources=results.retrieved_sources
+    )
+
+    minimal_answer = MinimalAnswer(
+        question_id=results.question_id,
+        question=query,
+        retrieved_sources=results.retrieved_sources,
+        answer=answer
+    )
+
+    final_result = StudentSearchResultsAndAnswer(
+        search_results=[minimal_answer],
+        k=k
+    )
+
+    dump_json(final_result, output_path)
+
+    print(final_result.model_dump_json(indent=2))
 
 
 def query_answer(
@@ -254,7 +304,7 @@ if __name__ == "__main__":
             "index": index_command,
             "search": search_command,
             "search_dataset": search_dataset_command,
-            "answer": query_answer,
+            "answer": answer_command,
             "answer_dataset": answer_dataset_command,
             "evaluate": evaluate_command,
             "hybrid": hybrid_command
