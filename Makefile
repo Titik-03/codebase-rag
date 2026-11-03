@@ -11,15 +11,16 @@ install:
 run:
 	$(PYTHON) -m src $(ARGS)
 
+debug: ARGS =
 debug:
 	$(PYTHON) -m pdb -m src $(ARGS)
 
 lint:
-	uv run --with flake8 flake8 src
-	uv run --with mypy mypy src
+	uv run flake8 .
+	uv run mypy . --warn-return-any --warn-unused-ignores --ignore-missing-imports --disallow-untyped-defs --check-untyped-defs
 
 clean:
-	find src -type d -name "__pycache__" -exec rm -rf {} +
-	find src -type f -name "*.pyc" -delete
+	find src -type f -name "*.py[co]" -delete
+	find src -depth -type d -name "__pycache__" -empty -delete
 	rm -rf .mypy_cache .pytest_cache .ruff_cache
 	rm -rf build dist

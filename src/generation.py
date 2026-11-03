@@ -1,4 +1,5 @@
 import torch
+from typing import Any
 
 from .models import (
     MinimalSource,
@@ -8,7 +9,6 @@ from .models import (
 )
 from tqdm import tqdm
 from transformers import AutoTokenizer, AutoModelForCausalLM
-from .retrieval import load_data
 
 MODEL_NAME = "Qwen/Qwen3-0.6B"
 MAX_NEW_TOKENS = 200
@@ -39,7 +39,8 @@ def get_context(sources: list[MinimalSource]) -> list[str]:
     return contexts
 
 
-def prepare_inputs(question: str, contexts: list[str]):
+def prepare_inputs(question: str, contexts: list[str]) -> Any:
+    """Format the grounded chat prompt and tokenize it for generation."""
     prompt = build_prompt(question, contexts)
 
     messages = [
@@ -73,7 +74,8 @@ def fit_context(
     max_input_tokens: int
 ) -> list[str]:
 
-    selected_chunks = []
+    """Select whole context chunks that fit the input token budget."""
+    selected_chunks: list[str] = []
 
     for context in contexts:
         candidate = selected_chunks + [context]
@@ -89,6 +91,7 @@ def fit_context(
 
 
 def build_prompt(question: str, contexts: list[str]) -> str:
+    """Build a question prompt that restricts answers to source context."""
     context_text = "\n\n".join(contexts)
 
     return f"""Answer the question using only the provided context.
@@ -138,7 +141,7 @@ def generate_answer(
 
     generated_ids = outputs[0][input_length:]
 
-    answer = tokenizer.decode(
+    answer: str = tokenizer.decode(
         generated_ids,
         skip_special_tokens=True
     )
@@ -146,7 +149,10 @@ def generate_answer(
     return answer.strip()
 
 
-def generate_dataset(dataset: StudentSearchResults) -> StudentSearchResultsAndAnswer:
+def generate_dataset(
+    dataset: StudentSearchResults
+) -> StudentSearchResultsAndAnswer:
+    """Generate a validated answer for each retrieved question."""
     answers = []
     for result in tqdm(dataset.search_results):
         answer = generate_answer(
@@ -167,7 +173,11 @@ def generate_dataset(dataset: StudentSearchResults) -> StudentSearchResultsAndAn
     )
 
 
-def save_results(results: StudentSearchResultsAndAnswer, output_path: str) -> None:
+def save_results(
+    results: StudentSearchResultsAndAnswer,
+    output_path: str
+) -> None:
+    """Write validated batch answers to a JSON file."""
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(results.model_dump_json(indent=2))
 

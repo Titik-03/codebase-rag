@@ -46,7 +46,9 @@ def parse_python_file(path: Path) -> Dict[str, Any] | None:
         return None
 
 
-def get_node_char(node: ast.AST, offset: List[int]) -> Tuple[int, int]:
+def get_node_char(
+    node: Any, offset: List[int]
+) -> Tuple[int, int]:
     """Map AST node lines to absolute character offsets."""
     start = offset[node.lineno - 1] + node.col_offset
     end = offset[node.end_lineno - 1] + node.end_col_offset
@@ -104,7 +106,14 @@ def _slice_oversized(start: int, end: int, str_path: str, max_chunk_size: int,
         pos = chunk_end - overlap
 
 
-def _emit_node(node, line_offsets, str_path, max_chunk_size, chunks):
+def _emit_node(
+    node: Any,
+    line_offsets: List[int],
+    str_path: str,
+    max_chunk_size: int,
+    chunks: List[Dict[str, Any]]
+) -> None:
+    """Append a Python node or recursively split its children into chunks."""
     start, end = get_node_char(node, line_offsets)
     node_length = end - start
 
@@ -116,7 +125,7 @@ def _emit_node(node, line_offsets, str_path, max_chunk_size, chunks):
         })
         return
 
-    children = []
+    children: List[Any] = []
     for attr in ("body", "orelse", "handlers", "finalbody"):
         children.extend(getattr(node, attr, None) or [])
 
@@ -216,7 +225,8 @@ def add_source_to_chunks(chunks: List[Dict[str, Any]]) -> None:
         c["text"] = source[start:end]
 
 
-def all_chunks():
+def all_chunks() -> List[Dict[str, Any]]:
+    """Collect Python and documentation chunks with their source text."""
     chunks = parse_nodes("vllm-0.10.1", max_chunk_size=2000) + \
         chunk_markdown("vllm-0.10.1", max_chunk_size=2000)
     add_source_to_chunks(chunks)

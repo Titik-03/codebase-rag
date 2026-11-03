@@ -5,9 +5,11 @@ from tqdm import tqdm
 from pathlib import Path
 import pickle
 import math
+from typing import Any
 
 
-def tokenize_text(text):
+def tokenize_text(text: str) -> list[str]:
+    """Extract lowercase identifiers and their underscore-separated parts."""
     raw_tokens = re.findall(
         r"[A-Za-z_][A-Za-z0-9_]*",
         text
@@ -28,7 +30,8 @@ def tokenize_text(text):
     return tokens
 
 
-def tokenize(chunks, name):
+def tokenize(chunks: list[dict[str, Any]], name: str) -> None:
+    """Attach tokens to chunks, including file paths for code chunks."""
     for c in tqdm(chunks, desc=f"Tokenizing {name}", unit="chunk"):
         tokens = tokenize_text(c["text"])
 
@@ -38,11 +41,12 @@ def tokenize(chunks, name):
         c["tokens"] = tokens
 
 
-def index(chunks):
+def index(chunks: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Build term frequencies and lengths for tokenized chunks."""
     index = []
 
     for chunk_id, chunk in enumerate(chunks):
-        c = {}
+        c: dict[str, Any] = {}
 
         c["chunk_id"] = chunk_id
         c["tokens"] = chunk["tokens"]
@@ -54,8 +58,11 @@ def index(chunks):
     return index
 
 
-def inverted_index(index):
-    inverted = {}
+def inverted_index(
+    index: list[dict[str, Any]]
+) -> dict[str, dict[int, int]]:
+    """Map each token to its chunk frequencies."""
+    inverted: dict[str, dict[int, int]] = {}
     for chunk in index:
         chunk_id = chunk["chunk_id"]
         for token, freq in chunk["tf"].items():
@@ -66,20 +73,25 @@ def inverted_index(index):
     return inverted
 
 
-def df(inverted):
+def df(inverted: dict[str, dict[int, int]]) -> dict[str, int]:
+    """Count the chunks containing each token."""
     df = {}
     for token, chunks in inverted.items():
         df[token] = len(chunks)
     return df
 
 
-def average_lenght(index):
-    i = sum(chunk["length"] for chunk in index)
+def average_lenght(index: list[dict[str, Any]]) -> float:
+    """Calculate the mean token count across indexed chunks."""
+    i: int = sum(chunk["length"] for chunk in index)
     j = len(index)
     return i/j
 
 
-def bm25_idf(token, inverted, N):
+def bm25_idf(
+    token: str, inverted: dict[str, dict[int, int]], N: int
+) -> float:
+    """Calculate the BM25 inverse document frequency of a token."""
     if token not in inverted:
         return 0
 
@@ -92,8 +104,11 @@ def bm25_idf(token, inverted, N):
     return idf
 
 
-def bm25_tf(tf, chunk_length, avgdl, k1=1.5, b=0.75):
+def bm25_tf(
+    tf: int, chunk_length: int, avgdl: float, k1: float = 1.5, b: float = 0.75
+) -> float:
 
+    """Calculate the length-normalized BM25 term frequency."""
     numerator = tf * (k1 + 1)
 
     length_normalization = (
@@ -106,14 +121,15 @@ def bm25_tf(tf, chunk_length, avgdl, k1=1.5, b=0.75):
 
 
 def bm25_term_score(
-    token,
-    chunk,
-    inverted,
-    N,
-    avgdl,
-    k1=1.5,
-    b=0.75
-):
+    token: str,
+    chunk: dict[str, Any],
+    inverted: dict[str, dict[int, int]],
+    N: int,
+    avgdl: float,
+    k1: float = 1.5,
+    b: float = 0.75
+) -> float:
+    """Calculate one query token contribution to a chunk score."""
     if token not in chunk["tf"]:
         return 0
 
@@ -137,17 +153,18 @@ def bm25_term_score(
 
 
 def bm25_search(
-    query,
-    index,
-    inverted,
-    avgdl,
-    top_k=5,
-    k1=1.5,
-    b=0.75
-):
+    query: str,
+    index: list[dict[str, Any]],
+    inverted: dict[str, dict[int, int]],
+    avgdl: float,
+    top_k: int = 5,
+    k1: float = 1.5,
+    b: float = 0.75
+) -> list[tuple[int, float]]:
+    """Rank matching chunks by their summed BM25 scores."""
     query_tokens = tokenize_text(query)
 
-    scores = {}
+    scores: dict[int, float] = {}
     N = len(index)
 
     for token in query_tokens:
@@ -183,7 +200,8 @@ def bm25_search(
     return ranked[:top_k]
 
 
-def save_data(path, data):
+def save_data(path: str | Path, data: Any) -> None:
+    """Persist an object as a pickle file, creating parent directories."""
     path = Path(path)
 
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -193,10 +211,11 @@ def save_data(path, data):
 
 
 def process_chunks(
-    chunks,
-    name,
+    chunks: list[dict[str, Any]],
+    name: str,
     index_directory: str = "data/processed"
-):
+) -> None:
+    """Tokenize chunks and save their BM25 index and metadata."""
     add_source_to_chunks(chunks)
     tokenize(chunks, name)
 
@@ -219,7 +238,8 @@ def process_chunks(
 def build_index(max_chunk_size: int = 2000,
                 raw_directory: str = "data/raw/vllm-0.10.1",
                 index_directory: str = "data/processed"
-                ):
+                ) -> None:
+    """Chunk the corpus and persist separate and combined lexical indexes."""
     if not 1 < max_chunk_size <= 2000:
         raise ValueError("max chunk size must be between 1 and 2000")
     chunks_py = parse_nodes(

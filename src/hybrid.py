@@ -9,6 +9,7 @@ def reciprocal_rank_fusion(
     k: int = 5,
 ) -> list[tuple[int, float]]:
 
+    """Merge lexical and semantic rankings using reciprocal ranks."""
     scores = {}
     result = []
     for rank, (chunk_id, score) in enumerate(bm25_results, start=1):
@@ -31,6 +32,7 @@ def hybrid_search(
     candidate_k: int = 20,
 ) -> list[tuple[int, float]]:
 
+    """Fuse BM25 and semantic candidates into one ranked result list."""
     if k <= 0 or candidate_k <= 0:
         raise ValueError("k and candidate_k must be positive")
 

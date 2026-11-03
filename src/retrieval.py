@@ -1,4 +1,6 @@
 import pickle
+from typing import Any
+from pydantic import BaseModel
 from .indexing import bm25_search, save_data
 from pathlib import Path
 from tqdm import tqdm
@@ -16,12 +18,16 @@ from .models import (
 )
 
 
-def load_data(path):
+def load_data(path: str | Path) -> Any:
+    """Load an object from a local pickle file."""
     with open(path, "rb") as f:
         return pickle.load(f)
 
 
-def get_sources(results, chunks) -> list[MinimalSource]:
+def get_sources(
+    results: list[tuple[int, float]], chunks: list[dict[str, Any]]
+) -> list[MinimalSource]:
+    """Convert ranked chunk identifiers to validated source locations."""
     sources = []
 
     for chunk_id, _ in results:
@@ -39,14 +45,15 @@ def get_sources(results, chunks) -> list[MinimalSource]:
 
 
 def search(
-    question_id,
-    query,
-    chunks,
-    index_chunks,
-    inverted,
-    avgdl,
-    k=5
-):
+    question_id: str,
+    query: str,
+    chunks: list[dict[str, Any]],
+    index_chunks: list[dict[str, Any]],
+    inverted: dict[str, dict[int, int]],
+    avgdl: float,
+    k: int = 5
+) -> MinimalSearchResults:
+    """Return ranked source locations for a query."""
     results = bm25_search(
         query,
         index_chunks,
@@ -65,15 +72,16 @@ def search(
 
 
 def search_dataset(
-    dataset_path,
-    chunks,
-    index_chunks,
-    inverted,
-    avgdl,
+    dataset_path: str | Path,
+    chunks: list[dict[str, Any]],
+    index_chunks: list[dict[str, Any]],
+    inverted: dict[str, dict[int, int]],
+    avgdl: float,
     index_type: str,
-    k=5,
+    k: int = 5,
     index_directory: str = "data/processed"
-):
+) -> StudentSearchResults:
+    """Retrieve sources for every question in a JSON dataset."""
     with open(dataset_path, "r", encoding="utf-8") as f:
         data = f.read()
 
@@ -125,7 +133,8 @@ def search_dataset(
     )
 
 
-def dump_json(result, output_path):
+def dump_json(result: BaseModel, output_path: str | Path) -> None:
+    """Save a Pydantic model as JSON, creating parent directories."""
     output_path = Path(output_path)
 
     output_path.parent.mkdir(
@@ -173,6 +182,7 @@ if __name__ == "__main__":
         docs_index,
         docs_inverted,
         docs_metadata["avgdl"],
+        index_type="docs",
         k=5
     )
 
@@ -182,10 +192,11 @@ if __name__ == "__main__":
         code_index,
         code_inverted,
         code_metadata["avgdl"],
+        index_type="code",
         k=5
     )
-    save_data(f"data/processed/docs_re.pkl", docs_results)
-    save_data(f"data/processed/code_re.pkl", code_results)
+    save_data("data/processed/docs_re.pkl", docs_results)
+    save_data("data/processed/code_re.pkl", code_results)
     dump_json(
         docs_results,
         "data/output/search_results/docs_result.json"

@@ -6,6 +6,7 @@ from .retrieval import get_sources
 from .models import MinimalSearchResults
 import hashlib
 import json
+from typing import Any
 
 
 model = SentenceTransformer(
@@ -13,15 +14,17 @@ model = SentenceTransformer(
 )
 
 
-def embed_query(query: str):
-    tokens = model.encode(
+def embed_query(query: str) -> Any:
+    """Encode a query as a normalized semantic vector."""
+    tokens: Any = model.encode(
         query,
         normalize_embeddings=True
     )
     return tokens
 
 
-def chunks_fingerprint(chunks):
+def chunks_fingerprint(chunks: list[dict[str, Any]]) -> str:
+    """Hash the embedding model settings and ordered chunk content."""
     hasher = hashlib.sha256()
     hasher.update(b"all-MiniLM-L6-v2:normalized:v1")
     for chunk in chunks:
@@ -38,7 +41,10 @@ def chunks_fingerprint(chunks):
     return hasher.hexdigest()
 
 
-def build_embeddings(index_type: str):
+def build_embeddings(
+    index_type: str
+) -> tuple[list[dict[str, Any]], Any]:
+    """Load matching embeddings or encode and save the indexed chunks."""
     if index_type not in ("docs", "code", "combined"):
         raise ValueError("Invalid index type")
 
@@ -85,7 +91,10 @@ def build_embeddings(index_type: str):
     return chunks, embeddings
 
 
-def semantic_search(query: str, index_type: str, k: int = 5):
+def semantic_search(
+    query: str, index_type: str, k: int = 5
+) -> list[tuple[int, float]]:
+    """Rank chunks by similarity to the normalized query vector."""
     if k <= 0:
         raise ValueError("k must be greater than 0")
 
@@ -110,7 +119,8 @@ def semantic_retrieve(
     query: str,
     index_type: str = "docs",
     k: int = 5
-):
+) -> MinimalSearchResults:
+    """Return validated source locations from semantic search."""
     results = semantic_search(query, index_type, k)
 
     chunks, _ = build_embeddings(index_type)

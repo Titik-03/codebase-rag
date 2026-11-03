@@ -28,3 +28,16 @@ requires = ["uv_build>=0.12.10,<0.13.0"]
 build-backend = "uv_build"
 [tool.uv]
 package = false
+
+[tool.mypy]
+exclude = '(^|/)(\.venv|data|evaluations|exams|chubbik-lubbik|build|dist)/'
+
+[[tool.mypy.overrides]]
+module = ["torch.*", "transformers.*", "sentence_transformers.*", "fastapi.*"]
+follow_imports = "skip"
+
+[dependency-groups]
+dev = [
+    "flake8>=7.5.0",
+    "mypy>=2.4.1",
+]

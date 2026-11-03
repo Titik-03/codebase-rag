@@ -3,14 +3,20 @@ import pickle
 from .indexing import bm25_search
 from .indexing import index, inverted_index, average_lenght
 from functools import lru_cache
+from typing import Any
 
 
-def load_data(path: Path):
+def load_data(path: Path) -> Any:
+    """Load an object from a local pickle file."""
     with path.open("rb") as file:
         return pickle.load(file)
 
 
-def build_combined():
+def build_combined() -> tuple[
+    list[dict[str, Any]], list[dict[str, Any]],
+    dict[str, dict[int, int]], float
+]:
+    """Combine documentation and code chunks into one BM25 index."""
     path_proc = Path("data/processed")
     docs_chunks = load_data(path_proc / "docs_chunks.pkl")
     code_chunks = load_data(path_proc / "code_chunks.pkl")
@@ -26,7 +32,13 @@ def build_combined():
     )
 
 
-def save_combined_index(chunks, idx, inverted, avgdl):
+def save_combined_index(
+    chunks: list[dict[str, Any]],
+    idx: list[dict[str, Any]],
+    inverted: dict[str, dict[int, int]],
+    avgdl: float
+) -> None:
+    """Persist the combined chunks, index, and metadata."""
     output = Path("data/processed")
     output.mkdir(parents=True, exist_ok=True)
 
@@ -46,7 +58,11 @@ def save_combined_index(chunks, idx, inverted, avgdl):
 
 
 @lru_cache(maxsize=1)
-def load_combined_index():
+def load_combined_index() -> tuple[
+    list[dict[str, Any]], list[dict[str, Any]],
+    dict[str, dict[int, int]], dict[str, Any]
+]:
+    """Load and cache the combined index and its metadata."""
     base = Path("data/processed")
 
     chunks = load_data(base / "combined_chunks.pkl")
@@ -57,7 +73,8 @@ def load_combined_index():
     return chunks, idx, inverted, metadata
 
 
-def build_and_save_combined():
+def build_and_save_combined() -> None:
+    """Rebuild the combined index and clear its memory cache."""
     chunks, idx, inverted, avgdl = build_combined()
 
     save_combined_index(chunks, idx, inverted, avgdl)
@@ -67,7 +84,8 @@ def build_and_save_combined():
     print("Combined index created successfully.")
 
 
-def combined_search(query: str, k: int = 5):
+def combined_search(query: str, k: int = 5) -> list[tuple[int, float]]:
+    """Search documentation and code together using BM25."""
     chunks, idx, inverted, metadata = load_combined_index()
 
     results = bm25_search(
@@ -89,6 +107,7 @@ if __name__ == "__main__":
         "What is continuous batching?",
     ]
 
+    _: Any
     chunks, _, _, _ = load_combined_index()
 
     for query in queries:

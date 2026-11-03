@@ -6,6 +6,7 @@ from pathlib import Path
 
 
 def make_cache_key(query: str, k: int, index_version: str) -> str:
+    """Hash a query, result count, and index version into a cache key."""
     data = [query, k, index_version]
 
     serial = json.dumps(data, ensure_ascii=False)
@@ -22,6 +23,7 @@ def get_index_version(
     index_directory: str = "data/processed"
 ) -> str:
 
+    """Fingerprint the sizes and modification times of index artifacts."""
     files = ["chunks", "index", "inverted_index", "metadata"]
     information = []
 
@@ -47,6 +49,7 @@ def load_cached_result(
     cache_directory: str = "data/cache/queries"
 ) -> MinimalSearchResults | None:
 
+    """Load a cached retrieval result, ignoring unreadable cache entries."""
     path = Path(cache_directory) / f"{cache_key}.json"
 
     if not path.exists():
@@ -63,6 +66,7 @@ def save_cached_result(
     result: MinimalSearchResults,
     cache_directory: str = "data/cache/queries"
 ) -> None:
+    """Persist a validated retrieval result in the query cache."""
     path = Path(cache_directory) / f"{cache_key}.json"
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(

@@ -6,6 +6,7 @@ def source_iou(
     expected: MinimalSource,
     retrieved: MinimalSource
 ) -> float:
+    """Calculate character-range intersection over union within one file."""
     if expected.file_path != retrieved.file_path:
         return 0.0
     start = max(
@@ -35,6 +36,7 @@ def sources_match(
     retrieved: MinimalSource,
     threshold: float = 0.05
 ) -> bool:
+    """Check whether two source spans meet the overlap threshold."""
     return source_iou(expected, retrieved) >= threshold
 
 
@@ -44,6 +46,7 @@ def recall_at_k(
     k: int
 ) -> float:
 
+    """Calculate the fraction of reference sources matched in the top k."""
     if not expected_sources:
         return 0.0
 
@@ -63,6 +66,7 @@ def evaluate_dataset(
     student: StudentSearchResults
 ) -> dict[str, float]:
 
+    """Average recall at several cutoffs across reference questions."""
     retrieved_by_id = {
         result.question_id: result
         for result in student.search_results

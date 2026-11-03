@@ -1,17 +1,16 @@
 import fire
 import sys
+from typing import Any
 from pathlib import Path
-from pydantic import ValidationError
 from .indexing import build_index
 from functools import lru_cache
-from .retrieval import load_data, search as retrieve
+from .retrieval import load_data
 from .retrieval import search_dataset as retrieve_dataset, dump_json
 from .hybrid import hybrid_search
 from .evaluation import evaluate_dataset
 from .combined_search import (
     combined_search,
     load_combined_index,
-    build_and_save_combined
 )
 from .retrieval import get_sources
 from .models import MinimalSearchResults, StudentSearchResults, RagDataset
@@ -27,7 +26,11 @@ from .cache import (
 def load_index(
     name: str,
     index_directory: str = "data/processed"
-):
+) -> tuple[
+    list[dict[str, Any]], list[dict[str, Any]],
+    dict[str, dict[int, int]], dict[str, Any]
+]:
+    """Load and cache the lexical artifacts for a corpus type."""
     path = Path(index_directory)
 
     chunks = load_data(path / f"{name}_chunks.pkl")
@@ -42,7 +45,8 @@ def index_command(
     max_chunk_size: int = 2000,
     raw_directory: str = "data/raw/vllm-0.10.1",
     index_directory: str = "data/processed"
-):
+) -> None:
+    """Build the corpus index through the command-line interface."""
     try:
         build_index(
             max_chunk_size=max_chunk_size,
@@ -59,7 +63,8 @@ def search_dataset_command(
     k: int = 5,
     save_directory: str = "data/output/search_results",
     index_directory: str = "data/processed"
-):
+) -> None:
+    """Retrieve a question dataset and save its JSON results."""
     if k <= 0:
         raise ValueError("k must be greater than 0")
     dataset_name = Path(dataset_path).name
@@ -95,7 +100,8 @@ def hybrid_command(
     query: str,
     k: int = 5,
     candidate_k: int = 20
-):
+) -> None:
+    """Print sources retrieved by hybrid search."""
     validate_query(query, k)
 
     if candidate_k <= 0:
@@ -124,7 +130,8 @@ def search_both(
     query: str,
     k: int = 5,
     index_directory: str = "data/processed"
-):
+) -> MinimalSearchResults:
+    """Retrieve code and documentation sources with query caching."""
     validate_query(query, k)
 
     index_version = get_index_version(
@@ -164,7 +171,8 @@ def search_command(
     query: str,
     k: int = 5,
     index_directory: str = "data/processed"
-):
+) -> None:
+    """Print the source locations retrieved for one query."""
     result = search_both(query, k, index_directory)
     print(result.model_dump_json(indent=2))
 
@@ -173,7 +181,8 @@ def query_answer(
     query: str,
     k: int = 5,
     index_directory: str = "data/processed"
-):
+) -> str:
+    """Generate an answer from the sources retrieved for one query."""
     try:
         results = search_both(query, k, index_directory)
 
@@ -193,8 +202,9 @@ def query_answer(
 def answer_dataset_command(
     student_search_results_path: str,
     save_directory: str
-):
+) -> None:
 
+    """Generate and save answers from a search-results JSON file."""
     with open(student_search_results_path, "r", encoding="utf-8") as f:
         dataset = StudentSearchResults.model_validate_json(f.read())
 
@@ -212,7 +222,8 @@ def answer_dataset_command(
 def evaluate_command(
     student_search_results_path: str,
     dataset_path: str
-):
+) -> None:
+    """Print recall metrics against a reference question dataset."""
     with open(student_search_results_path, "r", encoding="utf-8") as f:
         student = StudentSearchResults.model_validate_json(f.read())
 
@@ -225,7 +236,8 @@ def evaluate_command(
         print(f"{metric}: {score:.3f} ({score * 100:.1f}%)")
 
 
-def validate_query(query: str, k: int):
+def validate_query(query: str, k: int) -> None:
+    """Reject empty queries and invalid result counts."""
     if not isinstance(query, str):
         raise ValueError("Query must be a string")
 
