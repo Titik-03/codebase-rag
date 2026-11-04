@@ -47,11 +47,24 @@ def parse_python_file(path: Path) -> Dict[str, Any] | None:
 
 
 def get_node_char(
-    node: Any, offset: List[int]
-) -> Tuple[int, int]:
-    """Map AST node lines to absolute character offsets."""
-    start = offset[node.lineno - 1] + node.col_offset
-    end = offset[node.end_lineno - 1] + node.end_col_offset
+    node: Any,
+    offset: list[int],
+    source_lines: list[str]
+) -> tuple[int, int]:
+    """Convert AST byte offsets into character offsets."""
+
+    def char_position(line_number: int, byte_column: int) -> int:
+        line = source_lines[line_number - 1]
+
+        column = len(
+            line.encode("utf-8")[:byte_column].decode("utf-8")
+        )
+
+        return offset[line_number - 1] + column
+
+    start = char_position(node.lineno, node.col_offset)
+    end = char_position(node.end_lineno, node.end_col_offset)
+
     return start, end
 
 
@@ -84,7 +97,7 @@ def chunk_markdown(raw_dir: Path | str,
             })
             if end == len(source):
                 break
-            pos = end - min(overlap, max_chunk_size - 1)
+            pos = end - min(overlap, max_chunk_size // 4)
 
     return chunks
 
@@ -103,18 +116,19 @@ def _slice_oversized(start: int, end: int, str_path: str, max_chunk_size: int,
         })
         if chunk_end >= end:
             break
-        pos = chunk_end - overlap
+        pos = chunk_end - min(overlap, max_chunk_size // 4)
 
 
 def _emit_node(
     node: Any,
-    line_offsets: List[int],
+    line_offsets: list[int],
+    source_lines: list[str],
     str_path: str,
     max_chunk_size: int,
-    chunks: List[Dict[str, Any]]
+    chunks: list[dict[str, Any]]
 ) -> None:
     """Append a Python node or recursively split its children into chunks."""
-    start, end = get_node_char(node, line_offsets)
+    start, end = get_node_char(node, line_offsets, source_lines)
     node_length = end - start
 
     if node_length <= max_chunk_size:
@@ -136,7 +150,10 @@ def _emit_node(
     for child in children:
         if not hasattr(child, "lineno"):
             continue
-        _emit_node(child, line_offsets, str_path, max_chunk_size, chunks)
+        _emit_node(
+            child, line_offsets, source_lines, str_path, max_chunk_size,
+            chunks
+        )
 
 
 def parse_nodes(raw_dir: Path | str,
@@ -158,6 +175,7 @@ def parse_nodes(raw_dir: Path | str,
         ast_tree = parsed["tree"]
         line_offsets = parsed["line_offsets"]
         str_path = parsed["path"]
+        source_lines = parsed["source"].splitlines(keepends=True)
 
         chunk_start = None
         chunk_end = None
@@ -166,7 +184,7 @@ def parse_nodes(raw_dir: Path | str,
             if not hasattr(node, "lineno"):
                 continue
 
-            start, end = get_node_char(node, line_offsets)
+            start, end = get_node_char(node, line_offsets, source_lines)
             node_length = end - start
 
             if node_length > max_chunk_size:
@@ -177,8 +195,10 @@ def parse_nodes(raw_dir: Path | str,
                         "last_character_index": chunk_end,
                     })
                     chunk_start = None
-                _emit_node(node, line_offsets, str_path,
-                           max_chunk_size, chunks)
+                _emit_node(
+                    node, line_offsets, source_lines,
+                    str_path, max_chunk_size, chunks
+                )
                 continue
 
             if (

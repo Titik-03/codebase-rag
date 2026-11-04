@@ -7,16 +7,20 @@ from .models import MinimalSearchResults
 import hashlib
 import json
 from typing import Any
+from functools import lru_cache
 
 
-model = SentenceTransformer(
-    "sentence-transformers/all-MiniLM-L6-v2"
-)
+@lru_cache(maxsize=1)
+def get_model() -> SentenceTransformer:
+    """Load the embedding model only when needed."""
+    return SentenceTransformer(
+        "sentence-transformers/all-MiniLM-L6-v2"
+    )
 
 
 def embed_query(query: str) -> Any:
     """Encode a query as a normalized semantic vector."""
-    tokens: Any = model.encode(
+    tokens: Any = get_model().encode(
         query,
         normalize_embeddings=True
     )
@@ -69,7 +73,7 @@ def build_embeddings(
 
         valid = embeddings.shape == (
             len(chunks),
-            model.get_sentence_embedding_dimension()
+            get_model().get_sentence_embedding_dimension()
         )
 
     if not valid:
@@ -77,7 +81,7 @@ def build_embeddings(
 
         texts = [chunk["text"] for chunk in chunks]
 
-        embeddings = model.encode(
+        embeddings = get_model().encode(
             texts,
             normalize_embeddings=True,
             batch_size=64,

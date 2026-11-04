@@ -266,7 +266,7 @@ def build_index(max_chunk_size: int = 2000,
     process_chunks(chunks_doc, "docs", index_directory)
 
     from .combined_search import build_and_save_combined
-    build_and_save_combined()
+    build_and_save_combined(index_directory)
 
     print("Indexing finished.")
 

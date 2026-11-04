@@ -156,9 +156,9 @@ def search_both(
     if cached is not None:
         return cached
 
-    chunks, _, _, _ = load_combined_index()
+    chunks, _, _, _ = load_combined_index(index_directory)
 
-    results = combined_search(query, k)
+    results = combined_search(query, k, index_directory)
 
     sources = get_sources(results, chunks)
 
@@ -197,7 +197,9 @@ def answer_command(
     query: str,
     k: int = 5,
     index_directory: str = "data/processed",
-    output_path: str = "data/output/search_results_and_answer/single_answer.json"
+    output_path: str = (
+        "data/output/search_results_and_answer/single_answer.json"
+    )
 ) -> None:
     """Answer one query and save the required JSON output."""
 

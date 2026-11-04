@@ -12,12 +12,12 @@ def load_data(path: Path) -> Any:
         return pickle.load(file)
 
 
-def build_combined() -> tuple[
+def build_combined(index_directory: str = "data/processed") -> tuple[
     list[dict[str, Any]], list[dict[str, Any]],
     dict[str, dict[int, int]], float
 ]:
     """Combine documentation and code chunks into one BM25 index."""
-    path_proc = Path("data/processed")
+    path_proc = Path(index_directory)
     docs_chunks = load_data(path_proc / "docs_chunks.pkl")
     code_chunks = load_data(path_proc / "code_chunks.pkl")
     combined_chunks = docs_chunks + code_chunks
@@ -36,10 +36,11 @@ def save_combined_index(
     chunks: list[dict[str, Any]],
     idx: list[dict[str, Any]],
     inverted: dict[str, dict[int, int]],
-    avgdl: float
+    avgdl: float,
+    index_directory: str = "data/processed"
 ) -> None:
     """Persist the combined chunks, index, and metadata."""
-    output = Path("data/processed")
+    output = Path(index_directory)
     output.mkdir(parents=True, exist_ok=True)
 
     data = {
@@ -58,12 +59,12 @@ def save_combined_index(
 
 
 @lru_cache(maxsize=1)
-def load_combined_index() -> tuple[
+def load_combined_index(index_directory: str = "data/processed") -> tuple[
     list[dict[str, Any]], list[dict[str, Any]],
     dict[str, dict[int, int]], dict[str, Any]
 ]:
     """Load and cache the combined index and its metadata."""
-    base = Path("data/processed")
+    base = Path(index_directory)
 
     chunks = load_data(base / "combined_chunks.pkl")
     idx = load_data(base / "combined_index.pkl")
@@ -73,20 +74,30 @@ def load_combined_index() -> tuple[
     return chunks, idx, inverted, metadata
 
 
-def build_and_save_combined() -> None:
+def build_and_save_combined(
+    index_directory: str = "data/processed"
+) -> None:
     """Rebuild the combined index and clear its memory cache."""
-    chunks, idx, inverted, avgdl = build_combined()
+    chunks, idx, inverted, avgdl = build_combined(index_directory)
 
-    save_combined_index(chunks, idx, inverted, avgdl)
+    save_combined_index(
+        chunks, idx, inverted, avgdl, index_directory
+    )
 
     load_combined_index.cache_clear()
 
     print("Combined index created successfully.")
 
 
-def combined_search(query: str, k: int = 5) -> list[tuple[int, float]]:
+def combined_search(
+    query: str,
+    k: int = 5,
+    index_directory: str = "data/processed"
+) -> list[tuple[int, float]]:
     """Search documentation and code together using BM25."""
-    chunks, idx, inverted, metadata = load_combined_index()
+    chunks, idx, inverted, metadata = load_combined_index(
+        index_directory
+    )
 
     results = bm25_search(
         query,
