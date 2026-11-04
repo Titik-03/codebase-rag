@@ -32,3 +32,31 @@ dist/
 eval.html
 moulinette-ubuntu
 data/AnsweredQuestions
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# Generated RAG indexes and caches
+data/processed/
+data/cache/
+data/output/
+
+# Private evaluation data
+private/
+exams/
+evaluations/
+private.zip
+exams.zip
+moulinette.zip
+moulinette-ubuntu
+moulinette-fedora
+data/datasets/private/
+data/datasets/datasets_private.zip
+
+# Other generated files
+*.log

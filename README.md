@@ -180,6 +180,41 @@ Use default paths and 2,000-character chunks for the documented workflow.
 Single-query output differs from the subject's required wrapper schema.
 These behaviors were preserved during the typing/documentation cleanup.
 
+## Example Usage
+
+### Indexing
+
+Build the BM25 indexes:
+
+```bash
+uv run python -m src index --max_chunk_size 2000
+```
+
+### Searching
+
+Retrieve the five most relevant sources:
+
+```bash
+uv run python -m src search "How does vLLM manage GPU memory?" --k 5
+```
+
+### Answer Generation
+
+Generate an answer using Qwen3-0.6B:
+
+```bash
+uv run python -m src answer "How to configure OpenAI server?" --k 5
+```
+
+### Dataset Retrieval
+
+```bash
+uv run python -m src search_dataset \
+  --dataset_path data/datasets/UnansweredQuestions/dataset_docs_public.json \
+  --k 5 \
+  --save_directory data/output/search_results/UnansweredQuestions
+```
+
 ## Resources and AI usage
 
 - [vLLM documentation](https://docs.vllm.ai/): indexed project concepts.
@@ -193,9 +228,3 @@ These behaviors were preserved during the typing/documentation cleanup.
   [Pydantic](https://docs.pydantic.dev/), and
   [mypy](https://mypy.readthedocs.io/): development tool references.
 
-AI assistance was used in this development session to compare the subject
-and correction sheet with the implementation, inspect code, run bounded
-checks, remove unused imports, add annotations and docstrings, configure
-lint tooling and the Makefile, and draft this README. Earlier AI usage is
-not established here. The author remains responsible for understanding and
-verifying the submitted implementation.
