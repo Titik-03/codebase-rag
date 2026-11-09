@@ -240,8 +240,8 @@ def build_index(max_chunk_size: int = 2000,
                 index_directory: str = "data/processed"
                 ) -> None:
     """Chunk the corpus and persist separate and combined lexical indexes."""
-    if not 1 < max_chunk_size <= 2000:
-        raise ValueError("max chunk size must be between 1 and 2000")
+    if not isinstance(max_chunk_size, int) or not 1 < max_chunk_size <= 2000:
+        raise ValueError("chunk size must be an integer between 2 and 2000")
     chunks_py = parse_nodes(
         raw_directory,
         max_chunk_size=max_chunk_size

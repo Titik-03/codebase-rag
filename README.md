@@ -13,15 +13,17 @@ the CLI, Pydantic validates exchanged data, and tqdm shows batch progress.
 
 The current project requires Python **3.14 or later** and `uv`. A GPU is not
 required. Allow disk space for PyTorch, model weights, the corpus, and indexes.
-Models download on first use and are then cached. The semantic model currently
-loads when the CLI starts, including for ordinary BM25 commands.
+Models download on first use and are then cached. Generation and semantic
+models load only when their respective features are used.
 
 ```sh
 uv sync
 # Or: make install
 ```
 
-Extract the supplied corpus and public datasets into these directories:
+The small public datasets are included. Extract the supplied vLLM corpus
+locally into `data/raw/vllm-0.10.1/`; the corpus, generated indexes, and model
+weights are excluded from Git. The expected data layout is:
 
 ```text
 data/raw/vllm-0.10.1/
@@ -86,8 +88,8 @@ make clean                       # Python/build caches; keeps data and models
 
 `models.py` defines the Pydantic models. Batch retrieval uses
 `StudentSearchResults`; batch answers use `StudentSearchResultsAndAnswer`.
-Single-query search currently prints `MinimalSearchResults`, and single-query
-answer returns plain text.
+Single-query commands save the same wrapper models with one result. Search
+also prints source locations; answer prints its JSON output.
 
 ## Chunking strategy
 
@@ -121,7 +123,7 @@ midway, at the cost of sometimes leaving unused context space.
 
 ## Performance analysis
 
-A 2026-11-02 audit rebuilt lexical indexes in a temporary workspace and used
+A 2026-11-09 audit rebuilt lexical indexes in a temporary workspace and used
 the official moulinette on two provided private datasets of 100 questions
 each. Both result files were valid.
 
@@ -129,16 +131,18 @@ each. Both result files were valid.
 | --- | --- | --- |
 | Docs recall@5 | 87% | At least 80% |
 | Code recall@5 | 50% | At least 50% |
-| Whole-corpus lexical indexing | 51.71 seconds | At most 300 seconds |
-| Search over 200 questions | 61.99 seconds | At most 90 seconds |
+| Whole-corpus lexical indexing | 23 seconds | At most 300 seconds |
+| Search over 200 questions | 24 seconds | At most 90 seconds |
 
-The audit limited CPU thread settings to four. Results depend on the machine;
-code recall has no margin above the threshold. Private datasets are corrector
+Results depend on the machine; code recall has no margin above the threshold.
+Private datasets are corrector
 material and are not distributed with the project. The supplied reliability
 script passed all four cases.
 
-Fresh Qwen generation did not finish its first answer within a 110-second
-audit limit. Live answer quality and HTTP behavior still need verification.
+Three questions tested with the default Qwen model and `k=10` produced three
+satisfactory, source-grounded answers (the requirement is two out of three).
+Sequential calls in one process took approximately 84, 119, and 96 seconds,
+including one model load. CPU generation remains slow.
 
 ## Bonus features and challenges
 
@@ -147,12 +151,14 @@ audit limit. Live answer quality and HTTP behavior still need verification.
   dimensions match. Keep matching `*_chunks.pkl` and `*_embeddings.sha256`
   files with them. Mismatches trigger expensive embedding regeneration.
 - **Hybrid retrieval:** reciprocal rank fusion combines lexical and semantic
-  candidates. A CPU query using saved vectors worked; no recall improvement
+  candidates. Semantic and hybrid search passed on a small CPU test corpus;
+  a full-corpus embedding rebuild was not completed, and no recall improvement
   is claimed.
 - **Caching:** indexes are cached in memory; query results are stored on disk
   with index-version keys. Repeated-query consistency was checked.
-- **HTTP API:** FastAPI provides a form plus `/search` and `/answer`. The
-  audit stalled in HTTP/AnyIO execution, so a live demonstration is pending.
+- **HTTP API:** FastAPI provides a form plus `/search` and `/answer`. Local
+  smoke tests passed for the homepage, normal search, and a no-context answer.
+  Whitespace-only queries still need controlled HTTP error handling.
 
 Incremental indexing is not implemented.
 
@@ -174,11 +180,10 @@ method. Identifier splitting, path tokens, and semantic search address
 different aspects of this problem. Fingerprints prevent accidental reuse of
 vectors for changed chunks. CPU generation remains a practical limitation.
 
-Known issues remain in Unicode AST offsets, Python windows of 50 characters
-or less, custom combined-index directories, and some filesystem errors.
-Use default paths and 2,000-character chunks for the documented workflow.
-Single-query output differs from the subject's required wrapper schema.
-These behaviors were preserved during the typing/documentation cleanup.
+Regression checks passed for Unicode AST offsets, chunk sizes of 2, 20, 50,
+and 2,000 characters, configurable combined-index paths, and single-query JSON
+wrappers. Empty or corrupt pickle indexes produce a CLI error asking for a
+rebuild. Long-running API processes should be restarted after re-indexing.
 
 ## Example Usage
 
@@ -216,6 +221,9 @@ uv run python -m src search_dataset \
 ```
 
 ## Resources and AI usage
+
+AI assisted with code review, test execution, and small error-handling and
+documentation fixes.
 
 - [vLLM documentation](https://docs.vllm.ai/): indexed project concepts.
 - [Qwen3-0.6B](https://huggingface.co/Qwen/Qwen3-0.6B): generator model card.

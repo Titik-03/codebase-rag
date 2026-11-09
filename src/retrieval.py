@@ -148,7 +148,6 @@ def dump_json(result: BaseModel, output_path: str | Path) -> None:
 
 if __name__ == "__main__":
 
-    # DOCS
     docs_chunks = load_data(
         "data/processed/docs_chunks.pkl"
     )
@@ -162,7 +161,6 @@ if __name__ == "__main__":
         "data/processed/docs_metadata.pkl"
     )
 
-    # CODE
     code_chunks = load_data(
         "data/processed/code_chunks.pkl"
     )

@@ -1,62 +1,33 @@
-# Python cache
-__pycache__/
-*.pyc
-
-# Virtual environment and IDE
+# Python environment and caches
 .venv/
 .vscode/
-
-# Processed data and search outputs
-# data/processed/
-data/output/
-
-
-data/cache/
-data/output/
-evaluations/
-data/processed/*_index.pkl
-data/processed/*_inverted_index.pkl
-data/processed/*_metadata.pkl
-data/processed/*.stale.npy
-
-data/datasets/private/
-data/AnsweredQuestions/
-data/UnansweredQuestions/
-
-.mypy_cache/
-.pytest_cache/
-.ruff_cache/
-build/
-dist/
-
-eval.html
-moulinette-ubuntu
-data/AnsweredQuestions
-
-# Python
 __pycache__/
 *.py[cod]
-.venv/
 .mypy_cache/
 .pytest_cache/
 .ruff_cache/
 
-# Generated RAG indexes and caches
-data/processed/
-data/cache/
-data/output/
+# Local corpus, generated indexes, results, and build artifacts
+/data/raw/
+/data/processed/
+/data/cache/
+/data/output/
+/evaluations/
+/build/
+/dist/
+*.log
 
-# Private evaluation data
-private/
-exams/
-evaluations/
+# Dataset downloads and private evaluation material
+/data/datasets/datasets_public/
+/data/datasets/*.zip
+/data/datasets/private/
+/data/AnsweredQuestions/
+/data/UnansweredQuestions/
+/private/
+/exams/
 private.zip
 exams.zip
 moulinette.zip
 moulinette-ubuntu
 moulinette-fedora
-data/datasets/private/
-data/datasets/datasets_private.zip
-
-# Other generated files
-*.log
+eval.html

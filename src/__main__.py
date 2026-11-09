@@ -1,4 +1,5 @@
 import fire
+import pickle
 import sys
 from typing import Any
 from pathlib import Path
@@ -6,7 +7,6 @@ from .indexing import build_index
 from functools import lru_cache
 from .retrieval import load_data
 from .retrieval import search_dataset as retrieve_dataset, dump_json
-from .hybrid import hybrid_search
 from .evaluation import evaluate_dataset
 from .combined_search import (
     combined_search,
@@ -71,8 +71,8 @@ def search_dataset_command(
     index_directory: str = "data/processed"
 ) -> None:
     """Retrieve a question dataset and save its JSON results."""
-    if k <= 0:
-        raise ValueError("k must be greater than 0")
+    if not isinstance(k, int) or isinstance(k, bool) or k <= 0:
+        raise ValueError("k must be a positive integer")
     dataset_name = Path(dataset_path).name
 
     if dataset_name.startswith("dataset_docs_"):
@@ -108,6 +108,7 @@ def hybrid_command(
     candidate_k: int = 20
 ) -> None:
     """Print sources retrieved by hybrid search."""
+    from .hybrid import hybrid_search
     validate_query(query, k)
 
     if candidate_k <= 0:
@@ -179,7 +180,7 @@ def search_command(
     index_directory: str = "data/processed",
     output_path: str = "data/output/search_results/single_search.json"
 ) -> None:
-    """Search a single query and save the required JSON output."""
+    """Print source locations and save the required JSON output."""
 
     result = search_both(query, k, index_directory)
 
@@ -190,7 +191,11 @@ def search_command(
 
     dump_json(final_result, output_path)
 
-    print(final_result.model_dump_json(indent=2))
+    for source in result.retrieved_sources:
+        print(
+            f"{source.file_path} "
+            f"[{source.first_character_index}:{source.last_character_index}]"
+        )
 
 
 def answer_command(
@@ -312,6 +317,13 @@ if __name__ == "__main__":
             "hybrid": hybrid_command
         })
 
-    except (ValueError, FileNotFoundError)as e:
+    except KeyboardInterrupt:
+        print("\nCancelled.", file=sys.stderr)
+        sys.exit(130)
+    except (pickle.UnpicklingError, EOFError):
+        print("Error: Corrupt index. Rebuild it with the index command.",
+              file=sys.stderr)
+        sys.exit(1)
+    except (ValueError, TypeError, OSError) as e:
         print(f"Error: {e}", file=sys.stderr)
         sys.exit(1)
